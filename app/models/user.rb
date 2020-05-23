@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :themes, through: :selected_themes
   has_many :matching_profiles
   has_many :messages
+  validates :nickname, presence: true
 end
