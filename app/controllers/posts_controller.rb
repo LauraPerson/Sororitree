@@ -4,15 +4,19 @@ class PostsController < ApplicationController
   def index
     @posts = policy_scope(Post)
     authorize @posts
+    @post = Post.new()
+    authorize @post
   end
 
   def create
     @post = Post.new(params_posts)
+    @post.theme = Theme.first
     authorize @post
-    if @post.save
-      # redirect_to
+    @post.user = current_user
+    if @post.save!
+      redirect_to posts_path
     else
-      render '/posts'
+      render :index
     end
   end
 
