@@ -1,0 +1,21 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
+
+.form-registration-new {
+  box-shadow: $box-shadow;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  font-family: $body-font;
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.form-actions {
+}
+
+.btn-rose {
+  background-color: $red_pink;
+  border-radius: 10px;
+}
