@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :matching_profiles
   has_many :messages
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }
+  validates :helper
 end
