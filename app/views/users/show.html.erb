@@ -4,8 +4,7 @@
   </div>
 
   <div class="card-user-profile d-flex align-items-center">
-    <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); height: 56px;">
-    </div>
+    <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
     <div class="card-user-information ml-2">
     <%= current_user.nickname %>
     </div>
