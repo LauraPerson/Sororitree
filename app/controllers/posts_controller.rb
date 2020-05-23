@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params_posts)
-    @post.theme = Theme.first
     authorize @post
     @post.user = current_user
     if @post.save!
