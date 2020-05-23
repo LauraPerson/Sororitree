@@ -1,1 +1,30 @@
-<h1>This is the personal profile  page</h1>
+<div class="container">
+  <div class="user-show-title">
+    <h1>Your profile page</h1>
+  </div>
+
+  <div class="card-user-profile d-flex align-items-center">
+    <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)); height: 56px;">
+    </div>
+    <div class="card-user-information ml-2">
+    <%= current_user.nickname %>
+    </div>
+    
+
+  </div>
+  <div class="user-helper d-flex align-items-center mt-3">
+    <% if current_user.helper == false %>
+      <div class="btn-user-helper-false">
+      </div>
+      <div class="user-helper-text">
+        <p class="m-0">You're not available to help</p> 
+      </div>
+    <% else %>
+      <div class="btn-user-helper-true">
+      </div>
+      <div class="user-helper-text">
+        <p class="m-0">You're not available to help</p> 
+      </div>
+    <% end %>
+  </div>
+</div>
