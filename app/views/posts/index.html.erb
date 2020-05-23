@@ -1,4 +1,22 @@
-<h1>This is the feed page</h1>
-<% @posts.each do |post| %>
-  <%= post.content %>
-<% end %>
+<div class="posts-container">
+  <div>
+    <h1> Sororitree Posts Page </h1>
+  </div>
+
+  <div>
+    <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
+      <%= f.label 'Add a new post'  %>
+      <%= f.input :content %>
+      <%= f.association :theme, label: "Category", class: "form_control" %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+  <div>
+    <% @posts.each do |post| %>
+    <div class="posts-cards mt-4">
+      <%= post.content %>
+    </div>
+    <% end %>
+  </div>
+</div>
