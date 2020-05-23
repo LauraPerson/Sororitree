@@ -1,4 +1,3 @@
-
 array_themes = ["Domestic Violence", "Psychological Violence", "Physical Violence", "Sexual Assaults", "Harassment", "Abortion", "Sexuality", "Maternity", "Contraception", "Women Rights", "Abusive Relationships", "Career Guidance", "Women's Health", "Gender Equality"]
 
 array_themes.each do |theme|

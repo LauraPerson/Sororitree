@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, authentication_keys: [:nickname]
 
   has_many :requests
   has_many :posts
@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :themes, through: :selected_themes
   has_many :matching_profiles
   has_many :messages
+  validates :nickname, presence: true, uniqueness: { case_sensitive: false }
 end
