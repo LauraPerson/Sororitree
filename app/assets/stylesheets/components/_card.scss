@@ -1,0 +1,10 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
+.posts-cards {
+  margin: 5% auto;
+  color: black;
+  padding: 20px;
+  width: 60%;
+  box-shadow: $box-shadow;
+  background-color: white;
+}

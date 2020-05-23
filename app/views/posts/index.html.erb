@@ -1,6 +1,6 @@
 <div class="posts-container">
   <div>
-    <h1>This is the feed page</h1>
+    <h1> Sororitree Posts Page </h1>
   </div>
 
   <div>
@@ -14,7 +14,9 @@
 
   <div>
     <% @posts.each do |post| %>
+    <div class="posts-cards mt-4">
       <%= post.content %>
+    </div>
     <% end %>
   </div>
 </div>
