@@ -1,3 +1,5 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
 .btn-user-helper-false {
   padding: 8px 16px;
   background-color: red;
@@ -18,7 +20,9 @@
   background-color: #311D3F;
   border-radius: 8px;
   display: inline-block;
+  box-shadow: $box-shadow;
   &:hover {
     background-color: #88304E;
+    box-shadow: $box-shadow;
   }
 }
