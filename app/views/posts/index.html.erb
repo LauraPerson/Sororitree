@@ -1,22 +1,29 @@
-<div class="posts-container">
-  <div>
-    <h1> Sororitree Posts Page </h1>
-  </div>
-
-  <div>
-    <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
-      <%= f.label 'Add a new post'  %>
-      <%= f.input :content %>
-      <%= f.association :theme, label: "Category", class: "form_control" %>
-      <%= f.submit class: 'btn btn-primary' %>
-    <% end %>
-  </div>
-
-  <div>
-    <% @posts.each do |post| %>
-    <div class="posts-cards mt-4">
-      <%= post.content %>
+<div class="post-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'womem_handsup.png' %>)">
+  <div class="posts-container">
+    <div>
+      <h1> Sororitree Posts Page </h1>
     </div>
-    <% end %>
+
+    <div>
+      <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
+        <%= f.label 'Add a new post'  %>
+        <%= f.input :content %>
+        <%= f.association :theme, label: "Category", class: "form_control" %>
+        <%= f.submit class: 'btn-post' %>
+      <% end %>
+    </div>
+
+    <div>
+      <% @posts.each do |post| %>
+      <div class="posts-cards mt-4">
+        <div class="d-flex justify-content-between">
+        <p>Category: <%= post.theme.title %></p>
+        <p><%= post.created_at.strftime("%Y-%m-%d") %><p>
+        </div>
+        <p><%= post.user.nickname %><p><p>
+        <p><%= post.content %><p>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
