@@ -1,21 +1,21 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar-sororitree">
   <% if user_signed_in? %>
-        <p class="logo-navbar">
-          <%= link_to image_tag("test2.png", width: 70, height: 60), root_path, class: "link-home-page" %>
-        </p>
-      <div class="inbox-icon">
-        <%= link_to chatrooms_path do  %>
-          <i class='fas fa-comments' id="inbox_button"></i>
-        <% end %>
-        <!-- add avatar logic -->
-        <%= link_to image_tag("test.png", width: 50), user_path(current_user), class: "avatar" %>
-      </div>
+    <p class="logo-navbar ml-3">
+      <%= link_to image_tag("test2.png", width: 70, height: 60), root_path, class: "link-home-page" %>
+    </p>
+    <div class="inbox-icon mr-3">
+      <%= link_to chatrooms_path do  %>
+        <i class='fas fa-comments' id="inbox_button"></i>
+      <% end %>
+      <!-- add avatar logic -->
+      <%= link_to image_tag("test.png", width: 50), user_path(current_user), class: "avatar" %>
+    </div>
   <% else %>
-    <p class="logo-navbar">
+    <p class="logo-navbar ml-3">
       <%= link_to image_tag("test2.png", width: 80, height: 70), root_path, class: "link-home-page" %>
     </p>
-    <div class="not-signed-in-navbar">
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light" %>
+    <div class="not-signed-in-navbar d-flex align-items-center mr-3">
+      <%= link_to "Sign up", new_user_registration_path, class: "btn-sugar-cane" %>
       <%= link_to "Sign in", new_user_session_path, class: "btn btn-secondary" %>
     </div>
   <% end %>

@@ -21,3 +21,22 @@ font-size: 32px;
 padding: 4px;
 margin: 4px;
 }
+
+.navbar-sororitree {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $sugar-cane;
+  border-bottom: solid 0.5px rgba(49, 29, 63, 0.5);
+}
+
+.nav-transparent {
+  position: fixed;
+  background-color: transparent;
+  border: none;
+}
+
+.nav-fixed {
+  position: fixed;
+}
