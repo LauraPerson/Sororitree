@@ -17,4 +17,9 @@
   color: black;
   padding: 8px;
   border-radius: 4px;
+  &:hover {
+    text-decoration: none;
+    background-color: $sugar-cane-dark;
+    color: black;
+  }
 }

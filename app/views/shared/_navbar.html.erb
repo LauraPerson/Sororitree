@@ -1,9 +1,9 @@
-<nav class="navbar-sororitree">
+<nav class="navbar-sororitree mb-3">
   <% if user_signed_in? %>
-    <p class="logo-navbar ml-3">
+    <p class="logo-navbar">
       <%= link_to image_tag("test2.png", width: 70, height: 60), root_path, class: "link-home-page" %>
     </p>
-    <div class="inbox-icon mr-3">
+    <div class="inbox-icon">
       <%= link_to chatrooms_path do  %>
         <i class='fas fa-comments' id="inbox_button"></i>
       <% end %>
@@ -14,7 +14,7 @@
     <p class="logo-navbar ml-3">
       <%= link_to image_tag("test2.png", width: 80, height: 70), root_path, class: "link-home-page" %>
     </p>
-    <div class="not-signed-in-navbar d-flex align-items-center mr-3">
+    <div class="not-signed-in-navbar d-flex align-items-center">
       <%= link_to "Sign up", new_user_registration_path, class: "btn-sugar-cane" %>
       <%= link_to "Sign in", new_user_session_path, class: "btn btn-secondary" %>
     </div>

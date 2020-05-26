@@ -23,7 +23,7 @@ margin: 4px;
 }
 
 .navbar-sororitree {
-  width: 100%;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,6 @@ margin: 4px;
 }
 
 .nav-transparent {
-  position: fixed;
   background-color: transparent;
   border: none;
 }
