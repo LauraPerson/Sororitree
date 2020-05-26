@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: [:nickname]
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :requests
   has_many :posts
@@ -10,5 +12,6 @@ class User < ApplicationRecord
   has_many :themes, through: :selected_themes
   has_many :matching_profiles
   has_many :messages
+  has_one_attached :photo
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }
 end
