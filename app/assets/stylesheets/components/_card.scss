@@ -1,10 +1,27 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .posts-cards {
-  margin: 5% auto;
+  margin: 2% auto;
   color: black;
   padding: 20px;
   width: 60%;
   box-shadow: $box-shadow;
   background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;;
+  h6 {
+    font-family: $body-font;
+    font-size: 17px;
+    font-style: italic;
+  }
+  p{
+    font-family: $body-font;
+    font-size: 16px;
+  }
 }
+
+.card-form {
+  font-size: 18px;
+  border-radius: 10px;
+}
+

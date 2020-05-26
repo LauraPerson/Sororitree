@@ -1,7 +1,18 @@
-
 .banner-home {
   background-size: cover;
   background-position: top;
   height: 100vh;
   padding: 16px;
+}
+
+.post-banner {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
