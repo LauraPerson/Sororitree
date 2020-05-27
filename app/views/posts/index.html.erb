@@ -1,14 +1,14 @@
-<div class="container-post">
-  <div class="post-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'womem_handsup1.png' %>)">
+<div class="container-page">
+  <div class="container-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'womem_handsup1.png' %>)">
   </div>
-  <div class="posts-container">
-    <div>
+  <div class="container-posts">
+    <div class="py-5 px-3">
       <h1> Sororitree Posts </h1>
     </div>
 
     <div class="cards-form">
       <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
-        <%= f.input :content, label: 'Post content', placeholder: 'Tell us your history...', input_html: { class: 'card-form' } %>
+        <%= f.input :content, label: false, placeholder: 'Tell us your history...', input_html: { class: 'card-form' } %>
         <%= f.association :theme, label: "Category", input_html: { class: 'card-form' } %>
         <%= f.submit class: 'btn-post' %>
       <% end %>
