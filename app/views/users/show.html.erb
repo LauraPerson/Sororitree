@@ -32,14 +32,17 @@
             </div>
             <div class="d-flex flex-wrap">
               <% current_user.themes.each do |theme| %>
-                <div class="card-selected-theme d-flex align-items-center justify-content-center">
-                  <p class="m-0"><%= theme.title %></p>
+                <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
+                  <div class="delete-theme align-self-end">
+                    <%= link_to "x", user_destroy_theme_path(theme_id: theme.id), method: :delete, data: { confirm: "Certeza ?"} %>
+                  </div>
+                  <p><%= theme.title %></p>
                 </div>
               <% end %>
             <% end %>
           </div>
         </div>
-        <div class="form-selected-themes offset-1 col-4">
+        <div class="form-selected-themes">
           <p>Você queria ajudar em quais assuntos ?</p>
           <%= render 'shared/form_themes' %>
         </div>

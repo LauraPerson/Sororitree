@@ -17,6 +17,13 @@ class UsersController < ApplicationController
     authorize current_user
     current_user.toggle! (:helper)
     redirect_to user_path(current_user)
+  end
+
+  def destroy_theme
+    authorize current_user
+    selected_theme = SelectedTheme.find_by(user_id: current_user.id, theme_id: params[:theme_id])
+    selected_theme.destroy
+    redirect_to user_path(current_user)
   end 
 
   private

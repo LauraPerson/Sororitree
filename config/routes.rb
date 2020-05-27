@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   patch "users/:id/helper", to: "users#toggle_helper", as: :user_toggle_helper
+  delete "users/:id/theme", to: "users#destroy_theme", as: :user_destroy_theme
   resources :users, only: [:show, :update] do
     resources :selected_themes, only: [:create, :update]
   end
