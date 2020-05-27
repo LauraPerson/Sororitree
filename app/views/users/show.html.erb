@@ -13,11 +13,13 @@
       <%= current_user.nickname %>
       </div>
     </div>
-    <div class="d-flex align-items-center mt-3">
+    <div class="d-flex align-items-center my-3">
       <% if current_user.helper == false %>
-        <%= link_to "Help", user_toggle_helper_path(current_user), method: :patch, class: "btn-user-helper-start" %>
+        <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper" %>
+        <p class="mb-0 ml-3">Você não está disponível para ajudar</p>
       <% else %>
-        <%= link_to "Stop to help", user_toggle_helper_path(current_user), method: :patch, class: "btn-user-helper-stop" %>
+        <%= link_to icon_helper("check-square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper" %>
+        <p class="mb-0 ml-3">Você está disponível para ajudar</p>
       <% end %>
     </div>
 

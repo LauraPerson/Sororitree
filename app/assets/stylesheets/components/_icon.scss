@@ -1,0 +1,7 @@
+.icon-helper {
+  color: $blue-green;
+  &:hover {
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    color: $blue-green-dark;
+  }
+}

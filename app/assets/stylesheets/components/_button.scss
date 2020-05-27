@@ -1,31 +1,5 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
-.btn-user-helper-stop {
-  padding: 8px 16px;
-  background-color: red;
-  border-radius: 8px;
-  display: inline-block;
-  color: black;
-  &:hover {
-    text-decoration: none;
-    color: black;
-    $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
-  }
-}
-
-.btn-user-helper-start {
-  padding: 8px 16px;
-  background-color: green;
-  border-radius: 8px;
-  display: inline-block;
-  color: black;
-  &:hover {
-    text-decoration: none;
-    color: black;
-    $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
-  }
-}
-
 .btn-post {
   padding: 8px 16px;
   color: white;
