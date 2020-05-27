@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :users, only: :show
+  resources :users, only: [:show, :update] do
+    resources :selected_themes, only: [:create, :update]
+  end
   resources :posts, only: [:index, :show, :create]
   resources :matching_profiles, only: :index
   resources :requests, only: [:create, :new]
