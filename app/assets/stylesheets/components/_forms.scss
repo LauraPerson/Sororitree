@@ -13,10 +13,9 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
-.form-actions {
-}
-
-.btn-rose {
-  background-color: $red_pink;
-  border-radius: 10px;
+.form-selected-themes {
+  box-shadow: $box-shadow;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
 }
