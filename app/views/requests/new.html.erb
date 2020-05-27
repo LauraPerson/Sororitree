@@ -1,3 +1,29 @@
-<h1>Request page</h1>
+<div class="container-post">
+  <div class="post-banner" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'womem_handsup1.png' %>)">
+  </div>
+  <div class="posts-container">
+    <div class="header ">
+      <h1> Help Request </h1>
+    </div>
+    <div class="form-request-info">
+      <h3> Dear sister, in this help request form, you can specify some characteristics you prefer, like the sisters location, age interval or if the sister already passed true a situation related to the choosen theme.</h3>
+      <h4> We hope you get throught this situation in the best way possible.</h4>
+    </div>
+    <div class="cards-form">
+      <%= simple_form_for @request, url: {controller: "requests", action: "create"} do |f| %>
+        <%= f.association :theme, label: "Select a Theme", input_html: { class: 'card-form' } %>
+        <%= f.label 'Select Age Interval' %>
+        <div class="d-flex justify-content-between">
+          <%= f.input :age_min, input_html: { class: 'card-form' } %>
+          <%= f.input :age_max, input_html: { class: 'card-form' } %>
+        </div>
+        <%= f.submit class: 'btn-post' %>
+      <% end %>
+    </div>
+    <div>
+    </div>
+  </div>
+</div>
+
 
 

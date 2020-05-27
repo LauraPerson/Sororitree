@@ -1,9 +1,14 @@
 .posts-container {
   max-width: 1000px;
   width: 60%;
-  margin: 5% auto;
+  margin: auto;
   h1 {
     font-family: $body-font;
     font-weight: bold;
   }
+}
+
+.container-post {
+  position: relative;
+  min-height: 100vh;
 }
