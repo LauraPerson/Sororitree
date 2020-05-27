@@ -1,4 +1,5 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+$box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 
 .posts-cards {
   margin: 2% auto;
@@ -25,3 +26,11 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 }
 
+.card-selected-theme {
+  background-color: $sugar-cane;
+  padding: 8px 16px;
+  margin: 4px;
+  box-shadow: $box-shadow-purple;
+  width: 40%;
+  text-align: center;
+}

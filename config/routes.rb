@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
+  patch "users/:id/helper", to: "users#toggle_helper", as: :user_toggle_helper
   resources :users, only: [:show, :update] do
     resources :selected_themes, only: [:create, :update]
   end

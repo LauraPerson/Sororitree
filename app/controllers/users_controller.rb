@@ -12,10 +12,16 @@ class UsersController < ApplicationController
     current_user.update(params_user)
     redirect_to user_path(current_user)
   end
+  
+  def toggle_helper
+    authorize current_user
+    current_user.toggle! (:helper)
+    redirect_to user_path(current_user)
+  end 
 
   private
 
   def params_user
-    params.require(current_user).permit(:selected_theme_id, :nickname, :email, :password)
+    params.require(:user).permit(:selected_theme_id, :nickname, :email, :password, :helper)
   end
 end

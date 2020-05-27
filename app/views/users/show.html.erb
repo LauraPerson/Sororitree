@@ -13,21 +13,35 @@
       <%= current_user.nickname %>
       </div>
     </div>
-    <div class="user-helper d-flex align-items-center mt-3">
+    <div class="d-flex align-items-center mt-3">
       <% if current_user.helper == false %>
-        <div class="btn-user-helper-false">
-        </div>
-        <div class="user-helper-text">
-          <p class="m-0">You're not available to help</p> 
-        </div>
+        <%= link_to "Help", user_toggle_helper_path(current_user), method: :patch, class: "btn-user-helper-start" %>
       <% else %>
-        <div class="btn-user-helper-true">
-        </div>
-        <div class="user-helper-text">
-          <p class="m-0">You're not available to help</p> 
-        </div>
+        <%= link_to "Stop to help", user_toggle_helper_path(current_user), method: :patch, class: "btn-user-helper-stop" %>
       <% end %>
     </div>
+
+    <% if current_user.helper == true %>
+      <div class="row">
+        <div class="selected-themes col-6">
+          <div class="selected-themes-title">
+            <p>Você està disponível para ajudar com</p>
+          </div>
+          <div class="d-flex flex-wrap">
+            <% current_user.themes.each do |theme| %>
+              <div class="card-selected-theme">
+                <%= theme.title %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="form-selected-themes offset-1 col-4">
+          <p>Você queria ajudar em outros assuntos ?</p>
+          <%= render 'shared/form_themes' %>
+        </div>
+      </div>
+    <% end %>
+    
 
   <% else %>
     <div class="user-show-title">
@@ -59,5 +73,4 @@
       <% end %>
     </div>
   <% end %>
-  <%= render 'shared/form_themes' %>
 </div>
