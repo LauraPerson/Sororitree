@@ -5,3 +5,15 @@
     color: $blue-green-dark;
   }
 }
+
+.icon-helper-w-hover {
+  color: $blue-green;
+}
+
+.icon-destroy {
+  color: $sugar-cane;
+  &:hover {
+    color: $sugar-cane-dark;
+    text-decoration: none;
+  }
+}

@@ -24,26 +24,28 @@
     </div>
 
     <% if current_user.helper == true %>
-      <div class="d-flex justify-content-around">
-        <div class="selected-themes">
-          <% if current_user.selected_themes.exists? %>
+      <div class="d-flex justify-content-between p-4">
+        <% if current_user.selected_themes.exists? %>
+          <div class="selected-themes flex-grow-2">
             <div class="selected-themes-title">
-              <p>Você està disponível para ajudar com</p>
+              <p class="text-center">Ajuda uma sister</p>
             </div>
-            <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap justify-content-center">
               <% current_user.themes.each do |theme| %>
                 <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
                   <div class="delete-theme align-self-end">
-                    <%= link_to "x", user_destroy_theme_path(theme_id: theme.id), method: :delete, data: { confirm: "Certeza ?"} %>
+                    <%= link_to "x", user_destroy_theme_path(theme_id: theme.id), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy" %>
                   </div>
                   <p><%= theme.title %></p>
                 </div>
               <% end %>
-            <% end %>
+            </div>
           </div>
-        </div>
-        <div class="form-selected-themes">
-          <p>Você queria ajudar em quais assuntos ?</p>
+        <% end %>
+        <div class="<%= current_user.themes == [] ? 'form-selected-themes-alone' : 'form-selected-themes flex-shrink-2' %>">
+          <div class="title-form mb-2">
+            Assuntos para ajudar
+          </div>
           <%= render 'shared/form_themes' %>
         </div>
       </div>
@@ -51,33 +53,42 @@
     
 
   <% else %>
-    <div class="user-show-title">
-      <h1>Profile page of <%= @user.nickname %></h1>
+    <div class="user-show-title text-center">
+      <h1><%= @user.nickname %></h1>
     </div>
-    <div class="card-user-profile d-flex align-items-center">
+    <div class="card-user-profile d-flex align-items-center justify-content-center">
       <% if @user.photo.attached? %>
         <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')"></div>
       <% else %>
         <div class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.png", crop: :fill %>')"></div>
       <% end %>
       <div class="card-user-information ml-2">
-      <%= @user.nickname %>
+        INFO?
       </div>
     </div>
-    <div class="user-helper d-flex align-items-center mt-3">
+    <div class="d-flex align-items-center justify-content-center my-3">
       <% if @user.helper == false %>
-        <div class="btn-user-helper-false">
+        <div class="icon-helper-w-hover">
+          <%= icon_helper("square") %>
         </div>
-        <div class="user-helper-text">
-          <p class="m-0"><%= @user.nickname %> isn't available to help</p> 
-        </div>
+        <p class="mb-0 ml-3"> <%= @user.nickname %> não está disponível para ajudar</p>
       <% else %>
-        <div class="btn-user-helper-true">
+        <div class="icon-helper-w-hover">
+          <%= icon_helper("check-square") %>
         </div>
-        <div class="user-helper-text">
-          <p class="m-0"><%= @user.nickname %> is available to help</p> 
-        </div>
+        <p class="mb-0 ml-3"> <%= @user.nickname %> está disponível para ajudar</p>
       <% end %>
     </div>
+    <% if @user.selected_themes.exists? %>
+          <div class="selected-themes center" style="width: 50%; margin: auto">
+            <div class="d-flex flex-wrap justify-content-center">
+              <% @user.themes.each do |theme| %>
+                <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
+                  <p class="m-0"><%= theme.title %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
   <% end %>
 </div>

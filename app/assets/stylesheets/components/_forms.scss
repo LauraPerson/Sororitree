@@ -19,3 +19,17 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   padding: 16px;
   border-radius: 8px;
 }
+
+.form-selected-themes-alone { 
+  display: inline-block;
+  margin: auto;
+  box-shadow: $box-shadow;
+  background-color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+}
+
+.title-form {
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,7 +1,7 @@
 <%= simple_form_for [current_user, @selected_theme] do |f| %>
   <div class="form-inputs">
-    <%= f.association :theme, as: :check_boxes,
-      input_html: { autocomplete: "Themes", multiple: true }%>
-    <%= f.submit "Adiciona um tema", class: "btn-rose" %>
+    <%= f.association :theme, as: :check_boxes, legend_tag: false,
+      input_html: { multiple: true }%>
+    <%= f.submit "Ajuda !", class: "btn-rose" %>
   </div>
 <% end %>
