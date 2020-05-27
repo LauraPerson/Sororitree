@@ -1,0 +1,10 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
+
+.chat_box {
+  width: 100vh;
+  box-shadow: $box-shadow;
+
+  font-family: $body-font;
+
+}

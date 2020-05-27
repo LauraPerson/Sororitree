@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :themes, through: :selected_themes
   has_many :matching_profiles
   has_many :messages
+  has_many :chatrooms
   has_one_attached :photo
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }
 end
