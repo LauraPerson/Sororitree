@@ -1,10 +1,29 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 
+.chat-container {
+   width: 100vh;
+   height: 70vh;
+   background: #FFF;
+   border-radius: 10px;
+  background: #FFF;
+}
+
 .chat_box {
   width: 100vh;
   box-shadow: $box-shadow;
-
   font-family: $body-font;
-
+  background: #FFF;
+  border-radius: 10px;
 }
+
+#side-bar {
+  background: #0048AA;
+  color: #FFF;
+  width: 250px;padding: 10px;
+}
+
+// #side-bar content {
+//   display: inline-block;
+//   padding: 10px;
+// }

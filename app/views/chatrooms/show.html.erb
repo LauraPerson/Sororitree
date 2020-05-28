@@ -1,23 +1,28 @@
 <h1># <%= @chatroom.user.nickname %></h1>
 
-<%= simple_form_for [ @chatroom, @message ], url: chatroom_messages_path(@chatroom), remote: true do |f| %>
-  <div class="chat_box">
-    <%= f.input :content, label: false, placeholder: "Your Message" %>
-  </div>
-  <%= f.submit %>
-<% end %>
 
-
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.nickname %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
+  <div class="chat-container" data-chatroom-id="<%= @chatroom.id %>">
+    <div id="side-bar">
+      ola
     </div>
-  <% end %>
-</div>
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-container" id="message-<%= message.id %>">
+        <i class="author">
+          <span><%= message.user.nickname %></span>
+          <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+        </i>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+      <%= simple_form_for [ @chatroom, @message ], url: chatroom_messages_path(@chatroom), remote: true do |f| %>
+    <div class="chat_box">
+      <%= f.input :content, label: false, placeholder: "Your Message" %>
+    </div>
+      <%= f.submit %>
+      <% end %>
+  </div>
+
+
+
 
 
