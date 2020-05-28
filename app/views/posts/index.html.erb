@@ -10,7 +10,7 @@
       <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
         <%= f.input :content, label: false, placeholder: 'Tell us your history...', input_html: { class: 'card-form' } %>
         <%= f.association :theme, label: "Category", input_html: { class: 'card-form' } %>
-        <%= f.submit class: 'btn-post' %>
+        <%= f.button :submit, 'Share', class: 'btn-post' %>
       <% end %>
     </div>
 

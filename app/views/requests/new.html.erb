@@ -1,30 +1,34 @@
 <div class="container-page">
+
   <div class="container-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'womem_hug.png' %>)">
   </div>
+
   <div class="container-request">
-    <div class="header text-center">
+
+    <div class="text-form text-center mt-5">
       <h1> Help Request </h1>
     </div>
+
     <div class="form-request-info text-justify">
       <h3> Dear sister, in this help request form you can specify some characteristics you prefer, like the sisters location, age interval or if the sister already passed true a situation related to the choosen theme.</h3>
       <div><h3 class="text-center mt-4"> We hope you get throught this situation in the best way possible! ❤️</h3></div>
     </div>
+
     <div class="request-form">
       <%= simple_form_for @request, url: {controller: "requests", action: "create"} do |f| %>
-        <%= f.association :theme, label: "Select a Theme", input_html: { class: 'card-form' }  %>
-        <%= f.label 'Select Age Interval', input_html: { class: 'text-form text-center' }%>
+        <%= f.association :theme, label: "Select a theme would you like to talk?", input_html: { class: 'card-form' }  %>
+        <%= f.label "Select women's age interval that you would like to talk:", input_html: { class: 'text-form text-center' }%>
         <div class="d-flex justify-content-around">
-          <%= f.input :age_min, input_html: { class: 'card-form' } %>
-          <%= f.input :age_max, input_html: { class: 'card-form' } %>
+          <%= f.input :age_min, input_html: { min: '18', step: 'any', class: 'card-form' } %>
+          <%= f.input :age_max, input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
         </div>
-        <%= f.input :distance, label: "Select a radius of search distance (km)", input_html: { class: 'card-form' } %>
+        <%= f.input :distance, label: "Select a location distance (km) of the person would you like to talk", input_html: { class: 'card-form' } %>
         <div class="text-center mt-4">
-          <%= f.submit class: 'btn-request' %>
+          <%=f.button :submit, 'Send', class: 'btn-request' %>
         </div>
       <% end %>
     </div>
+
   </div>
+
 </div>
-
-
-

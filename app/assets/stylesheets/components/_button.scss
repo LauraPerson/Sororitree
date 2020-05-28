@@ -24,6 +24,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     background-color: #88304E;
     box-shadow: $box-shadow;
+    cursor: pointer;
   }
 }
 
@@ -37,6 +38,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     background-color: #88304E;
     box-shadow: $box-shadow;
+    cursor: pointer;
   }
 }
 
