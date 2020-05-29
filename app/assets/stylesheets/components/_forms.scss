@@ -1,6 +1,5 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
-
 .form-registration-new {
   box-shadow: $box-shadow;
   padding: 10px;
@@ -49,6 +48,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   font-weight: bold;
 }
 
+
 .theme-choice {
   white-space: nowrap;
   background-color: $medium-gray;
@@ -68,4 +68,22 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background: linear-gradient(rgba(226,62,87,1), rgba(226,62,87,0.8));
     opacity: 1;
   }
+}
+
+.form-request-info {
+  padding: 4% 5% 4% 5%;
+}
+
+.request-form {
+  margin: auto;
+  width: 80%;
+  background-color: rgba(222, 213, 204, 0.9);
+  padding: 4% 5%;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: $box-shadow;
+}
+
+.text-form {
+  font-weight: bold;
 }
