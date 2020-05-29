@@ -8,9 +8,9 @@
 
     <div class="cards-form">
       <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
-        <%= f.input :content, label: false, placeholder: 'Tell us your history...', input_html: { class: 'card-form' } %>
-        <%= f.association :theme, label: "Category", input_html: { class: 'card-form' } %>
-        <%= f.button :submit, 'Share', class: 'btn-post' %>
+        <%= f.input :content, label: false, placeholder: 'Nos conte sua história...', input_html: { class: 'card-form' } %>
+        <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
+        <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
       <% end %>
     </div>
 

@@ -6,28 +6,29 @@
   <div class="container-request">
 
     <div class="text-form text-center mt-5">
-      <h1> Help Request </h1>
+      <h1> Solicitação de Ajuda </h1>
     </div>
 
     <div class="form-request-info text-justify">
-      <h3> Dear sister, in this help request form you can specify some characteristics you prefer, like the sisters location, age interval or if the sister already passed true a situation related to the choosen theme.</h3>
-      <div><h3 class="text-center mt-4"> We hope you get throught this situation in the best way possible! ❤️</h3></div>
+      <h3> Querida, nesse formulário de solicitação de ajuda você pode especificar algumas características que você prefere como intervalo de idade e a temática. Assim procuraremos "manas" que passaram por situação similar para lhe ajudar.</h3>
+      <div><h3 class="text-center mt-4"> Esperamos que você supere essa situação da melhor forma possível! ❤️</h3></div>
+      <div><h3 class="text-center mt-1"> Juntas somos mais fortes!!!</h3></div>
     </div>
 
     <div class="request-form">
       <div class="text-center mb-4">
-        <h4> Select your preferences </h4>
+        <h4 class="form-request-title"> Selecione suas preferências </h4>
       </div>
       <%= simple_form_for @request do |f| %>
-        <%= f.label "Select a theme would you like to talk?" %>
+        <%= f.label "Selecione a temática que você gostaria de conversar:" %>
         <%= f.association :theme, label: false, input_html: { class: 'card-form' }  %>
-        <%= f.label "Select women's age interval that you would like to talk:", input_html: { class: 'text-form text-center' }%>
+        <%= f.label "Selecione o intervalo de idade da mulher que você gostaria de conversar:", input_html: { class: 'text-form text-center' }%>
         <div class="d-flex justify-content-around">
-          <%= f.input :age_min, input_html: { min: '18', step: 'any', class: 'card-form' } %>
-          <%= f.input :age_max, input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
+          <%= f.input :age_min, label: 'Idade Mínima', input_html: { min: '18', step: 'any', class: 'card-form' } %>
+          <%= f.input :age_max, label: 'Idade Máxima', input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
         </div>
         <div class="text-center mt-3">
-          <%=f.button :submit, 'Send', class: 'btn-request' %>
+          <%=f.button :submit, 'Envie', class: 'btn-request' %>
         </div>
       <% end %>
     </div>

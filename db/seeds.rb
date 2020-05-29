@@ -1,4 +1,4 @@
-array_themes = ["Domestic Violence", "Psychological Violence", "Physical Violence", "Sexual Assaults", "Harassment", "Abortion", "Sexuality", "Maternity", "Contraception", "Women Rights", "Abusive Relationships", "Career Guidance", "Women's Health", "Gender Equality"]
+array_themes = ["Violência Doméstica", "Violência Psicológica", "Violência Física", "Agressões sexuais", "Assédio", "Aborto", "Sexualidade", "Maternidade", "Contracepção", "Direitos das Mulheres", "Relacionamentos Abusivos", "Orientação Profissional", "Saúde da Mulher", "Igualdade de Gênero"]
 
 array_themes.each do |theme|
   the = Theme.create(title: theme)
