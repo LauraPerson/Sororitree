@@ -27,6 +27,33 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.btn-rose-outline {
+  background-color: $sugar-cane;
+  border-radius: 10px;
+  color: $red-pink;
+  padding: 4px 8px;
+  border: solid 1px $red-pink;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $sugar-cane-dark;
+  }
+}
+
+.btn-purple-medium {
+  background-color: $purple-medium;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+}
+
 .btn-sugar-cane {
   background-color: $sugar-cane;
   color: black;

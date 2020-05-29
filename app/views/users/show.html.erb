@@ -27,10 +27,7 @@
       <% if current_user.helper == true %>
         <div class="d-flex justify-content-around p-4">
           <% if current_user.selected_themes.exists? %>
-            <div class="selected-themes flex-grow-2">
-              <div class="selected-themes-title">
-                <p class="text-center">Ajuda uma sister</p>
-              </div>
+            <div class="selected-themes pt-4 flex-grow-2">
               <div class="d-flex flex-wrap justify-content-center">
                 <% current_user.selected_themes.each do |select_theme| %>
                   <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">

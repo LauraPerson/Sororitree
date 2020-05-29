@@ -4,7 +4,14 @@ class UsersController < ApplicationController
   def show
     authorize current_user
     @user = User.find(params[:id])
-    @selected_theme = SelectedTheme.new()
+    @selected_theme = SelectedTheme.new
+    selected_themes_existing = SelectedTheme.where(user_id: current_user.id)
+    array_existing_theme = []
+    selected_themes_existing.each do |select_theme|
+      array_existing_theme << select_theme.theme_id
+    end
+    @themes = Theme.where.not(id: array_existing_theme)
+    @themes == nil ? Theme.all : @themes
   end
 
   def update
