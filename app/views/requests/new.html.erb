@@ -15,7 +15,7 @@
     </div>
 
     <div class="request-form">
-      <%= simple_form_for @request, url: {controller: "requests", action: "create"} do |f| %>
+      <%= simple_form_for @request do |f| %>
         <%= f.association :theme, label: "Select a theme would you like to talk?", input_html: { class: 'card-form' }  %>
         <%= f.label "Select women's age interval that you would like to talk:", input_html: { class: 'text-form text-center' }%>
         <div class="d-flex justify-content-around">
