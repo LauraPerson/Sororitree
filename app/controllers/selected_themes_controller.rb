@@ -11,12 +11,15 @@ class SelectedThemesController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def update
+  def destroy
+    @selected_theme = SelectedTheme.find(params[:id])
+    authorize @selected_theme
+    @selected_theme.destroy
+    redirect_to user_path(current_user)
   end
 
   private
-
   def params_selected_themes
-    params.require(:selected_theme).require(:theme_id)
+    params.require(:selected_theme).permit(:theme_id, :user_id)
   end
 end

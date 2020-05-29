@@ -32,12 +32,12 @@
                 <p class="text-center">Ajuda uma sister</p>
               </div>
               <div class="d-flex flex-wrap justify-content-center">
-                <% current_user.themes.each do |theme| %>
+                <% current_user.selected_themes.each do |select_theme| %>
                   <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
                     <div class="delete-theme align-self-end">
-                      <%= link_to "x", user_destroy_theme_path(theme_id: theme.id), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy" %>
+                      <%= link_to "x", selected_theme_path(select_theme), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy" %>
                     </div>
-                    <p><%= theme.title %></p>
+                    <p><%= select_theme.theme.title %></p>
                   </div>
                 <% end %>
               </div>

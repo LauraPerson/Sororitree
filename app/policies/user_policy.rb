@@ -16,8 +16,4 @@ class UserPolicy < ApplicationPolicy
   def toggle_helper?
     true
   end
-
-  def destroy_theme?
-    true
-  end
 end
