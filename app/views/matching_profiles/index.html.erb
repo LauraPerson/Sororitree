@@ -1,2 +1,22 @@
-<h1>This page will show all matching profiles</h1>
+<div class="container-page">
+
+  <div class="container-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'womem_support.png' %>)">
+  </div>
+
+  <div class="matching-header text-center">
+    <h1> Manas disponíveis para ajudar </h1>
+  </div>
+
+  <div class="container-matching-cards">
+    <% @matching_profiles.each do |matchingprofile| %>
+      <div class="matching-card">
+        <div><img class="avatar-matching" src="<%= image_path 'avatar.png' %>"></div>
+        <div class="matching-info">
+          <h4 class="text-center"><%= matchingprofile.user.nickname %></h4>
+          <h6 class="text-center"><%= DateTime.now().year - matchingprofile.user.birth_date.year.to_i %> anos</h6>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 

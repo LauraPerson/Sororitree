@@ -25,3 +25,38 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 }
 
+
+.matching-card {
+  margin: 5%;
+  padding: 2% 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  border-radius: 10px;
+  background:  linear-gradient(45deg, $purple-dark 38%, $sugar-cane-dark 30%);
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
+  &:hover {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 6px 10px 0px;
+  }
+}
+
+.matching-header{
+  padding: 2% 5%;
+  h1 {
+    font-family: $body-font;
+  }
+}
+
+.matching-info {
+  padding: 5% 5%;
+  h4 {
+    font-family: $body-font;
+    font-weight: bold;
+  }
+  h6 {
+    font-family: $body-font;
+  }
+}
