@@ -4,7 +4,7 @@
   <div class="chat-container d-flex" data-chatroom-id="<%= @chatroom.id %>">
     <div id="side-bar">
     </div>
-    <div class="chat-discussion-form-container">
+    <div class="chat-discussion-form-container d-flex flex-column">
       <div class="discussion-container">
         <% @chatroom.messages.each do |message| %>
           <div class="message-container" id="message-<%= message.id %>">
@@ -17,16 +17,19 @@
         <% end %>
       </div>
       <div class="chat-form-container" >
-        <%= simple_form_for [ @chatroom, @message ], html:{class: "m-0"} do |f| %>
-          <div class="chat-box">
-            <%= f.input :content, label: false, placeholder: "Your Message" %>
+        <%= simple_form_for [ @chatroom, @message ], html:{class: "m-0 d-flex"} do |f| %>
+          <div class="chat-box flex-grow-1">
+            <textarea class="form-control chat-message required" placeholder="Escreve a sua mensagem..." name="message[content]" id="message_content"></textarea>
           </div>
-          <%= f.submit %>
+          <div class="d-flex">
+            <input type="submit" name="commit" value="Mensagem" data-disable-with="Mensagem" class= "btn-rose-wradius-left m-0">
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

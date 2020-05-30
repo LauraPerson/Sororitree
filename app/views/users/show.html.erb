@@ -14,6 +14,9 @@
           INFO ?
         </div>
       </div>
+      <div class="button-help text-center my-4">
+        <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-post"%>
+      </div>
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if current_user.helper == false %>
           <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper" %>
