@@ -27,7 +27,7 @@ margin: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $sugar-cane;
+  background-color: $light-brown;
   border-bottom: solid 0.5px rgba(49, 29, 63, 0.5);
 }
 
@@ -40,7 +40,8 @@ margin: 4px;
   position: fixed;
 }
 
-.inbos-and-drop-down {
+.inbox-and-drop-down {
   display: flex;
+  justify-content: space-evenly;
 }
 
