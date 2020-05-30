@@ -12,12 +12,62 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
-.form-actions {
+.form-selected-themes {
+  box-shadow: $box-shadow;
+  background-color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
 }
 
-.btn-rose {
-  background-color: $red_pink;
-  border-radius: 10px;
+.form-theme-content {
+  height: 60vh;
+  overflow-y: scroll;
+  padding: 8px 16px;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.form-selected-themes-alone { 
+  display: inline-block;
+  margin: auto;
+  width: 30vw;
+  box-shadow: $box-shadow;
+  background-color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+}
+
+.form-theme-choice {
+  display: flex;
+}
+
+.title-form {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.theme-choice {
+  white-space: nowrap;
+  background-color: $medium-gray;
+  padding: 8px;
+  opacity: 0.5;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  text-align: center;
+  flex-grow: 1;
+  &:hover {
+    background-color: $medium-gray;
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+    background: linear-gradient(rgba(226,62,87,1), rgba(226,62,87,0.8));
+    opacity: 1;
+  }
 }
 
 .form-request-info {

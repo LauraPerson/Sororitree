@@ -8,4 +8,12 @@ class UserPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def update?
+    true
+  end
+
+  def toggle_helper?
+    true
+  end
 end
