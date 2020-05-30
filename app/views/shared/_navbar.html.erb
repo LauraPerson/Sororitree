@@ -3,7 +3,9 @@
     <p class="logo-navbar">
       <%= link_to image_tag("test2.png", width: 70, height: 60), posts_path, class: "link-home-page" %>
     </p>
-  <div class="inbos-and-drop-down">
+
+  <div class="inbox-and-drop-down">
+    <%= link_to "Help", new_request_path(current_user), class: "helpbutton" %>
     <div class="inbox-icon">
       <%= link_to chatrooms_path do  %>
         <i class='fas fa-comments' id="inbox_button"></i>

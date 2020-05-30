@@ -1,19 +1,5 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
-.btn-user-helper-false {
-  padding: 8px 16px;
-  background-color: red;
-  border-radius: 8px;
-  display: inline-block;
-}
-
-.btn-user-helper-true {
-  padding: 8px 16px;
-  background-color: green;
-  border-radius: 8px;
-  display: inline-block;
-}
-
 .btn-post {
   padding: 8px 16px;
   color: white;
@@ -24,6 +10,65 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     background-color: #88304E;
     box-shadow: $box-shadow;
+    cursor: pointer;
+    text-decoration: none;
+    color: $sugar-cane;
+  }
+}
+
+.btn-rose {
+  background-color: $red-pink;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+  }
+}
+
+.btn-rose-wradius-left {
+  background-color: $red-pink;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+  }
+}
+
+.btn-rose-outline {
+  background-color: $sugar-cane;
+  border-radius: 10px;
+  color: $red-pink;
+  padding: 4px 8px;
+  border: solid 1px $red-pink;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $sugar-cane-dark;
+  }
+}
+
+.btn-purple-medium {
+  background-color: $purple-medium;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
   }
 }
 
@@ -37,6 +82,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     background-color: #88304E;
     box-shadow: $box-shadow;
+    cursor: pointer;
   }
 }
 
@@ -49,5 +95,23 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     text-decoration: none;
     background-color: $sugar-cane-dark;
     color: black;
+  }
+}
+
+.helpbutton {
+  border: 1px solid $purple-medium;
+  background-color: $light-brown;
+  color: $purple-medium;
+  text-align: center;
+  border-radius: 8px;
+  height: 36px;
+  width: 55px;
+  margin-top: 8px;
+  padding: 6px;
+  &:hover {
+    background-color: $purple-light;
+    color: $light-brown;
+    border: 1px solid $purple-medium;
+    text-decoration: none;
   }
 }

@@ -1,4 +1,5 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+$box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 
 .posts-cards {
   margin: 2% auto;
@@ -25,3 +26,56 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 }
 
+.card-selected-theme {
+  background: linear-gradient(rgba(226,62,87,1), rgba(226,62,87,0.8));
+  color: $sugar-cane;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 4px;
+  box-shadow: $box-shadow-purple;
+  width: 18vw;
+  text-align: center;
+}
+
+.matching-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  border-radius: 10px;
+  background:  linear-gradient(45deg, $purple-medium 0.1%, $sugar-cane-dark 50%);
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
+  &:hover {
+    background:  linear-gradient(45deg, $purple-medium 20%, white 50%);
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 6px 10px 0px;
+  }
+}
+
+.matching-header{
+  padding: 2% 5%;
+  h1 {
+    font-family: $body-font;
+  }
+}
+
+.matching-info {
+  padding: 5% 5%;
+  h4 {
+    font-family: $body-font;
+    font-weight: bold;
+  }
+  h6 {
+    font-family: $body-font;
+  }
+}
+
+.without-text-decoration {
+  color: black;
+  margin: 1%;
+  padding: 2% 2%;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
