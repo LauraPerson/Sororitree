@@ -31,3 +31,13 @@
     font-weight: bold;
   }
 }
+
+.container-matching-cards {
+  padding: 2% 5%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
