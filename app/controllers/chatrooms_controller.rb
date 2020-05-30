@@ -6,9 +6,11 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new(chatroom_params)
+    @chatroom = Chatroom.new
     @chatroom.user = current_user
     authorize @chatroom
+    @chatroom.save
+    redirect_to chatroom_path(@chatroom)
   end
 
   def show
