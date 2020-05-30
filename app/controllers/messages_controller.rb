@@ -2,9 +2,10 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @chatroom = Chatroom.find(:chatroom_id)
+    @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
+    @message.user = current_user
     authorize @message
     if @message.save
       redirect_to chatroom_path(@chatroom)
@@ -16,6 +17,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :chatroom_id, :user_id)
+    params.require(:message).permit(:content, :chatroom)
   end
 end

@@ -7,10 +7,12 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
+    @chatroom.user = current_user
     authorize @chatroom
   end
 
   def show
+    @message = Message.new
     @chatroom = Chatroom.find(params[:id])
     authorize @chatroom
   end
@@ -18,6 +20,6 @@ class ChatroomsController < ApplicationController
   private
 
   def chatroom_params
-   params.require(:chatroom)
+   params.require(:chatroom).permit(:user_id)
   end
 end

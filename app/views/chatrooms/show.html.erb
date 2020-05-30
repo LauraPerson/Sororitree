@@ -1,1 +1,33 @@
-<h1>Show Chatroom</h1>
+<h1> Chat with <%= @chatroom.user.nickname %></h1>
+
+<div class="chat">
+  <div class="chat-container d-flex" data-chatroom-id="<%= @chatroom.id %>">
+    <div id="side-bar">
+    </div>
+    <div class="chat-discussion-form-container">
+      <div class="discussion-container">
+        <% @chatroom.messages.each do |message| %>
+          <div class="message-container" id="message-<%= message.id %>">
+            <i class="author">
+              <span><%= message.user.nickname %></span>
+              <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+            </i>
+            <p><%= message.content %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="chat-form-container" >
+        <%= simple_form_for [ @chatroom, @message ], html:{class: "m-0"} do |f| %>
+          <div class="chat-box">
+            <%= f.input :content, label: false, placeholder: "Your Message" %>
+          </div>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
