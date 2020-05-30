@@ -51,6 +51,8 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   margin: auto;
   display: block;
   &:hover {
+  }
+}
 
 .btn-request {
   padding: 8px 16px;
@@ -61,7 +63,6 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   box-shadow: $box-shadow;
   &:hover {
     background-color: #88304E;
-
     box-shadow: $box-shadow;
     cursor: pointer;
   }
