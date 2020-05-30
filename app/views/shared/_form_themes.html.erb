@@ -1,0 +1,16 @@
+<%= simple_form_for [current_user, @selected_theme] do |f| %>
+  <div class="form-inputs">
+    
+    <fieldset class="form-group form-theme-content required">
+      <% @themes.each do |theme| %>
+        <div class="form-theme-choice">
+            <input class="hidden-checkbox" type="checkbox" value="<%= theme.id %>" name="selected_theme[theme_id][]" id="selected_theme_theme_id_<%= theme.id %>">
+            <label class="theme-choice" for="selected_theme_theme_id_<%= theme.id %>"> <%= theme.title %> </label>
+        </div>
+      <% end %>
+    </fieldset>
+
+
+    <%= f.submit "Ajuda !", class: "btn-rose-outline" %>
+  </div>
+<% end %>

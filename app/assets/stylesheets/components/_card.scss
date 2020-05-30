@@ -1,10 +1,11 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+$box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 
 .posts-cards {
   margin: 2% auto;
   color: black;
   padding: 20px;
-  width: 60%;
+  width: 80%;
   box-shadow: $box-shadow;
   background-color: white;
   border-radius: 10px;
@@ -25,3 +26,13 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
 }
 
+.card-selected-theme {
+  background: linear-gradient(rgba(226,62,87,1), rgba(226,62,87,0.8));
+  color: $sugar-cane;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 4px;
+  box-shadow: $box-shadow-purple;
+  width: 18vw;
+  text-align: center;
+}

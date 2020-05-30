@@ -17,7 +17,7 @@
 
 #inbox_button {
 color: $light-red;
-font-size: 32px;
+font-size: 36px;
 padding: 4px;
 margin: 4px;
 }
@@ -39,3 +39,8 @@ margin: 4px;
 .nav-fixed {
   position: fixed;
 }
+
+.inbos-and-drop-down {
+  display: flex;
+}
+
