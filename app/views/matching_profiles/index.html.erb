@@ -10,7 +10,11 @@
   <div class="container-matching-cards">
     <% @matching_profiles.each do |matchingprofile| %>
       <div class="matching-card">
-        <div><img class="avatar-matching" src="<%= image_path 'avatar.png' %>"></div>
+        <% if @user.photo.attached? %>
+          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @user.photo.key, crop: :fill %>')"></div>
+        <% else %>
+          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "avatar.png", crop: :fill %>')"></div>
+        <% end %>
         <div class="matching-info">
           <h4 class="text-center"><%= matchingprofile.user.nickname %></h4>
           <h6 class="text-center"><%= DateTime.now().year - matchingprofile.user.birth_date.year.to_i %> anos</h6>
