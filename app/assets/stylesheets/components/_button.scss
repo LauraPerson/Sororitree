@@ -30,6 +30,22 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.btn-rose-wradius-left {
+  background-color: $red-pink;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+  }
+}
+
 .btn-rose-outline {
   background-color: $sugar-cane;
   border-radius: 10px;

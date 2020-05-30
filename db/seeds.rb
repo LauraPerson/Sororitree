@@ -97,3 +97,10 @@ array_users.each do |user|
   use = User.create(user)
   puts "Created #{use.id} users"
 end
+
+chatroom1 = {
+  user_id: 1
+}
+
+Chatroom.create(chatroom1)
+puts "Create a chatroom1"
