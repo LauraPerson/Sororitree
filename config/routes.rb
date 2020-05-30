@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   end
   resources :selected_themes, only: :destroy
   resources :posts, only: [:index, :show, :create]
-  resources :matching_profiles, only: :index
-  resources :requests, only: [:create, :new]
+
+  resources :requests, only: [:create, :new] do
+    resources :matching_profiles, only: [:index, :create]
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
