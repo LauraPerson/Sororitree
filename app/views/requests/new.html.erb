@@ -28,7 +28,7 @@
           <%= f.input :age_max, label: 'Idade Máxima', input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
         </div>
         <div class="text-center mt-3">
-          <%=f.button :submit, 'Envie', class: 'btn-request' %>
+          <%=f.submit 'Envie', class: 'btn-request' %>
         </div>
       <% end %>
     </div>

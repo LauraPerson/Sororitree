@@ -3,7 +3,7 @@ class MatchingProfilesController < ApplicationController
 
   def index
     @request = Request.find(params[:request_id])
-    @matching_profiles = policy_scope(MatchingProfile)
+    @matching_profiles = policy_scope(MatchingProfile.where(request: @request))
   end
 
   def create

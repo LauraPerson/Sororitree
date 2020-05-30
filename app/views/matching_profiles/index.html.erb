@@ -1,5 +1,6 @@
 
 <h1>Matching Profiles</h1>
+
 <% @matching_profiles.each do |matchingprofile| %>
     <p><%= matchingprofile.user.nickname %> || <%= matchingprofile.user.address %></p>
 <% end %>

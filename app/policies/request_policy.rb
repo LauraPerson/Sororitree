@@ -1,7 +1,7 @@
 class RequestPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(request_id: @request.id)
+      scope.all
     end
   end
 

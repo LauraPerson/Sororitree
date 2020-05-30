@@ -10,6 +10,7 @@ class RequestsController < ApplicationController
     @request = Request.new(params_request)
     authorize @request
     @request.user = current_user
+    @request.save
 
     if @request.age_min.nil? || @request.age_max.nil?
       @helpers = User.where(helper: true)
@@ -30,6 +31,8 @@ class RequestsController < ApplicationController
     else
       render :new
     end
+
+
   end
 
   private
@@ -38,7 +41,7 @@ class RequestsController < ApplicationController
     helpers = User.where(helper: true)
     year_min = DateTime.now().year - age_min.to_i
     year_max = DateTime.now().year - age_max.to_i
-    helpers = helpers.where("extract(year from birth_date) >= ?", year_min)
+    helpers = helpers.where("extract(year from birth_date) <= ?", year_min)
     helpers = helpers.where("extract(year from birth_date) >= ?", year_max)
     return helpers
   end
