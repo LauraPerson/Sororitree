@@ -1,19 +1,5 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
-.btn-user-helper-false {
-  padding: 8px 16px;
-  background-color: red;
-  border-radius: 8px;
-  display: inline-block;
-}
-
-.btn-user-helper-true {
-  padding: 8px 16px;
-  background-color: green;
-  border-radius: 8px;
-  display: inline-block;
-}
-
 .btn-post {
   padding: 8px 16px;
   color: white;
@@ -27,6 +13,44 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.btn-rose {
+  background-color: $red-pink;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+  }
+}
+
+.btn-rose-outline {
+  background-color: $sugar-cane;
+  border-radius: 10px;
+  color: $red-pink;
+  padding: 4px 8px;
+  border: solid 1px $red-pink;
+  margin: auto;
+  display: block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $sugar-cane-dark;
+  }
+}
+
+.btn-purple-medium {
+  background-color: $purple-medium;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  margin: auto;
+  display: block;
+  &:hover {
+
 .btn-request {
   padding: 8px 16px;
   color: white;
@@ -36,6 +60,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   box-shadow: $box-shadow;
   &:hover {
     background-color: #88304E;
+
     box-shadow: $box-shadow;
   }
 }
