@@ -19,10 +19,10 @@
       </div>
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if current_user.helper == false %>
-          <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper" %>
+          <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
           <p class="mb-0 ml-3">Você não está disponível para ajudar</p>
         <% else %>
-          <%= link_to icon_helper("check-square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper" %>
+          <%= link_to icon_helper("check-square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
           <p class="mb-0 ml-3">Você está disponível para ajudar</p>
         <% end %>
       </div>
@@ -35,7 +35,7 @@
                 <% current_user.selected_themes.each do |select_theme| %>
                   <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
                     <div class="delete-theme align-self-end">
-                      <%= link_to "x", selected_theme_path(select_theme), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy" %>
+                      <%= link_to "x", selected_theme_path(select_theme), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy", remote: true %>
                     </div>
                     <p><%= select_theme.theme.title %></p>
                   </div>
