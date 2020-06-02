@@ -1,4 +1,4 @@
-<%= simple_form_for [current_user, @selected_theme] do |f| %>
+<%= simple_form_for [current_user, @selected_theme], remote: true do |f| %>
   <div class="form-inputs">
     
     <fieldset class="form-group form-theme-content required">
