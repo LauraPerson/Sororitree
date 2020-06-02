@@ -5,11 +5,7 @@
         <h1> <%= current_user.nickname %> </h1>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <% if current_user.photo.attached? %>
-          <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
-        <% else %>
-          <div class="avatar-large" style="background-image: url('<%= image_path "avatar.png", crop: :fill %>')"></div>
-        <% end %>
+        <div class="avatar-large" style="background-image: url('<%= current_user.photo.attached? ? (cl_image_path current_user.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
         <div class="card-user-information ml-2">
           INFO ?
         </div>
@@ -32,7 +28,7 @@
           <% if current_user.selected_themes.exists? %>
             <div class="selected-themes pt-4 flex-grow-2">
               <div class="d-flex flex-wrap justify-content-center">
-                <% current_user.selected_themes.each do |select_theme| %>
+                <% @selected_themes_existing.each do |select_theme| %>
                   <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
                     <div class="delete-theme align-self-end">
                       <%= link_to "x", selected_theme_path(select_theme), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy", remote: true %>
@@ -58,11 +54,7 @@
         <h1><%= @user.nickname %></h1>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <% if @user.photo.attached? %>
-          <div class="avatar-large" style="background-image: url('<%= cl_image_path @user.photo.key, crop: :fill %>')"></div>
-        <% else %>
-          <div class="avatar-large" style="background-image: url('<%= image_path "avatar.png", crop: :fill %>')"></div>
-        <% end %>
+        <div class="avatar-large" style="background-image: url('<%= @user.photo.attached? ? (cl_image_path @user.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
         <div class="card-user-information ml-2">
           INFO?
         </div>
