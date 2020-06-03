@@ -2,6 +2,8 @@ class MatchingProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @matching_profiles = policy_scope(MatchingProfile.where(user: current_user))
+    authorize @matching_profiles
   end
 
   def new
@@ -14,6 +16,21 @@ class MatchingProfilesController < ApplicationController
       @helpers = search_age(@request.age_min, @request.age_max)
       @helpers = search_theme(@request.theme_id, @helpers)
     end
+  end
+
+  def accepted_true
+    @matching_profile = MatchingProfile.find(params[:id])
+    @matching_profile.accepted = true
+    authorize @matching_profile
+    @matching_profile.save
+    # render - create chatroom
+  end
+
+  def accepted_false
+    @matching_profile = MatchingProfile.find(params[:id])
+    @matching_profile.accepted = false
+    authorize @matching_profile
+    @matching_profile.save
   end
 
   def create
@@ -41,7 +58,9 @@ class MatchingProfilesController < ApplicationController
     selected_theme = SelectedTheme.where(theme_id: theme_id)
     theme_helpers = []
     selected_theme.each do |selected_theme|
-      theme_helpers << selected_theme.user_id
+      if selected_theme.user_id != current_user.id
+        theme_helpers << selected_theme.user_id
+      end
     end
     helpers = helpers.where(id: theme_helpers)
   end
