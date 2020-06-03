@@ -105,7 +105,25 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   text-align: center;
   border-radius: 8px;
   height: 36px;
-  width: 55px;
+  width: 64px;
+  margin-top: 8px;
+  padding: 6px;
+  &:hover {
+    background-color: $purple-light;
+    color: $light-brown;
+    border: 1.5px solid $purple-medium;
+    text-decoration: none;
+  }
+}
+
+#button-modal {
+  border: 1px solid $purple-medium;
+  background-color: $purple-medium;
+  color: $light-brown;
+  text-align: center;
+  border-radius: 8px;
+  height: 48px;
+  width: 144px;
   margin-top: 8px;
   padding: 6px;
   &:hover {
@@ -115,3 +133,4 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     text-decoration: none;
   }
 }
+

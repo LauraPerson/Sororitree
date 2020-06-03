@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     resources :selected_themes, only: :create
   end
   resources :selected_themes, only: :destroy
-  resources :posts, only: [:index, :show, :create]
+  resources :posts, only: [:index, :show, :create] do
+    collection do
+      get :my_posts
+    end
+  end
 
   resources :requests, only: [:create, :new] do
     resources :matching_profiles, only: [:index, :create]
