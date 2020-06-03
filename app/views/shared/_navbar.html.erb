@@ -1,11 +1,11 @@
 <nav class="navbar-sororitree">
   <% if user_signed_in? %>
     <p class="logo-navbar">
-      <%= link_to image_tag("test2.png", width: 120, height: 110), posts_path, class: "link-home-page" %>
+      <%= link_to image_tag("newlogo.png", width: 70, height: 60), posts_path, class: "link-home-page" %>
     </p>
 
   <div class="inbox-and-drop-down">
-    <%= link_to "Help", new_request_path(current_user), class: "helpbutton" %>
+    <%= link_to "Ajuda", new_request_path(current_user), class: "helpbutton" %>
     <div class="inbox-icon">
       <%= link_to chatrooms_path do  %>
         <i class='fas fa-comments' id="inbox_button"></i>
@@ -17,14 +17,14 @@
           <%= link_to cl_image_tag(current_user.photo.key), user_path(current_user), class: "avatar-small", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Profile",user_path(current_user), class: "dropdown-item" %>
-              <%# link_to "Seus posts", post_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Seus posts", my_posts_posts_path(current_user), class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
         <% else %>
           <%= link_to image_tag("avatar.png"), user_path(current_user), class: "avatar-small", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <%= link_to "Profile",user_path(current_user), class: "dropdown-item" %>
-                <%= link_to "Seus posts", post_path(current_user), class: "dropdown-item" %>
+                <%= link_to "Seus posts", my_posts_posts_path(current_user), class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
       </div>
@@ -33,7 +33,7 @@
   </div>
   <% else %>
     <p class="logo-navbar ml-3">
-      <%= link_to image_tag("test2.png", width: 80, height: 70), root_path, class: "link-home-page" %>
+      <%= link_to image_tag("newlogo.png", width: 80, height: 70), root_path, class: "link-home-page" %>
     </p>
     <div class="not-signed-in-navbar d-flex align-items-center">
       <%= link_to "Sign up", new_user_registration_path, class: "btn-sugar-cane" %>
