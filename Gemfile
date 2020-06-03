@@ -8,6 +8,9 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '6.0.2.2'
 gem 'redis'
+#Turbolinks Gem + Debugger
+gem 'turbolinks', '~> 5'
+gem 'turbolinks_render'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'

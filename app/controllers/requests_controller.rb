@@ -14,12 +14,14 @@ class RequestsController < ApplicationController
 
     if @request.age_min.nil? || @request.age_max.nil?
       @helpers = User.where(helper: true)
+      @helpers = search_theme(@request.theme_id, @helpers)
       @helpers.each do |helper|
         @matching_profile = MatchingProfile.new(request_id: @request.id, user_id: helper.id)
         @matching_profile.save
       end
     else
-      @helpers = search(@request.age_min, @request.age_max)
+      @helpers = search_age(@request.age_min, @request.age_max)
+      @helpers = search_theme(@request.theme_id, @helpers)
       @helpers.each do |helper|
         @matching_profile = MatchingProfile.new(request_id: @request.id, user_id: helper.id)
         @matching_profile.save
@@ -37,13 +39,21 @@ class RequestsController < ApplicationController
 
   private
 
-  def search(age_min, age_max)
+  def search_age(age_min, age_max)
     helpers = User.where(helper: true)
     year_min = DateTime.now().year - age_min.to_i
     year_max = DateTime.now().year - age_max.to_i
     helpers = helpers.where("extract(year from birth_date) <= ?", year_min)
     helpers = helpers.where("extract(year from birth_date) >= ?", year_max)
-    return helpers
+  end
+
+  def search_theme(theme_id, helpers)
+    selected_theme = SelectedTheme.where(theme_id: theme_id)
+    theme_helpers = []
+    selected_theme.each do |selected_theme|
+      theme_helpers << selected_theme.user_id
+    end
+    helpers = helpers.where(id: theme_helpers)
   end
 
   def params_request

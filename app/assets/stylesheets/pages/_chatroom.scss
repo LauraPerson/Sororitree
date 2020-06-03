@@ -5,14 +5,12 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-
+  margin-bottom: 5vh;
   // max-height: 800px;
   // width: 75vw;
 }
 
 .chat-container {
-  height: 70vh;
-  background: #FFF;
   border-radius: 4px;
   background: #FFF;
   max-height: 800px;
@@ -25,7 +23,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   font-family: $body-font;
 }
 
-#side-bar {
+.side-bar {
   background: $red-pink;
   color: #FFF;
   width: 35vh;
@@ -33,18 +31,18 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 4px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  height: 100%;
+  flex-grow: 1;
   box-shadow: $box-shadow;
 }
 
 .discussion-container {
   padding: 15px;
   overflow-y: scroll;
-  height: 70vh;
+  height: 60vh;
 }
 
 .chat-discussion-form-container {
-  width: 85vh;
+  width: 65vw;
   border-radius: 4px;
 }
 

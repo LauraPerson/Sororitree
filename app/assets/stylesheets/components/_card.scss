@@ -43,11 +43,11 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   align-items: center;
   width: 20vw;
   border-radius: 10px;
-  background:  linear-gradient(45deg, $purple-medium 0.1%, $sugar-cane-dark 50%);
+  background-color:  white;
   opacity: 0.9;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
   &:hover {
-    background:  linear-gradient(45deg, $purple-medium 20%, white 50%);
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 6px 10px 0px;
   }
 }

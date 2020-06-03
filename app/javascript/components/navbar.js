@@ -4,14 +4,14 @@ const transparentNabarHome = () => {
     const navbar = document.querySelector('.navbar-sororitree');
     navbar.classList.add('nav-transparent');
     navbar.classList.add('fixed-top');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        navbar.classList.remove('nav-transparent');
-        navbar.classList.add('nav-fixed');
-      } else {
-        navbar.classList.add('nav-transparent');
-      }
-    })
+    // window.addEventListener('scroll', () => {
+    //   if (window.scrollY >= window.innerHeight) {
+    //     navbar.classList.remove('nav-transparent');
+    //     navbar.classList.add('nav-fixed');
+    //   } else {
+    //     navbar.classList.add('nav-transparent');
+    //   }
+    // })
   }
 }
 
