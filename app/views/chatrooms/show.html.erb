@@ -5,7 +5,7 @@
     <div class="side-bar">
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">
-      <div class="discussion-container">
+      <div class="discussion-container" id="chat-container" >
         <% @chatroom.messages.each do |message| %>
           <%= render 'messages/message', message:message %>
         <% end %>
@@ -23,8 +23,4 @@
     </div>
   </div>
 </div>
-
-
-
-
 
