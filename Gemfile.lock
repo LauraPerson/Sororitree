@@ -171,6 +171,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.1.4)
+    repost (0.3.2)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -255,6 +256,7 @@ DEPENDENCIES
   pundit
   rails (= 6.0.2.2)
   redis
+  repost
   sassc-rails
   simple_form
   spring

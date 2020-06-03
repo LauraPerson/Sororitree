@@ -7,6 +7,7 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new
+    @chatroom.guest_user = current_user
     @chatroom.user = current_user
     authorize @chatroom
     @chatroom.save
