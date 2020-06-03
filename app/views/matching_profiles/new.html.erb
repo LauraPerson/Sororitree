@@ -1,0 +1,23 @@
+<div class="container-page">
+
+  <div class="container-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'women_hug.png' %>)">
+  </div>
+
+  <div class="matching-header text-center">
+    <h2> Manas disponíveis para ajudar </h2>
+  </div>
+
+  <div class="container-matching-cards">
+    <% @helpers.each do |help| %>
+      <%= link_to request_matching_profiles_path(helper_id: help.id), method: :post, data: { confirm: "Gostaria de abrir um chat com o #{help.nickname}?" }, class: "without-text-decoration" do %>
+        <div class="matching-card">
+          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= help.photo.attached? ? (cl_image_path help.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+          <div class="matching-info">
+            <h4 class="text-center"><%= help.nickname %></h4>
+            <h6 class="text-center"><%= DateTime.now().year - help.birth_date.year.to_i %> anos</h6>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
