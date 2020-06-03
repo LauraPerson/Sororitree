@@ -136,3 +136,19 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.btn-rose-edit {
+  background-color: $red-pink;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  flex: 0 1 auto;
+  margin-left: auto;
+  border: none;
+  font-size: 12px;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+    text-decoration: none;
+    color: white;
+  }
+}

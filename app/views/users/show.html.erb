@@ -1,11 +1,17 @@
 <div class="show-user-banner" style="background-image: url('<%= image_path 'User-show-profile.png' %>')">
   <div class="container pt-3">
     <% if @user == current_user %>
-      <div class="user-show-title text-center">
-        <h1> <%= current_user.nickname %> </h1>
+      <div class="user-show-title d-flex align-items-center mb-4">
+        <div class="user-show-nickname">
+          <%= current_user.nickname %>
+        </div>
+        <%= link_to edit_user_registration_path, class: "btn-rose-edit" do %>
+          <i class="fas fa-pencil-alt"></i>
+          Editar meu perfil
+        <% end %>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <div class="avatar-large" style="background-image: url('<%= current_user.photo.attached? ? (cl_image_path current_user.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+        <div class="avatar-large" style="background-image: url('<%= current_user.photo.attached? ? (cl_image_path current_user.photo.key, crop: :fill) : (image_path "Women/#{rand(14)}.jpg", crop: :fill) %>')"></div>
         <div class="card-user-information ml-2">
           INFO ?
         </div>
@@ -54,7 +60,7 @@
         <h1><%= @user.nickname %></h1>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <div class="avatar-large" style="background-image: url('<%= @user.photo.attached? ? (cl_image_path @user.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+        <div class="avatar-large" style="background-image: url('<%= @user.photo.attached? ? (cl_image_path @user.photo.key, crop: :fill) : (image_path "Women/#{rand(14)}.jpg", crop: :fill) %>')"></div>
         <div class="card-user-information ml-2">
           INFO?
         </div>
