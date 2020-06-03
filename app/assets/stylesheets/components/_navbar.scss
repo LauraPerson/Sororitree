@@ -46,3 +46,10 @@ margin: 4px;
   justify-content: space-evenly;
 }
 
+.not-signed-in-navbar {
+  p {
+    color: $red-pink;
+    font-weight: bold;
+  }
+}
+

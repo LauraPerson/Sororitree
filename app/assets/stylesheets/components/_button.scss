@@ -27,6 +27,8 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $red-pink-dark;
+    text-decoration: none;
+    color: white;
   }
 }
 
