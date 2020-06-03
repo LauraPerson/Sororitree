@@ -1,11 +1,11 @@
 <h1> Chat with <%= @chatroom.user.nickname %></h1>
 
 <div class="chat">
-  <div class="chat-container d-flex" data-chatroom-id="<%= @chatroom.id %>">
+  <div class="chat-container d-flex">
     <div class="side-bar">
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">
-      <div class="discussion-container" id="chat-container" >
+      <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
           <%= render 'messages/message', message:message %>
         <% end %>
