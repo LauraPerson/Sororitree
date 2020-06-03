@@ -28,7 +28,8 @@
   color: $red-pink;
   font-size: 50px;
   font-style: bold;
-  margin-top: 20vh;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .home-explanation {
@@ -38,16 +39,20 @@
   font-style: bold;
 }
 
+.banner-home-infos {
+  height: 150vh;
+}
+
 .banner-home-arms {
-  margin-top: 420px;
+  height: 120vh;
 }
 
 .banner-home-hands {
-  margin-top: 420px;
+  height: 120vh;
 }
 
 .banner-home-heart {
-  margin-top: 300px;
+  height: 120vh;
 }
 
 
