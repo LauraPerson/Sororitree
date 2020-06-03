@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   end
 
   resources :requests, only: [:create, :new] do
-    resources :matching_profiles, only: [:index, :create]
+    resources :matching_profiles, only: [:new, :create]
   end
+
+  resources :matching_profiles, only: [:index]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
