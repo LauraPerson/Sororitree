@@ -14,5 +14,6 @@ class User < ApplicationRecord
   has_many :messages
   has_many :chatroom
   has_one_attached :photo
+  has_many :professionals
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }
 end
