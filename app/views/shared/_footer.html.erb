@@ -5,21 +5,24 @@
       <div class="col-md-12 pb-2 pt-2">
         <div class="mt-2 mb-2 flex-center text-center">
           <!-- Facebook -->
-          <a href="https://pt-br.facebook.com/lewagon/" target="_blank" class="social-icon">
+          <%= link_to "https://pt-br.facebook.com/lewagon/", target: "_blank", class: "social-icon" do %>
             <i class="fab fa-facebook-f"> </i>
-          </a>
+          <% end %>
           <!--Linkedin -->
-          <a link_to="https://www.linkedin.com/school/le-wagon/?originalSubdomain=br" target="_blank" class="social-icon">
+          <%= link_to "https://www.linkedin.com/school/le-wagon/?originalSubdomain=br", target: "_blank", class: "social-icon" do %>
             <i class="fab fa-linkedin-in"> </i>
-          </a>
+          <% end %>
+
           <!--Instagram-->
-          <a href="https://www.instagram.com/lewagonbrasil/?hl=pt-br" target="_blank" class="social-icon">
+          <%= link_to "https://www.instagram.com/lewagonbrasil/?hl=pt-br", target: "_blank", class: "social-icon" do %>
             <i class="fab fa-instagram"> </i>
-          </a>
+          <% end %>
+
           <!--Twitter-->
-          <a href="https://twitter.com/lewagonbrasil" target="_blank" class="social-icon">
+          <%=  link_to "https://twitter.com/lewagonbrasil", target: "_blank", class: "social-icon" do %>
             <i class="fab fa-twitter"></i>
-          </a>
+          <% end %>
+
         </div>
       </div>
     </div>
