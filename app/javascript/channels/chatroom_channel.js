@@ -1,15 +1,7 @@
 import consumer from "./consumer";
 
 const initChatroomCable = () => {
-  const messagesContainer = document.getElementById('chat-container');
-//   messagesContainer.scrollblabla = messagesContainer.scrollHeight;
-
-//   if (firstTime) {
-//   messagescontainer.scrollTop = messagesContainer.scrollHeight;
-//   firstTime = false;
-// } else if (messagesContainer.scrollTop + messagesContainer.clientHeight === messagesContainer.scrollHeight) {
-//   messagesContainer.scrollTop = messagesontainer.scrollHeight;
-// }
+const messagesContainer = document.getElementById('chat-container');
 console.log("broadcast_received")
 
   if (messagesContainer) {
