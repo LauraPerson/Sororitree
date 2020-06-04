@@ -1,14 +1,20 @@
-<h1> Chat with <%= @chatroom.user.nickname %></h1>
+<% if @chatroom.user != current_user %>
+  <h1> Chat with <%= @chatroom.user.nickname %></h1>
+<% elsif @chatroom.guest_user != current_user %>
+  <h1> Chat with <%= @chatroom.guest_user.nickname %></h1>
+<% end %>
 
 <div class="chat">
   <div class="chat-container d-flex">
     <div class="side-bar">
       <% @chatrooms.each do |chat| %>
-        <% if chat.user != current_user %>
-          <%= chat.user.nickname %>
-        <% elsif chat.guest_user != current_user %>
-          <%= chat.guest_user.nickname %>
-        <% end %>
+        <div>
+          <% if chat.user != current_user %>
+            <%= link_to chat.user.nickname, chatroom_path(chat) %>
+          <% elsif chat.guest_user != current_user %>
+            <%= link_to chat.guest_user.nickname, chatroom_path(chat) %>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">

@@ -7,7 +7,7 @@
   <div class="inbox-and-drop-down">
     <%= link_to "Ajuda", new_request_path(current_user), class: "helpbutton" %>
     <div class="inbox-icon">
-      <%= link_to chatrooms_path do  %>
+      <%= link_to chatroom_path(Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)).last) do %>
         <i class='fas fa-comments' id="inbox_button"></i>
       <% end %>
     </div>
