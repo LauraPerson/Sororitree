@@ -1,18 +1,22 @@
 import consumer from "./consumer";
 
-const initChatroomCable = () => {
-const messagesContainer = document.getElementById('chat-container');
-  // if (messagesContainer.scrollTop + messagesContainer.clientHeight === messagesContainer.scrollHeight) {
-  //   messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  // }
+const scrollLastMessageIntoView = () => {
+  const messages = document.querySelectorAll('.message-container');
+  const lastMessage = messages[messages.length - 1];
+  if (lastMessage !== undefined) {
+    lastMessage.scrollIntoView();
+  }
+}
 
-console.log("broadcast_received")
+const initChatroomCable = () => {
+  const messagesContainer = document.querySelector("#chat-container");
 
   if (messagesContainer) {
     const id = messagesContainer.dataset.chatroomId;
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
-        messagesContainer.insertAdjacentHTML('beforeend', data)
+        messagesContainer.insertAdjacentHTML('beforeend', data);
+        scrollLastMessageIntoView();
       },
     });
   }
@@ -21,3 +25,5 @@ console.log("broadcast_received")
 
 
 export { initChatroomCable };
+
+
