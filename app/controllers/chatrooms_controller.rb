@@ -1,10 +1,6 @@
 class ChatroomsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @chatrooms = policy_scope(Chatroom)
-  end
-
   def create
     @chatroom = Chatroom.new
     @chatroom.guest_user = current_user
@@ -15,6 +11,7 @@ class ChatroomsController < ApplicationController
   end
 
   def show
+    @chatrooms = policy_scope(Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)))
     @message = Message.new
     @chatroom = Chatroom.find(params[:id])
     authorize @chatroom

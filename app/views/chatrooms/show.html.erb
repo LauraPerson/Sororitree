@@ -3,6 +3,13 @@
 <div class="chat">
   <div class="chat-container d-flex">
     <div class="side-bar">
+      <% @chatrooms.each do |chat| %>
+        <% if chat.user != current_user %>
+          <%= chat.user.nickname %>
+        <% elsif chat.guest_user != current_user %>
+          <%= chat.guest_user.nickname %>
+        <% end %>
+      <% end %>
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">
       <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
