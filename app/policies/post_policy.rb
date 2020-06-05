@@ -12,6 +12,7 @@ class PostPolicy < ApplicationPolicy
   def index?
     true
   end
+
   def my_posts?
     true
   end

@@ -1,0 +1,26 @@
+<div class="container-page">
+
+  <div class="container-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'women_hug.png' %>)">
+  </div>
+
+  <div class="matching-header text-center">
+    <h2> Manas pedindo ajuda </h2>
+  </div>
+
+  <div class="container-matching-cards">
+    <% @matching_profiles.each do |matching| %>
+      <% if matching.accepted.nil? %>
+        <div class="matching-card">
+          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= matching.user.photo.attached? ? (cl_image_path matching.user.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+          <div class="matching-info">
+            <h4 class="text-center"><%= matching.request.user.nickname %></h4>
+            <h6 class="text-center"><%= DateTime.now().year - matching.request.user.birth_date.year.to_i %> anos</h6>
+            <h6 class="text-center"><%= matching.request.theme.title %></h6>
+          </div>
+          <%= link_to 'Aceito', accepted_true_path(matching), method: :patch %>
+          <%= link_to 'Não posso', accepted_false_path(matching), method: :patch %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

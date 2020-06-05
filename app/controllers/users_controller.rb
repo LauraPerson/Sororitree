@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @selected_theme = SelectedTheme.new
     @selected_themes_existing = SelectedTheme.includes(:theme).where(user_id: current_user.id)
+    @professional = Professional.new
     array_existing_theme = []
     @selected_themes_existing.each do |select_theme|
       array_existing_theme << select_theme.theme_id
@@ -14,8 +15,6 @@ class UsersController < ApplicationController
     @themes == nil ? Theme.all : @themes
   end
 
-
-  
   def toggle_helper
     authorize current_user
     current_user.toggle! (:helper)
@@ -31,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def params_user
-    params.require(:user).permit(:selected_theme_id, :nickname, :email, :password, :helper)
+    params.require(:user).permit(:selected_theme_id, :nickname, :email, :password, :helper, :professional)
   end
 end

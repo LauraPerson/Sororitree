@@ -2,6 +2,8 @@ class MatchingProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @matching_profiles = policy_scope(MatchingProfile.where(user: current_user))
+    authorize @matching_profiles
   end
 
   def new
@@ -16,6 +18,21 @@ class MatchingProfilesController < ApplicationController
     end
   end
 
+  def accepted_true
+    @matching_profile = MatchingProfile.find(params[:id])
+    @matching_profile.accepted = true
+    authorize @matching_profile
+    @matching_profile.save
+    redirect_post chatrooms_path(matching_user_id: @matching_profile.request.user.id), options: {authenticity_token: :auto}
+  end
+
+  def accepted_false
+    @matching_profile = MatchingProfile.find(params[:id])
+    @matching_profile.accepted = false
+    authorize @matching_profile
+    @matching_profile.save
+  end
+
   def create
     @request = Request.find(params[:request_id])
     authorize @request
@@ -25,8 +42,8 @@ class MatchingProfilesController < ApplicationController
 
   private
 
-  def matchingprofile_params
-    params.require(:matchingprofile).permit(:request_id, :user_id)
+  def matching_profile_params
+    params.require(:matching_profile).permit(:user_id)
   end
 
   def search_age(age_min, age_max)
@@ -41,7 +58,9 @@ class MatchingProfilesController < ApplicationController
     selected_theme = SelectedTheme.where(theme_id: theme_id)
     theme_helpers = []
     selected_theme.each do |selected_theme|
-      theme_helpers << selected_theme.user_id
+      if selected_theme.user_id != current_user.id
+        theme_helpers << selected_theme.user_id
+      end
     end
     helpers = helpers.where(id: theme_helpers)
   end
