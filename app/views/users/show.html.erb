@@ -19,6 +19,45 @@
       <div class="button-help text-center my-4">
         <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-post"%>
       </div>
+
+<% if current_user.professional.nil? %>
+  <button type="button" class="btn btn-primary" id="button-modal" data-toggle="modal" data-target="#exampleModal">
+    Adicionar sua profissão
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sua profissão</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="cards-form">
+            <%= simple_form_for @professional do |f| %>
+              <%= f.input :job_category, collection: Professional::CATEGORIES, label: "Profissão", input_html: { class: 'card-form' } %>
+              <%= f.input :description, label: false, placeholder: 'Descrição', input_html: { class: 'card-form' } %>
+              <%= f.button :submit, 'Adicionar', class: 'btn-post' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+<% else %>
+  <div class="professional_job_category">
+    <p><%= current_user.professional.job_category %></p>
+  </div>
+  <div class="professional_description">
+    <%= current_user.professional.description %>
+  </div>
+<% end %>
+
+
+
+
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if current_user.helper == false %>
           <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
@@ -53,7 +92,7 @@
           </div>
         </div>
       <% end %>
-      
+
 
     <% else %>
       <div class="user-show-title text-center">

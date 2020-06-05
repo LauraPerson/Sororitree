@@ -5,6 +5,13 @@ array_themes.each do |theme|
   puts "Created #{the.id} themes"
 end
 
+array_job_category = Professional::CATEGORIES
+
+array_job_category.each do |category|
+  categ = Professional.create!(job_category: category)
+  puts "Created #{categ.id} categories"
+end
+
 user1 = {
   nickname: "Alexia",
   email: "alexia@gmail.com",
