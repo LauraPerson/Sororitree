@@ -69,7 +69,7 @@ user7 = {
   email: "patricia@gmail.com",
   password: "123456",
   address: "Rua João Pessoa, 70",
-  birth_date: "30 Dez 1994"
+  birth_date: "30 Dec 1994"
 }
 
 user8 = {
@@ -86,7 +86,7 @@ user9 = {
   email: "bruna@gmail.com",
   password: "123456",
   address: "Rua João dos Santos Mendes, 217",
-  birth_date: "30 Dez 1994"
+  birth_date: "30 Dec 1994"
 }
 
 user10 = {
@@ -105,6 +105,14 @@ array_users.each do |user|
   puts "Created #{use.id} users"
 end
 
+1..80.times do |n|
+  selectN = {
+    user_id: User.find(rand(User.first.id..User.last.id)).id,
+    theme_id: Theme.find(rand(Theme.first.id..Theme.last.id)).id
+  }
+  sel = SelectedTheme.create(selectN)
+  sel.save
+end
 
 post1 = {
   user_id: User.find(rand(User.first.id..User.last.id)).id,

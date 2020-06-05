@@ -6,14 +6,14 @@ class ChatroomPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user == record.guest_user
   end
 
   def show?
-    true
+    user == record.user || user == record.guest_user
   end
 
   def index?
-    true
+    user == record.user || user == record.guest_user
   end
 end
