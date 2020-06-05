@@ -42,8 +42,8 @@ class MatchingProfilesController < ApplicationController
 
   private
 
-  def matchingprofile_params
-    params.require(:matchingprofile).permit(:request_id, :user_id)
+  def matching_profile_params
+    params.require(:matching_profile).permit(:user_id)
   end
 
   def search_age(age_min, age_max)

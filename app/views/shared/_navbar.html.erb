@@ -9,6 +9,8 @@
     <div class="inbox-icon">
       <%= link_to chatroom_path(Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)).last) do %>
         <i class='fas fa-comments' id="inbox-button"></i>
+          <div class="messages-number">
+          </div>
       <% end %>
     </div>
 
