@@ -14,16 +14,18 @@ class UsersController < ApplicationController
     @themes == nil ? Theme.all : @themes
   end
 
-  def update
-    authorize current_user
-    current_user.update(params_user)
-    redirect_to user_path(current_user)
-  end
+
   
   def toggle_helper
     authorize current_user
     current_user.toggle! (:helper)
     redirect_to user_path(current_user)
+  end
+
+  def destroy_photo
+    authorize current_user
+    current_user.photo.purge
+    redirect_to edit_user_registration_path(current_user)
   end
 
   private

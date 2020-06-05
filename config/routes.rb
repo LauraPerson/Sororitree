@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#home'
 
   resources :chatrooms, only: [:index, :show, :create] do
@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   patch "users/:id/helper", to: "users#toggle_helper", as: :user_toggle_helper
+  patch "users/:id/remove_photo", to: "users#destroy_photo", as: :user_destroy_photo
   resources :users, only: [:show, :update] do
     resources :selected_themes, only: :create
   end
