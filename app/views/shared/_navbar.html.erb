@@ -8,16 +8,27 @@
     <%= link_to "Ajuda", new_request_path(current_user), class: "helpbutton" %>
     <div class="inbox-icon">
       <%= link_to chatroom_path(Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)).last) do %>
-        <i class='fas fa-comments' id="inbox_button"></i>
+        <i class='fas fa-comments' id="inbox-button"></i>
       <% end %>
     </div>
+
     <% if current_user.helper == true %>
-      <div class="matching-icon">
-        <%= link_to matching_profiles_path do  %>
-          <i class="fas fa-hands-helping" id="inbox_button"></i>
-        <% end %>
-      </div>
+      <%= link_to matching_profiles_path, class: "without-text-decoration" do  %>
+        <div class="matching-items-position d-flex">
+          <i class="fas fa-hands-helping" id="inbox-button"></i>
+          <div class="matching-number">
+            <% count = 0 %>
+            <% current_user.matching_profiles.each do |match| %>
+              <% if match.accepted.nil? %>
+                <% count += 1%>
+              <% end %>
+            <% end %>
+            <%= count %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
+
       <!-- add avatar logic <-->
     <div class="nav-item dropdown">
       <% if current_user.photo.attached? %>
