@@ -27,6 +27,12 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def toggle_professional
+    authorize current_user
+    current_user.toggle! (:professional_status)
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def params_user
