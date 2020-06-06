@@ -41,6 +41,8 @@ class MatchingProfilesController < ApplicationController
         @matching_profile = MatchingProfile.new(request_id: @request.id, user_id: user_helper_id)
         @matching_profile.save
       end
+    else
+      flash.now[:alert] = 'Você precisa selecionar pelo menos uma mana!'
     end
   end
 

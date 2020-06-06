@@ -8,7 +8,7 @@
   </div>
 
   <div class="container-matching-cards">
-    <%= form_tag request_matching_profiles_path, required: true, method: 'POST' do %>
+    <%= form_tag request_matching_profiles_path, method: 'POST' do %>
       <%= hidden_field_tag :request_id, @request.id %>
       <% @helpers.each do |user_helper| %>
         <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
@@ -25,7 +25,7 @@
 
       <div class="text-center mt-5">
         <button type="button" class="transparent" data-toggle="modal" data-target="#modalExemplo">
-          <%= submit_tag("Enviar", :id=>"button-modal-request", :class=>"btn-request", :name=>"submit")%>
+          <%= submit_tag("Enviar", :id=>"button-modal-request", :class=>"btn-request disabled", :name=>"submit")%>
         </button>
       </div>
 
@@ -33,7 +33,7 @@
   </div>
 </div>
 
-<!-- Include in a partial -->
+<!-- Include in a partial? -->
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

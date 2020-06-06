@@ -106,6 +106,12 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     box-shadow: $box-shadow;
     cursor: pointer;
   }
+  &.disabled {
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    box-shadow: $box-shadow;
+  }
 }
 
 .btn-sugar-cane {
