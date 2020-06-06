@@ -17,6 +17,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def toggle_professional?
+    true
+  end
+
   def destroy_photo?
     true
   end
