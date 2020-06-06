@@ -11,7 +11,6 @@ class RequestsController < ApplicationController
     authorize @request
     @request.user = current_user
     @request.save
-
     if @request.save
       redirect_to new_request_matching_profile_path(@request)
     else
@@ -22,7 +21,7 @@ class RequestsController < ApplicationController
   private
 
   def params_request
-    params.require(:request).permit(:age_min, :age_max, :distance, :theme_id, :user_id)
+    params.require(:request).permit(:age_min, :age_max, :distance, :theme_id, :user_id, :professional_id)
   end
 
   def find_request

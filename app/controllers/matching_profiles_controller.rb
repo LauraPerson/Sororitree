@@ -16,6 +16,8 @@ class MatchingProfilesController < ApplicationController
       @helpers = search_age(@request.age_min, @request.age_max)
       @helpers = search_theme(@request.theme_id, @helpers)
     end
+    if @request.professional
+      @helpers = search_professional(@request.professional_id, @helpers)
   end
 
   def accepted_true
@@ -63,5 +65,15 @@ class MatchingProfilesController < ApplicationController
       end
     end
     helpers = helpers.where(id: theme_helpers)
+  end
+
+  def search_professional(job_category, helpers)
+    professional_categ = Professional.where(job_category: job_category)
+    professional_helpers = []
+    professional_categ.each do |professional|
+      if professional.user_id != current_user.id
+        professional_helpers << professional.user_id
+      end
+      helpers = helpers.where(id: professional_helpers)
   end
 end

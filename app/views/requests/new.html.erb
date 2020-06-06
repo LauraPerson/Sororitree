@@ -27,6 +27,10 @@
           <%= f.input :age_min, label: 'Idade Mínima', input_html: { min: '18', step: 'any', class: 'card-form' } %>
           <%= f.input :age_max, label: 'Idade Máxima', input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
         </div>
+        <%= f.label "Você gostaria de conversar com um profissional? " %>
+        <%= f.check_box :request %>
+        <%= f.label "Sim" %>
+        <%= f.association :professional, collection: Professional::CATEGORIES, as: :check_boxes, label: "Profissão", input_html: { class: 'card-form' } %>
         <div class="text-center mt-3">
           <%=f.submit 'Envie', class: 'btn-request' %>
         </div>
