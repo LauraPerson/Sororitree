@@ -1,6 +1,7 @@
 .container-page {
   position: relative;
   min-height: 100vh;
+  padding-bottom: 32px;
 }
 
 .container-posts {
@@ -45,4 +46,23 @@
 .modal-box{
   padding: 8px;
   margin-left: 50px;
+}
+
+.container-posts{
+ padding-top: 82px;
+}
+
+#container-user{
+  padding-top: 90px;
+}
+
+#login {
+  padding-top: 10vh;
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
