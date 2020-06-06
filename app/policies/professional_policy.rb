@@ -6,6 +6,10 @@ class ProfessionalPolicy < ApplicationPolicy
   end
 
   def create?
-    !user.professional
+    true
+  end
+
+  def destroy?
+    true
   end
 end

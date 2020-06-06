@@ -20,6 +20,12 @@ class ProfessionalsController < ApplicationController
     authorize @professional
   end
 
+  def destroy
+    authorize current_user.professional
+    current_user.professional.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def params_professional

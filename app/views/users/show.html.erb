@@ -1,5 +1,5 @@
 <div class="show-user-banner" style="background-image: url('<%= image_path 'User-show-profile.png' %>')">
-  <div class="container pt-3">
+  <div class="container" id="container-user">
     <% if @user == current_user %>
       <div class="user-show-title d-flex align-items-center mb-4">
         <div class="user-show-nickname">
@@ -20,33 +20,39 @@
         <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-post"%>
       </div>
 
-<% if current_user.professional.nil? %>
-  <button type="button" class="btn btn-primary" id="button-modal" data-toggle="modal" data-target="#exampleModal">
-    Ir para Perfil Pro?
-  </button>
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalLabel">Sua profissão</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="cards-form">
-            <%= simple_form_for @professional do |f| %>
-              <%= f.input :job_category, collection: Professional::CATEGORIES, label: "Profissão", input_html: { class: 'card-form' } %>
-              <%= f.input :description, label: false, placeholder: 'Descrição', input_html: { class: 'card-form' } %>
-              <%= f.button :submit, 'Adicionar', class: 'btn-post'%>
-            <% end %>
+    <% if current_user.professional.nil? %>
+      <button type="button" method="PATCH" class="btn btn-primary" id="button modal" data-toggle="modal" data-target="#exampleModal">
+        Adicionar proffissão
+      </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sua profissão</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="cards-form">
+                  <%= simple_form_for @professional, url: professionals_path(current_user) do |f| %>
+                    <%= f.input :job_category, collection: Professional::CATEGORIES, label: "Profissão", input_html: { class: 'card-form' } %>
+                    <%= f.input :description, label: false, placeholder: 'Descrição', input_html: { class: 'card-form' } %>
+                    <%= f.submit 'Adicionar', class: 'btn-post' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+      <% else %>
+        <%= current_user.professional.job_category %>
+        <%= current_user.professional.description %>
+      <% end %>
 
+      <button>
+        <%= link_to "Excluir perfil profisional", professional_path, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-font-awesome mx-3' %>
+      </button>
 
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if current_user.helper == false %>
