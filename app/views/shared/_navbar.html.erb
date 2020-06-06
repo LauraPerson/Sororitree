@@ -6,13 +6,15 @@
 
   <div class="inbox-and-drop-down">
     <%= link_to "Ajuda", new_request_path(current_user), class: "helpbutton" %>
-    <div class="inbox-icon">
-      <%= link_to chatroom_path(Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)).last) do %>
-        <i class='fas fa-comments' id="inbox-button"></i>
-          <div class="messages-number">
-          </div>
-      <% end %>
-    </div>
+    <% if Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)).nil? %>
+      <div class="inbox-icon">
+        <%= link_to chatroom_path(Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user)).last) do %>
+          <i class='fas fa-comments' id="inbox-button"></i>
+            <div class="messages-number">
+            </div>
+        <% end %>
+      </div>
+    <% end %>
 
     <% if current_user.helper == true %>
       <%= link_to matching_profiles_path, class: "without-text-decoration" do  %>

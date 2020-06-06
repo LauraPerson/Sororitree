@@ -5,13 +5,6 @@ array_themes.each do |theme|
   puts "Created #{the.id} themes"
 end
 
-array_job_category = Professional::CATEGORIES
-
-array_job_category.each do |category|
-  categ = Professional.create!(job_category: category)
-  puts "Created #{categ.id} categories"
-end
-
 user1 = {
   nickname: "Alexia",
   email: "alexia@gmail.com",
@@ -105,6 +98,14 @@ array_users.each do |user|
   puts "Created #{use.id} users"
 end
 
+array_job_category = Professional::CATEGORIES
+
+array_job_category.each do |category|
+  user = User.find(rand(User.first.id..User.last.id))
+  categ = Professional.create!(job_category: category, user: user)
+  puts "Created #{categ.id} categories"
+end
+
 1..80.times do |n|
   selectN = {
     user_id: User.find(rand(User.first.id..User.last.id)).id,
@@ -180,5 +181,5 @@ array_posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, po
 array_posts.each do |post|
   pt = Post.create(post)
   pt.save
-  puts "Created post"
+  puts "Created #{pt.id} post"
 end
