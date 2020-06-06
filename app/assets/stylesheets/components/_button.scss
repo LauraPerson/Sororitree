@@ -55,10 +55,28 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   padding: 4px 8px;
   border: solid 1px $red-pink;
   margin: auto;
-  display: block;
+  display: inline-block;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $sugar-cane-dark;
+    text-decoration: none;
+    color: $red-pink;
+  }
+}
+
+.btn-rose-outline-remove {
+  background-color: $sugar-cane;
+  font-size: 12px;
+  border-radius: 10px;
+  color: $red-pink;
+  padding: 4px 8px;
+  border: solid 1px $red-pink;
+  display: inline-block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $sugar-cane-dark;
+    text-decoration: none;
+    color: $red-pink;
   }
 }
 

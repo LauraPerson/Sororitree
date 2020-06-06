@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row mt-3">
   <div class="col-6 offset-3">
 
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+    <h2 class="text-center">Editar Perfil</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -13,33 +13,39 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <%= f.input :nickname,
-                    hint: "leave it blank if you don't want to change it",
                     required: false,
                     input_html: { autocomplete: "nickname" } %>
         <%= f.input :password,
-                    hint: "leave it blank if you don't want to change it",
+                    label: "Nova senha",
+                    hint: "Deixa vazio se não quer mudar",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
+                    label: "Confirma nova senha",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
-        <%= f.input :photo, as: :file %>
+
+        <div class="d-flex align-items-center flex-column mb-4">
+          <% if current_user.photo.attached? %>
+            <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
+            <%= link_to "Remover a foto", user_destroy_photo_path(current_user), method: :patch, remote: true, class: "btn-rose-outline-remove my-2" %>
+          <% else %>
+            <i>Você não tem foto de perfil por enquanto</i>
+            <div class="avatar-large mb-2" style="background-image: url('<%= image_path "Point_d_interrogation.jpg" %>')"></div>
+          <% end %>
+          <%= f.input :photo, as: :file, label: false%>
+        </div>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Update" %>
+        <%= f.button :submit, "Update", class: "btn-rose" %>
       </div>
     <% end %>
-
-    <h3>Cancel my account</h3>
-
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-    <%= link_to "Back", :back %>
+    
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <%= link_to "Back", :back, class: "text-red-pink" %>
+      <%= link_to "Apagar a minha conta", registration_path(resource_name), class: "btn-rose-outline-remove", data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
 
   </div>
 </div>
