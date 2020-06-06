@@ -7,7 +7,7 @@
 <div class="chat">
   <div class="chat-container d-flex">
     <div class="side-bar">
-      <% @chatrooms.each do |chat| %>
+      <% @chatrooms_ordered.each do |chat| %>
         <div>
           <% if chat.user != current_user %>
             <%= link_to chat.user.nickname, chatroom_path(chat) %>
