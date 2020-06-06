@@ -20,6 +20,13 @@ class ProfessionalsController < ApplicationController
     authorize @professional
   end
 
+  def destroy
+    @professional = Professional.find(params[:id])
+    authorize @professional
+    @professional.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
 
   def params_professional
