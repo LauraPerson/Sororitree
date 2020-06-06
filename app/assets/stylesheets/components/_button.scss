@@ -27,6 +27,8 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $red-pink-dark;
+    text-decoration: none;
+    color: white;
   }
 }
 
@@ -53,10 +55,28 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   padding: 4px 8px;
   border: solid 1px $red-pink;
   margin: auto;
-  display: block;
+  display: inline-block;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $sugar-cane-dark;
+    text-decoration: none;
+    color: $red-pink;
+  }
+}
+
+.btn-rose-outline-remove {
+  background-color: $sugar-cane;
+  font-size: 12px;
+  border-radius: 10px;
+  color: $red-pink;
+  padding: 4px 8px;
+  border: solid 1px $red-pink;
+  display: inline-block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $sugar-cane-dark;
+    text-decoration: none;
+    color: $red-pink;
   }
 }
 
@@ -80,6 +100,8 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   display: inline-block;
   box-shadow: $box-shadow;
   &:hover {
+    text-decoration: none;
+    color: white;
     background-color: #88304E;
     box-shadow: $box-shadow;
     cursor: pointer;
@@ -134,3 +156,19 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.btn-rose-edit {
+  background-color: $red-pink;
+  border-radius: 10px;
+  color: white;
+  padding: 4px 8px;
+  flex: 0 1 auto;
+  margin-left: auto;
+  border: none;
+  font-size: 12px;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+    text-decoration: none;
+    color: white;
+  }
+}

@@ -6,6 +6,22 @@ class MatchingProfilePolicy < ApplicationPolicy
   end
 
   def index?
-   true
+    true
+  end
+
+  def new?
+    true
+  end
+
+  def create?
+    true
+  end
+
+  def accepted_true?
+    true
+  end
+
+  def accepted_false?
+    true
   end
 end

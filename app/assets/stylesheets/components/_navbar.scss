@@ -15,7 +15,7 @@
   margin: 4px;
 }
 
-#inbox_button {
+#inbox-button {
 color: $light-red;
 font-size: 36px;
 padding: 4px;
@@ -46,3 +46,21 @@ margin: 4px;
   justify-content: space-evenly;
 }
 
+.not-signed-in-navbar {
+  p {
+    color: $red-pink;
+    font-weight: bold;
+  }
+}
+
+.matching-number {
+  position: relative;
+  background-color: green;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  &:hover{
+    text-decoration: none;
+  }
+}

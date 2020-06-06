@@ -16,4 +16,8 @@ class UserPolicy < ApplicationPolicy
   def toggle_helper?
     true
   end
+
+  def destroy_photo?
+    true
+  end
 end

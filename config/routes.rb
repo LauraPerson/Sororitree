@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#home'
 
-  resources :chatrooms, only: [:index, :show, :create] do
+  resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
 
+  resources :professionals, only: [:create]
+
   patch "users/:id/helper", to: "users#toggle_helper", as: :user_toggle_helper
+  patch "users/:id/remove_photo", to: "users#destroy_photo", as: :user_destroy_photo
   resources :users, only: [:show, :update] do
     resources :selected_themes, only: :create
   end
@@ -18,8 +21,12 @@ Rails.application.routes.draw do
   end
 
   resources :requests, only: [:create, :new] do
-    resources :matching_profiles, only: [:index, :create]
+    resources :matching_profiles, only: [:new, :create]
   end
+
+  resources :matching_profiles, only: [:index]
+  patch "matching_profiles/:id/accepted_true", to: "matching_profiles#accepted_true", as: :accepted_true
+  patch "matching_profiles/:id/accepted_false", to: "matching_profiles#accepted_false", as: :accepted_false
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
