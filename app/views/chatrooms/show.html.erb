@@ -13,8 +13,13 @@
               <div class="card-chat-discussion d-flex align-items-center py-2">
                 <div class="avatar mx-2" style="background-color: rgb(0, 0, 0);">
                 </div>
-                <div class="card-chat-nickname">
-                  <%= chat.user.nickname %>
+                <div class="card-chat-user">
+                  <div class="card-chat-nickname">
+                    <%= chat.user.nickname %>
+                  </div>
+                  <div class="card-chat-theme">
+                    <%= chat.theme.title %>
+                  </div>
                 </div>
               </div>
             <% end %>
@@ -23,8 +28,13 @@
               <div class="card-chat-discussion d-flex align-items-center py-2">
                 <div class="avatar mx-2" style="background-color: rgb(0, 0, 0);">
                 </div>
-                <div class="card-chat-nickname">
-                 <%= chat.guest_user.nickname %>
+                <div class="card-chat-user">
+                  <div class="card-chat-nickname">
+                    <%= chat.guest_user.nickname %>
+                  </div>
+                  <div class="card-chat-theme">
+                    <%= chat.theme.title %>
+                  </div>
                 </div>
               </div>
             <% end %>

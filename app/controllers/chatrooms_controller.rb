@@ -6,6 +6,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new
     @chatroom.guest_user = current_user
     @chatroom.user = User.find(params[:matching_user_id])
+    @chatroom.theme = Theme.find(params[:theme_id])
     authorize @chatroom
     @chatroom.save
     redirect_to chatroom_path(@chatroom)
