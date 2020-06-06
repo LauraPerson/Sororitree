@@ -8,7 +8,7 @@
   </div>
 
   <div class="container-matching-cards">
-    <%= form_tag request_matching_profiles_path, method: 'POST', class: "without-text-decoration" do %>
+    <%= form_tag request_matching_profiles_path, required: true, method: 'POST' do %>
       <%= hidden_field_tag :request_id, @request.id %>
       <% @helpers.each do |user_helper| %>
         <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
@@ -22,8 +22,32 @@
           </div>
         </label>
       <% end %>
+
       <div class="text-center mt-5">
-        <%= submit_tag "Enviar", class: "btn-request" %>
+        <button type="button" class="transparent" data-toggle="modal" data-target="#modalExemplo">
+          <%= submit_tag("Enviar", :id=>"button-modal-request", :class=>"btn-request", :name=>"submit")%>
+        </button>
       </div>
+
     <% end %>
   </div>
+</div>
+
+<!-- Include in a partial -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Seu(s) pedido(s) de ajuda foram enviados!</h5>
+      </div>
+      <div class="modal-body">
+        <h6>Enquanto aguarda as manas responderem seu pedido, veja os posts de outras manas que podem lhe ajudar! ❤️</h6>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Ok!', posts_path, class: "btn-request" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -36,11 +36,12 @@ class MatchingProfilesController < ApplicationController
   def create
     @request = Request.find(params[:request_id])
     authorize @request
-    params[:user_helper_ids].each do |user_helper_id|
-      @matching_profile = MatchingProfile.new(request_id: @request.id, user_id: user_helper_id)
-      @matching_profile.save
+    if params.has_key?(:user_helper_ids)
+      params[:user_helper_ids].each do |user_helper_id|
+        @matching_profile = MatchingProfile.new(request_id: @request.id, user_id: user_helper_id)
+        @matching_profile.save
+      end
     end
-    redirect_to posts_path
   end
 
   private

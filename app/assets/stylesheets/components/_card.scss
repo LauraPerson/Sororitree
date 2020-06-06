@@ -52,8 +52,25 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
   }
   &.active {
-    background-color: #CFACB8;
-    border: 1.5px solid $purple-medium;
+    background-color: #F2EFEB;
+    box-shadow: $box-shadow-purple;
+    border: 3px solid $purple-medium;
+  }
+}
+
+.matching-card-helper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+  border-radius: 10px;
+  background-color: #DED5CC;
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
+  &:hover {
+    background-color: #F2EFEB;
+    box-shadow: $box-shadow-purple;
+    cursor: pointer;
   }
 }
 
