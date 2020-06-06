@@ -8,20 +8,47 @@
   </div>
 
   <div class="container-matching-cards">
-    <% @helpers.each do |help| %>
-      <%= link_to request_matching_profiles_path(helper_id: help.id), method: :post, data: { confirm: "Gostaria de abrir um chat com o #{help.nickname}?" }, class: "without-text-decoration" do %>
-        <div class="matching-card">
-          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= help.photo.attached? ? (cl_image_path help.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
-          <div class="matching-info">
-            <h4 class="text-center"><%= help.nickname %></h4>
-            <h6 class="text-center"><%= DateTime.now().year - help.birth_date.year.to_i %> anos</h6>
+    <%= form_tag request_matching_profiles_path, method: 'POST' do %>
+      <%= hidden_field_tag :request_id, @request.id %>
+      <% @helpers.each do |user_helper| %>
+        <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
+        <label for="helper_user_id_<%= user_helper.id %>">
+          <div class="matching-card">
+            <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= user_helper.photo.attached? ? (cl_image_path user_helper.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+            <div class="matching-info">
+              <h4 class="text-center"><%= user_helper.nickname %></h4>
+              <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
+            </div>
           </div>
-        </div>
+        </label>
       <% end %>
+
+      <div class="text-center mt-5">
+        <button type="button" class="transparent" data-toggle="modal" data-target="#modalExemplo">
+          <%= submit_tag("Enviar", :id=>"button-modal-request", :class=>"btn-request disabled", :name=>"submit")%>
+        </button>
+      </div>
+
     <% end %>
   </div>
-  <div class="text-center">
-    <h5> Enquanto aguarda o contato para conversar com as manas veja os relatos de outras mulheres sobre o assunto. Pode lhe ajudar! </h5>
-    <%= link_to 'Posts', posts_path, class: "btn-request" %>
+</div>
+
+<!-- Include in a partial? -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Seu pedido de ajuda foi enviado!</h5>
+      </div>
+      <div class="modal-body text-center">
+        <h6>Enquanto aguarda as manas responderem seu pedido, veja os posts de outras manas.</h6>
+        <h6>Ver relatos de pessoas que passaram por situações similares pode ser de grande ajuda! ❤️</h6>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Ok!', posts_path, class: "btn-request" %>
+      </div>
+    </div>
   </div>
 </div>
+
+
