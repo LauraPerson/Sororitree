@@ -1,13 +1,31 @@
 <% if @chatroom.user != current_user %>
-  <h1> Chat with <%= @chatroom.user.nickname %></h1>
+  <div class="chat-header m-2">
+    <div class="chat-title">
+      <%= @chatroom.user.nickname %>
+    </div>
+    <div class="chat-title-category">
+      <%= @chatroom.theme.title %>
+    </div>
+  </div>
 <% elsif @chatroom.guest_user != current_user %>
-  <h1> Chat with <%= @chatroom.guest_user.nickname %></h1>
+  <div class="chat-header m-2">
+    <div class="chat-title">
+    <%= @chatroom.guest_user.nickname %>
+    </div>
+    <div class="chat-title-category">
+      <%= @chatroom.theme.title %>
+    </div>
+  </div>
 <% end %>
 
 <div class="chat">
   <div class="chat-container d-flex">
     <div class="side-bar">
-      <% @chatrooms_ordered.each do |chat| %>
+      <div class="side-bar-title mb-2">
+        Conversas
+      </div>
+      <div class="side-bar-content">
+        <% @chatrooms_ordered.each do |chat| %>
           <% if chat.user != current_user %>
             <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
               <div class="card-chat-discussion d-flex align-items-center py-2">
@@ -36,10 +54,20 @@
                     <%= chat.theme.title %>
                   </div>
                 </div>
+                <div class="card-chat-time align-self-end">
+                  <% if DateTime.now.utc.hour - chat.messages.last.created_at.hour < 24 %>
+                    <%= (chat.messages.last.created_at).strftime('%I:%M %p') %>
+                  <% elsif DateTime.now.utc.hour - chat.messages.last.created_at.hour < 168 %>
+                    <%= (chat.messages.last.created_at).day %>
+                  <% else %>
+                    <%= (chat.messages.last.created_at).strftime('%d/%m') %>
+                  <% end %>
+                </div>
               </div>
             <% end %>
           <% end %>
-      <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">
       <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">

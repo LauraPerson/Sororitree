@@ -83,6 +83,11 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   background-color: $light-brown;
   border-radius: 4px;
   &:hover {
-    background-color: $red-pink-light;
+    background-color: $brown;
   }
+}
+
+.card-chat-theme {
+  font-style: italic;
+  color: gray;
 }
