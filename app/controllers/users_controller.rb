@@ -23,8 +23,13 @@ class UsersController < ApplicationController
 
   def toggle_helper
     authorize current_user
-    current_user.toggle! (:helper)
-    redirect_to user_path(current_user)
+    if current_user.professional == true
+      professional_status == true
+    else
+      professional_status == false
+  end
+    # current_user.toggle! (:helper)
+    # redirect_to user_path(current_user)
   end
 
   def toggle_professional

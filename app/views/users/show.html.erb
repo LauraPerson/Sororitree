@@ -38,23 +38,14 @@
             <%= simple_form_for @professional do |f| %>
               <%= f.input :job_category, collection: Professional::CATEGORIES, label: "Profissão", input_html: { class: 'card-form' } %>
               <%= f.input :description, label: false, placeholder: 'Descrição', input_html: { class: 'card-form' } %>
-              <%= f.button :submit, 'Adicionar', class: 'btn-post' %>
+              <%= f.button :submit, 'Adicionar', class: 'btn-post'%>
             <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-<% else %>
-  <div class="professional_job_category">
-    <p><%= current_user.professional.job_category %></p>
-  </div>
-  <div class="professional_description">
-    <%= current_user.professional.description %>
-  </div>
 <% end %>
-
-
 
 
       <div class="d-flex align-items-center justify-content-center my-3">
