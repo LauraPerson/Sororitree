@@ -33,6 +33,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-bottom-right-radius: 0px;
   flex-grow: 1;
   box-shadow: $box-shadow;
+  overflow-y: scroll;
 }
 
 .discussion-container {

@@ -72,10 +72,17 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 
 .without-text-decoration {
   color: black;
-  margin: 1%;
-  padding: 2% 2%;
   &:hover {
     text-decoration: none;
     color: black;
+  }
+}
+
+.card-chat-discussion {
+  border-bottom: solid 0.5px gray;
+  background-color: $light-brown;
+  border-radius: 4px;
+  &:hover {
+    background-color: $red-pink-light;
   }
 }
