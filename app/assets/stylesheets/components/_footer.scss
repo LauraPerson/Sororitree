@@ -1,0 +1,61 @@
+.page-footer {
+  background-color: $background;
+  // display: flex;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+#copyright {
+  background-color: $light-gray;
+  font-size: 12px;
+  text-align: center;
+}
+
+#copyrighttext {
+  font-size: 12px;
+  text-decoration: none;
+}
+.footer-copyright {
+  position: center;
+  font-size: 20px;
+  width: 100%;
+}
+
+.contact-email {
+  position: center;
+  font-size: 20px;
+}
+
+#facebook {
+  color: $purple-dark;
+  font-size: 30px;
+  &:hover {
+    color: $purple-light;
+  }
+}
+
+#linkedin {
+  color: $purple-dark;
+  font-size: 30px;
+  &:hover {
+    color: $purple-light;
+  }
+}
+
+#instagram {
+  color: $purple-dark;
+  font-size: 30px;
+  &:hover {
+    color: $purple-light;
+  }
+}
+
+#twitter {
+  color: $purple-dark;
+  font-size: 30px;
+  &:hover {
+    color: $purple-light;
+  }
+}

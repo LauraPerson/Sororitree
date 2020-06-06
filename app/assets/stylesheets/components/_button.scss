@@ -95,16 +95,22 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 .btn-request {
   padding: 8px 16px;
   color: white;
-  background-color: #311D3F;
+  background-color: $purple-dark;
   border-radius: 8px;
   display: inline-block;
   box-shadow: $box-shadow;
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: #88304E;
+    background-color: $purple-light;
     box-shadow: $box-shadow;
     cursor: pointer;
+  }
+  &.disabled {
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    box-shadow: $box-shadow;
   }
 }
 
@@ -171,4 +177,9 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     text-decoration: none;
     color: white;
   }
+}
+
+.transparent {
+  background-color: transparent;
+  border: none;
 }

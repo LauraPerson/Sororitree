@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :professionals, only: [:create]
+  resources :professionals, only: [:create, :destroy]
+
+  patch "users/:id/professional_status", to: "users#toggle_professional", as: :user_toggle_professional
+
 
   patch "users/:id/helper", to: "users#toggle_helper", as: :user_toggle_helper
   patch "users/:id/remove_photo", to: "users#destroy_photo", as: :user_destroy_photo
