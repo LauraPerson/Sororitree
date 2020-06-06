@@ -56,11 +56,11 @@
                 </div>
                 <div class="card-chat-time align-self-end">
                   <% if DateTime.now.utc.hour - chat.messages.last.created_at.hour < 24 %>
-                    <%= (chat.messages.last.created_at).strftime('%I:%M %p') %>
+                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
                   <% elsif DateTime.now.utc.hour - chat.messages.last.created_at.hour < 168 %>
-                    <%= (chat.messages.last.created_at).day %>
+                    <%= (chat.messages.last.created_at.in_time_zone).day %>
                   <% else %>
-                    <%= (chat.messages.last.created_at).strftime('%d/%m') %>
+                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
                   <% end %>
                 </div>
               </div>
