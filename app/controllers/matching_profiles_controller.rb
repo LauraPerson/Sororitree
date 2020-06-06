@@ -23,7 +23,7 @@ class MatchingProfilesController < ApplicationController
     @matching_profile.accepted = true
     authorize @matching_profile
     @matching_profile.save
-    redirect_post chatrooms_path(matching_user_id: @matching_profile.request.user.id), options: {authenticity_token: :auto}
+    redirect_post chatrooms_path(matching_user_id: @matching_profile.request.user.id, theme_id: @matching_profile.request.theme.id), options: {authenticity_token: :auto}
   end
 
   def accepted_false
