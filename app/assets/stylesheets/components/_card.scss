@@ -6,10 +6,9 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   color: black;
   padding: 20px;
   width: 80%;
-  box-shadow: $box-shadow;
   background-color: white;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 6px 0px;;
   h6 {
     font-family: $body-font;
     font-size: 17px;
@@ -115,4 +114,27 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 
 .hidden {
   display: none;
+}
+
+.post-name-avatar {
+  font-weight: bold;
+  color: $purple-medium;
+  font-size: 18px;
+}
+
+.post-time {
+  p {
+    margin-left: 10%;
+    font-family: $body-font;
+    font-size: 12px;
+    color: $gray;
+  }
+}
+
+.font-theme {
+  p {
+    font-family: $body-font;
+    font-size: 13px;
+    color: $purple-medium;
+  }
 }

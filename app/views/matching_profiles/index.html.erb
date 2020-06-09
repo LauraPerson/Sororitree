@@ -11,7 +11,7 @@
     <% @matching_profiles.each do |matching| %>
       <% if matching.accepted.nil? %>
         <div class="matching-card-helper">
-          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= matching.user.photo.attached? ? (cl_image_path matching.user.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+          <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= matching.user.photo.attached? ? (cl_image_path matching.user.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
           <div class="matching-info">
             <h4 class="text-center"><%= matching.request.user.nickname %></h4>
             <h6 class="text-center"><%= DateTime.now().year - matching.request.user.birth_date.year.to_i %> anos</h6>
