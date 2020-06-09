@@ -2,7 +2,7 @@
   <div class="container-background" style="background-image: url(<%= image_path 'womem_handsup1.png' %>)">
   </div>
   <div class="container-posts">
-    <div class="py-5 px-3">
+    <div class="py-3 px-3">
       <h1> Sororitree Posts </h1>
     </div>
 
@@ -11,6 +11,13 @@
         <%= f.input :content, label: false, placeholder: 'Nos conte sua história...', input_html: { class: 'card-form' } %>
         <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
         <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
+      <% end %>
+    </div>
+
+    <div class="search-bar text-center mt-2 mb-5">
+      <%= form_tag posts_path, method: :get do %>
+        <%= text_field_tag :query, "", placeholder: "Insira um assunto", required: true %>
+        <button class="btn-post-search">Filtre</button>
       <% end %>
     </div>
 
