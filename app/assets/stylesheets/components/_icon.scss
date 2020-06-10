@@ -23,11 +23,11 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 .icon-help-accept {
   margin: 2px;
   font-size: 22px;
-  color: green;
+  color: $purple-dark;
   &:hover {
     text-decoration: none;
     text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
-    color: $blue-green-dark;
+    color: $purple-light;
   }
 }
 

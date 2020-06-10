@@ -7,9 +7,10 @@
     <h2> Manas pedindo ajuda </h2>
   </div>
 
-  <div class="container-matching-cards">
+  <div class="container-matching-cards-helper">
     <% @matching_profiles.each do |matching| %>
       <% if matching.accepted.nil? %>
+
         <div class="row">
           <div class="col-md-12">
             <div class="matching-card-helper justify-content-around">
@@ -20,16 +21,23 @@
                 <p class="text-center mb-0"><%= matching.request.theme.title %></p>
               </div>
               <div class="icons-match text-center">
-                <%= link_to accepted_true_path(matching), method: :patch, class: "icon-help-accept" do %>
+                <%= link_to accepted_true_path(matching), method: :patch, class: "icon-help-accept", remote: true do %>
                   <i class="fas fa-check"></i>
                 <% end %>
-                <%= link_to accepted_false_path(matching), method: :patch, class: "icon-help-accept" do %>
+                <%= link_to accepted_false_path(matching), method: :patch, class: "icon-help-accept", remote: true do %>
                   <i class="fa fa-times"></i>
                 <% end %>
               </div>
             </div>
           </div>
-          </div>
+        </div>
+
+      <% else %>
+
+        <div class="matching-header text-center">
+          <h3> Obrigada! ❤️ <br> Não há manas precisando de ajuda no momento! </h3>
+        </div>
+
       <% end %>
     <% end %>
   </div>
