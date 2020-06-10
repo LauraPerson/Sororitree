@@ -11,10 +11,13 @@
         <% end %>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <div class="avatar-large" style="background-image: url('<%= current_user.photo.attached? ? (cl_image_path current_user.photo.key, crop: :fill) : (image_path "Women/#{rand(14)}.jpg", crop: :fill) %>')"></div>
-        <div class="card-user-information ml-2">
-          INFO ?
+      <% if current_user.photo.attached? %>
+        <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
+      <% else %>
+        <div class="avatar-large">
+          <p><%= current_user.nickname %></p>
         </div>
+      <% end %>
       </div>
       <div class="button-help text-center my-4">
         <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-post"%>
@@ -95,10 +98,13 @@
         <h1><%= @user.nickname %></h1>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <div class="avatar-large" style="background-image: url('<%= @user.photo.attached? ? (cl_image_path @user.photo.key, crop: :fill) : (image_path "Women/#{rand(14)}.jpg", crop: :fill) %>')"></div>
-        <div class="card-user-information ml-2">
-          INFO?
-        </div>
+        <% if current_user.photo.attached? %>
+          <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
+        <% else %>
+          <div class="avatar-large">
+            <p><%= current_user.nickname %></p>
+          </div>
+        <% end %>
       </div>
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if @user.helper == false %>

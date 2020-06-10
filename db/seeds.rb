@@ -130,3 +130,9 @@ Np = posts_content.count
   pt.save
   puts "Created #{pt.id} post"
 end
+
+
+(0..30).each do |n|
+  avatar = Avatar.create(filename: "avatar_#{n}")
+  puts "create #{avatar.id} avatar"
+end

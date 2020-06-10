@@ -12,6 +12,13 @@
   background-size: cover;
   background-position: center;
   border: outset white 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vh;
+  text-overflow: ellipsis;
+  color: white;
+  background-color: black;
 }
 .avatar-bordered {
   width: 40px;

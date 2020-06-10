@@ -138,3 +138,11 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
     color: $purple-medium;
   }
 }
+
+.card-avatar {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+}

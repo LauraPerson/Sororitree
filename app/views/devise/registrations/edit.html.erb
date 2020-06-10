@@ -31,9 +31,39 @@
             <%= link_to "Remover a foto", user_destroy_photo_path(current_user), method: :patch, remote: true, class: "btn-rose-outline-remove my-2" %>
           <% else %>
             <i>Você não tem foto de perfil por enquanto</i>
-            <div class="avatar-large mb-2" style="background-image: url('<%= image_path "Point_d_interrogation.jpg" %>')"></div>
+            <div class="avatar-large">
+              <p><%= current_user.nickname %></p>
+            </div>
           <% end %>
           <%= f.input :photo, as: :file, label: false%>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Addicione um avatar
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Escolhe seu avatar</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <% Avatar.all.each do |a| %>
+                        <div class="col-md-3 mb-2">
+                          <%= link_to profile_avatars_path(avatar_id: a.id), method: :post do %>
+                            <div class="card-avatar" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= image_path "Avatars/#{a.filename}.png" %>')"></div>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
