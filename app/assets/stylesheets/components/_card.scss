@@ -37,11 +37,13 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .matching-card {
+  margin: 0 auto;
+  margin-right: 18px;
+  margin-bottom: 18px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 20vw;
-  border-radius: 8px;
+  width: 15vw;
+  border-radius: 10px;
   background-color: #DED5CC;
   opacity: 0.9;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
@@ -57,11 +59,31 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.matching-header{
+  padding: 8% 2% 2% 2%;
+  h1 {
+    font-family: $body-font;
+  }
+}
+
+.matching-info {
+  margin: 0 auto;
+  padding: 5% 5%;
+  h5 {
+    font-family: $body-font;
+    font-weight: bold;
+  }
+  h6 {
+    font-family: $body-font;
+    font-size: 14px;
+  }
+}
+
 .matching-card-helper {
   width: 150px;
-  height: 205px;
-  margin: 5px 10px;
-  padding: 3% 2% 2% 2%;
+  height: 210px;
+  margin: 5px 15px;
+  padding: 6% 2% 5% 2%;
   border-radius: 8px;
   background-color: #DED5CC;
   opacity: 0.9;
@@ -72,14 +94,7 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   }
 }
 
-.matching-header{
-  padding: 8% 2% 2% 2%;
-  h1 {
-    font-family: $body-font;
-  }
-}
-
-.matching-info {
+.matching-info-helper {
   width: 100%;
   padding: 1% 5%;
   h5 {
