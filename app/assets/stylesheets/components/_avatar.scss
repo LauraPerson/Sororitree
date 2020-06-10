@@ -1,10 +1,13 @@
-.avatar {
+.avatar-chat {
   width: 35px;
   height: 35px;
   object-fit: cover;
   border-radius: 50%;
   padding: 6px;
+  background-position: center;
+  background-size: cover;
 }
+
 .avatar-large {
   height: 30vh;
   width: 30vh;
