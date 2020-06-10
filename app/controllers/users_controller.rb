@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @profile_avatar = ProfileAvatar.find_by(user: current_user)
     authorize current_user
     @user = User.find(params[:id])
     @selected_theme = SelectedTheme.new

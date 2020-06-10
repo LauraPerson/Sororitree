@@ -5,7 +5,6 @@ const checkBoxes = (boxes) => {
       checktrue = true;
     };
   });
-  console.log(checktrue);
   return checktrue;
 };
 
@@ -14,13 +13,10 @@ const checkBtnRequest = () => {
     const boxes = document.querySelectorAll('input[type=checkbox]');
     const btnModal = document.getElementById("button-modal-request");
     const checking = checkBoxes(boxes);
-    console.log(checking);
     if ( checking === true ) {
-        console.log("checkBoxes(boxes) == true ");
         btnModal.disabled = false;
         btnModal.classList.remove("disabled");
     } else{
-        console.log("checkBoxes(boxes) == false ");
         btnModal.disabled = true;
         btnModal.classList.add("disabled");
     };

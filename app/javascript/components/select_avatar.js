@@ -16,6 +16,19 @@ const cardAvatarHover = () => {
   }
 }
 
+const cardAvatarSelect = () => {
+  if ($(".card-avatar")) {
+    $('input:checkbox').click(function() {
+      console.log(this);
+      $('input:checkbox').not(this).prop('checked', false);
+      const label = document.querySelector(`label[for="profile_avatar_avatar_id_${this.value}"]`)
+      console.log(label);
+      label.classList.add("active");
+      $('label').not(label).attr('class', 'card-avatar');
+    });
+  }
+}
+
 const checkBoxes = (boxes) => {
   let checktrue = false;
   boxes.forEach((box) => {
@@ -56,17 +69,6 @@ const initBtnAvatar = () => {
     };
   };
 };
-
-const cardAvatarSelect = () => {
-  if ($(".card-avatar")) {
-    $('input:checkbox').click(function() {
-      $('input:checkbox').not(this).prop('checked', false);
-      const label = document.querySelector(`label[for="profile_avatar_avatar_id_${this.value}"]`)
-      label.classList.add("active");
-      $('label').not(label).attr('class', 'card-avatar');
-    });
-  }
-}
 
 
 export { cardAvatarHover, cardAvatarSelect, initBtnAvatar };

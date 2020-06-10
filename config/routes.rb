@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   patch "users/:id/helper", to: "users#toggle_helper", as: :user_toggle_helper
   patch "users/:id/remove_photo", to: "users#destroy_photo", as: :user_destroy_photo
-  resources :users, only: [:show, :update] do
+  resources :users, only: [:show] do
     resources :selected_themes, only: :create
   end
   resources :selected_themes, only: :destroy

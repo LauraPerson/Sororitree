@@ -7,6 +7,10 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  def edit
+    super
+  end
+
   def update
     super
   end
