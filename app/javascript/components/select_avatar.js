@@ -19,12 +19,13 @@ const cardAvatarHover = () => {
 const cardAvatarSelect = () => {
   if ($(".card-avatar")) {
     $('input:checkbox').click(function() {
-      console.log(this);
-      $('input:checkbox').not(this).prop('checked', false);
-      const label = document.querySelector(`label[for="profile_avatar_avatar_id_${this.value}"]`)
-      console.log(label);
-      label.classList.add("active");
-      $('label').not(label).attr('class', 'card-avatar');
+      // Add this condition not to modify other checkbox than avatar (ex: selected_theme)
+      if(this.name.includes("avatar")) {
+        $('input:checkbox').not(this).prop('checked', false);
+        const label = document.querySelector(`label[for="profile_avatar_avatar_id_${this.value}"]`)
+        label.classList.add("active");
+        $('label').not(label).attr('class', 'card-avatar');
+      }
     });
   }
 }
