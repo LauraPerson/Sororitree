@@ -1,6 +1,6 @@
 <div class="container-page">
 
-  <div class="container-background" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'women_hug.png' %>)">
+  <div class="container-background" style="background-image: url(<%= image_path 'women_hug.png' %>)">
   </div>
 
   <div class="matching-header text-center">
@@ -10,11 +10,11 @@
   <div class="container-matching-cards">
     <%= form_tag request_matching_profiles_path, method: 'POST' do %>
       <%= hidden_field_tag :request_id, @request.id %>
-      <% @helpers.each do |user_helper| %>
+      <% @helpers.sort_by { rand }.each do |user_helper| %>
         <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
         <label for="helper_user_id_<%= user_helper.id %>">
           <div class="matching-card">
-            <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= user_helper.photo.attached? ? (cl_image_path user_helper.photo.key, crop: :fill) : (image_path "avatar.png", crop: :fill) %>')"></div>
+            <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= user_helper.photo.attached? ? (cl_image_path user_helper.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
             <div class="matching-info">
               <h4 class="text-center"><%= user_helper.nickname %></h4>
               <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>

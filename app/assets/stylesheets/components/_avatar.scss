@@ -1,6 +1,9 @@
 .avatar {
-  width: 40px;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
   border-radius: 50%;
+  padding: 6px;
 }
 .avatar-large {
   height: 30vh;
@@ -24,9 +27,9 @@
 }
 
 .avatar-small img {
-   width: 55px;
-   height: 55px;
-   object-fit: cover;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
   border-radius: 50%;
   padding: 6px;
 }
@@ -34,6 +37,14 @@
 .avatar-matching {
   height: 70px;
   width: 70px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.avatar-post {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;

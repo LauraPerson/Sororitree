@@ -67,6 +67,23 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     box-shadow: $box-shadow;
     background-color: $red-pink-dark;
     text-decoration: none;
+    color: $sugar-cane;
+    cursor: pointer;
+  }
+}
+
+.btn-post-search {
+  padding: 2px 5px;
+  color: white;
+  background-color: #311D3F;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: $box-shadow;
+  &:hover {
+    background-color: #88304E;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    text-decoration: none;
     color: white;
   }
 }
@@ -84,6 +101,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background-color: $red-pink-dark;
     text-decoration: none;
     color: white;
+    cursor: pointer;
   }
 }
 
@@ -100,6 +118,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $red-pink-dark;
+    cursor: pointer;
   }
 }
 
@@ -116,6 +135,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background-color: $sugar-cane-dark;
     text-decoration: none;
     color: $red-pink;
+    cursor: pointer;
   }
 }
 
@@ -132,6 +152,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background-color: $sugar-cane-dark;
     text-decoration: none;
     color: $red-pink;
+    cursor: pointer;
   }
 }
 
@@ -144,6 +165,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   margin: auto;
   display: block;
   &:hover {
+    cursor: pointer;
   }
 }
 
@@ -178,6 +200,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     text-decoration: none;
     background-color: $sugar-cane-dark;
     color: black;
+    cursor: pointer;
   }
 }
 
@@ -196,6 +219,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background-color: $red-pink-dark;
     text-decoration: none;
     color: white;
+    cursor: pointer;
   }
 }
 
@@ -215,6 +239,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     color: $light-brown;
     border: 1px solid $purple-medium;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 
@@ -232,6 +257,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background-color: $red-pink-dark;
     text-decoration: none;
     color: white;
+    cursor: pointer;
   }
 }
 

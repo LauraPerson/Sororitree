@@ -1,21 +1,73 @@
 <% if @chatroom.user != current_user %>
-  <h1> Chat with <%= @chatroom.user.nickname %></h1>
+  <div class="chat-header m-2">
+    <div class="chat-title">
+      <%= @chatroom.user.nickname %>
+    </div>
+    <div class="chat-title-category">
+      <%= @chatroom.theme.title %>
+    </div>
+  </div>
 <% elsif @chatroom.guest_user != current_user %>
-  <h1> Chat with <%= @chatroom.guest_user.nickname %></h1>
+  <div class="chat-header m-2">
+    <div class="chat-title">
+    <%= @chatroom.guest_user.nickname %>
+    </div>
+    <div class="chat-title-category">
+      <%= @chatroom.theme.title %>
+    </div>
+  </div>
 <% end %>
 
 <div class="chat">
   <div class="chat-container d-flex">
     <div class="side-bar">
-      <% @chatrooms.each do |chat| %>
-        <div>
+      <div class="side-bar-title mb-2">
+        Conversas
+      </div>
+      <div class="side-bar-content">
+        <% @chatrooms_ordered.each do |chat| %>
           <% if chat.user != current_user %>
-            <%= link_to chat.user.nickname, chatroom_path(chat) %>
+            <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
+              <div class="card-chat-discussion d-flex align-items-center py-2">
+                <div class="avatar mx-2" style="background-color: rgb(0, 0, 0);">
+                </div>
+                <div class="card-chat-user">
+                  <div class="card-chat-nickname">
+                    <%= chat.user.nickname %>
+                  </div>
+                  <div class="card-chat-theme">
+                    <%= chat.theme.title %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           <% elsif chat.guest_user != current_user %>
-            <%= link_to chat.guest_user.nickname, chatroom_path(chat) %>
+            <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
+              <div class="card-chat-discussion d-flex align-items-center py-2">
+                <div class="avatar mx-2" style="background-color: rgb(0, 0, 0);">
+                </div>
+                <div class="card-chat-user">
+                  <div class="card-chat-nickname">
+                    <%= chat.guest_user.nickname %>
+                  </div>
+                  <div class="card-chat-theme">
+                    <%= chat.theme.title %>
+                  </div>
+                </div>
+                <div class="card-chat-time align-self-end">
+                  <% if DateTime.now.utc.hour - chat.messages.last.created_at.hour < 24 %>
+                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
+                  <% elsif DateTime.now.utc.hour - chat.messages.last.created_at.hour < 168 %>
+                    <%= (chat.messages.last.created_at.in_time_zone).day %>
+                  <% else %>
+                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">
       <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
