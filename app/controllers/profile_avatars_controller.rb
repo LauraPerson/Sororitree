@@ -1,7 +1,7 @@
 class ProfileAvatarsController < ApplicationController
   def new
-    profile_avatar = ProfileAvatar.new()
-    authorize profile_avatar
+    @profile_avatar = ProfileAvatar.new()
+    authorize @profile_avatar
   end
 
   def create

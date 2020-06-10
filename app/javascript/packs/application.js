@@ -9,7 +9,7 @@ import { matchChoice } from '../components/match_choice';
 import { initBtnRequest } from '../components/init_btn_request';
 import "bootstrap";
 import { initChatroomCable } from '../channels/chatroom_channel';
-import { cardAvatarHover, cardAvatarSelect } from '../components/card_avatar';
+import { cardAvatarHover, cardAvatarSelect, initBtnAvatar } from '../components/select_avatar';
 
 document.addEventListener('turbolinks:load', () => {
   transparentNabarHome();
@@ -19,4 +19,5 @@ document.addEventListener('turbolinks:load', () => {
   matchChoice();
   initBtnRequest();
   initChatroomCable();
+  initBtnAvatar();
 });

@@ -145,6 +145,7 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   border-radius: 50%;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
   &.active {
     border: $red-pink solid 3px;
   }
