@@ -11,12 +11,19 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
+}
+
+.avatar-large-black {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
   border: outset white 3px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 6vh;
-  text-overflow: ellipsis;
   color: white;
   background-color: black;
 }

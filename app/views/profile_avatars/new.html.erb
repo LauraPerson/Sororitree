@@ -1,0 +1,17 @@
+<div class="row mb-3">
+  <div class="col-6 offset-3">
+  <div class="title text-center my-3">
+    <h1>Choose your avatar</h1>
+  </div>
+    <div class="row">
+      <% Avatar.all.each do |a| %>
+        <div class="col-md-3 mb-4">
+          <%= link_to profile_avatars_path(avatar_id: a.id), method: :post do %>
+            <div class="card-avatar" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= image_path "Avatars/#{a.filename}.png" %>')"></div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>
+</div>

@@ -24,10 +24,6 @@ class ApplicationController < ActionController::Base
   # end
 
   private
-  
-  def after_sign_in_path_for(resource)
-    user_path(resource)
-  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/

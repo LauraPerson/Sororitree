@@ -11,10 +11,10 @@
         <% end %>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-      <% if current_user.photo.attached? %>
-        <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
+      <% if current_user.avatar %>
+        <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{current_user.avatar.id}", crop: :fill %>')"></div>
       <% else %>
-        <div class="avatar-large">
+        <div class="avatar-large-black">
           <p><%= current_user.nickname %></p>
         </div>
       <% end %>
@@ -98,10 +98,10 @@
         <h1><%= @user.nickname %></h1>
       </div>
       <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <% if current_user.photo.attached? %>
-          <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
+        <% if current_user.avatar %>
+          <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')"></div>
         <% else %>
-          <div class="avatar-large">
+          <div class="avatar-large-black">
             <p><%= current_user.nickname %></p>
           </div>
         <% end %>

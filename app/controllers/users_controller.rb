@@ -21,11 +21,11 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def destroy_photo
-    authorize current_user
-    current_user.photo.purge
-    redirect_to edit_user_registration_path(current_user)
-  end
+  # def destroy_photo
+  #   authorize current_user
+  #   current_user.photo.purge
+  #   redirect_to edit_user_registration_path(current_user)
+  # end
 
   # def toggle_professional
   #   authorize current_user

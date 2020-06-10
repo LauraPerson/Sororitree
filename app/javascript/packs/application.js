@@ -9,11 +9,12 @@ import { matchChoice } from '../components/match_choice';
 import { initBtnRequest } from '../components/init_btn_request';
 import "bootstrap";
 import { initChatroomCable } from '../channels/chatroom_channel';
-import { cardAvatar } from '../components/card_avatar';
+import { cardAvatarHover, cardAvatarSelect } from '../components/card_avatar';
 
 document.addEventListener('turbolinks:load', () => {
   transparentNabarHome();
-  cardAvatar();
+  cardAvatarHover();
+  cardAvatarSelect();
   themeChoice();
   matchChoice();
   initBtnRequest();

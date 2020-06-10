@@ -14,7 +14,7 @@
         <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
         <label for="helper_user_id_<%= user_helper.id %>">
           <div class="matching-card">
-            <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= user_helper.photo.attached? ? (cl_image_path user_helper.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
+            <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= user_helper.photo.attached? ? (cl_image_path user_helper.photo.key, crop: :fill) : (image_path "Avatars/avatar_#{rand(30)}.png", crop: :fill) %>')"></div>
             <div class="matching-info">
               <h4 class="text-center"><%= user_helper.nickname %></h4>
               <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>

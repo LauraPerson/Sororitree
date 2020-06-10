@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   resources :matching_profiles, only: [:index]
   patch "matching_profiles/:id/accepted_true", to: "matching_profiles#accepted_true", as: :accepted_true
   patch "matching_profiles/:id/accepted_false", to: "matching_profiles#accepted_false", as: :accepted_false
-  resources :profile_avatars, only: [ :create ]
+  resources :profile_avatars, only: [ :create, :new, :update]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
