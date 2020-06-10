@@ -1,4 +1,6 @@
 
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
 .home-title {
   font-family: $headers_font;
   color: $red-pink;
@@ -40,7 +42,7 @@
 }
 
 .banner-home-infos {
-  height: 30%;
+  height: 21%;
   background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.4))
 }
 
@@ -60,9 +62,21 @@
 }
 
 .post-presentation {
-  margin-left: 20vh;
-  margin-right: 20vh;
-  background: rgba(255,255,255,1);
+  height: 300px;
+  width: 192vh;
+  text-align: center;
+  margin: 0 auto;
+  display: box;
+  box-align: center;
+  border-radius: 10px;
+  background-color: rgba(248, 255, 248, 0.2);
+  box-shadow: $box-shadow;
 }
 
+.grid-post {
+  background: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
 
