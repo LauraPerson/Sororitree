@@ -1,15 +1,71 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
+
+// # button Sign up / Sign In / Log in /Pedir Ajuda /send message in chat##
+// # --> Important things
+
+// .btn-help-rose {
+//   background-color: $red-pink;
+//   border-radius: 8px;
+//   color: white;
+//   border: none;
+//   display: block;
+//   &:hover {
+//     box-shadow: $box-shadow;
+//     background-color: $red-pink-dark;
+//     text-decoration: none;
+//     color: white;
+//   }
+// }
+
+// # button Post/Enviar/Enviar modals ##
+// # --> All the other less important things
+
+// .btn-post-purple {
+//   color: white;
+//   background-color: $purple-dark;
+//   border-radius: 8px;
+//   box-shadow: $box-shadow;
+//   &:hover {
+//     text-decoration: none;
+//     color: white;
+//     background-color: $purple-light;
+//     box-shadow: $box-shadow;
+//     cursor: pointer;
+//   }
+// }
+
+
+// # button deletar /Sign out / Log out / Excluir ##
+
+// .btn-delete-brown {
+//   border: 1px solid $darker-brown;
+//   background-color: $light-brown;
+//   color: $darker-brown;
+//   text-align: center;
+//   border-radius: 8px;
+//   &:hover {
+//     background-color: $darker-brown;
+//     color: $white;
+//     border: 1.5px solid $darker-brown;
+//     text-decoration: none;
+//   }
+// }
+
+// ******************************************************************************
+
+
 .btn-post {
-  padding: 8px 16px;
-  color: white;
-  background-color: #311D3F;
+  background-color: $red-pink;
   border-radius: 8px;
+  color: white;
+  border: none;
   display: inline-block;
-  box-shadow: $box-shadow;
+  padding: 8px 16px;
+
   &:hover {
-    background-color: #88304E;
     box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
     text-decoration: none;
     color: $sugar-cane;
     cursor: pointer;
@@ -28,13 +84,13 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     box-shadow: $box-shadow;
     cursor: pointer;
     text-decoration: none;
-    color: $sugar-cane;
+    color: white;
   }
 }
 
 .btn-rose {
   background-color: $red-pink;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   padding: 4px 8px;
   border: none;
@@ -51,7 +107,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .btn-rose-wradius-left {
   background-color: $red-pink;
-  border-radius: 4px;
+  border-radius: 8px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   color: white;
@@ -68,7 +124,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .btn-rose-outline {
   background-color: $sugar-cane;
-  border-radius: 10px;
+  border-radius: 8px;
   color: $red-pink;
   padding: 4px 8px;
   border: solid 1px $red-pink;
@@ -86,7 +142,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 .btn-rose-outline-remove {
   background-color: $sugar-cane;
   font-size: 12px;
-  border-radius: 10px;
+  border-radius: 8px;
   color: $red-pink;
   padding: 4px 8px;
   border: solid 1px $red-pink;
@@ -102,7 +158,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .btn-purple-medium {
   background-color: $purple-medium;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   padding: 4px 8px;
   border: none;
@@ -139,7 +195,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   background-color: $sugar-cane;
   color: black;
   padding: 8px;
-  border-radius: 4px;
+  border-radius: 8px;
   &:hover {
     text-decoration: none;
     background-color: $sugar-cane-dark;
@@ -149,23 +205,24 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 .helpbutton {
-  border: 1px solid $purple-medium;
-  background-color: $light-brown;
-  color: $purple-medium;
-  text-align: center;
+  background-color: $red-pink;
   border-radius: 8px;
+  color: white;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  display: block;
   height: 36px;
   width: 64px;
-  margin-top: 8px;
-  padding: 6px;
   &:hover {
-    background-color: $purple-light;
-    color: $light-brown;
-    border: 1.5px solid $purple-medium;
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
     text-decoration: none;
+    color: white;
     cursor: pointer;
   }
 }
+
 
 #button-modal {
   border: 1px solid $purple-medium;
@@ -188,7 +245,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .btn-rose-edit {
   background-color: $red-pink;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   padding: 4px 8px;
   flex: 0 1 auto;

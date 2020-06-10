@@ -1,4 +1,6 @@
 
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
 .home-title {
   font-family: $headers_font;
   color: $red-pink;
@@ -40,19 +42,41 @@
 }
 
 .banner-home-infos {
-  height: 30%;
+  height: 21%;
+  background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.4))
 }
 
 .banner-home-arms {
   height: 22%;
+  background: linear-gradient(rgba(255,255,255,0.4), rgba(248,255,248,0))
 }
 
 .banner-home-hands {
   height: 24%;
+  background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.5))
 }
 
 .banner-home-heart {
   height: 24%;
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(248,255,248,0))
 }
 
+.post-presentation {
+  height: 300px;
+  width: 192vh;
+  text-align: center;
+  margin: 0 auto;
+  display: box;
+  box-align: center;
+  border-radius: 10px;
+  background-color: rgba(248, 255, 248, 0.2);
+  box-shadow: $box-shadow;
+}
+
+.grid-post {
+  background: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
 
