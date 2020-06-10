@@ -21,7 +21,7 @@
                 required: true,
                 input_html: { autocomplete: "new-password" },
                 label: "Confirmar a senha" %>
-    <%= f.input :birth_date, start_year: Date.today.year - 90,
+    <%= f.input :birth_date, start_year: Date.today.year - 40,
                 end_year: Date.today.year - 12,
                 order: [:day, :month, :year],
                 required: true,
