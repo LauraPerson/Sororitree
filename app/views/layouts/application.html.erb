@@ -14,7 +14,9 @@
   <body>
     <div class="flex-wrapper">
       <div>
-        <%= render 'shared/navbar' %>
+        <% if params[:action] != "new" || params[:controller] != "profile_avatars" %>
+          <%= render 'shared/navbar' %>
+        <% end %>
         <%= render 'shared/flashes' %>
         <%= yield %>
       </div>

@@ -51,6 +51,15 @@
   padding: 6px;
 }
 
+.avatar-small-black {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: black;
+}
+
 .avatar-matching {
   height: 70px;
   width: 70px;
