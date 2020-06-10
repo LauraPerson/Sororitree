@@ -41,18 +41,28 @@
 
 .banner-home-infos {
   height: 30%;
+  background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.4))
 }
 
 .banner-home-arms {
   height: 22%;
+  background: linear-gradient(rgba(255,255,255,0.4), rgba(248,255,248,0))
 }
 
 .banner-home-hands {
   height: 24%;
+  background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.5))
 }
 
 .banner-home-heart {
   height: 24%;
+  background: linear-gradient(rgba(255,255,255,0.5), rgba(248,255,248,0))
+}
+
+.post-presentation {
+  margin-left: 20vh;
+  margin-right: 20vh;
+  background: rgba(255,255,255,1);
 }
 
 
