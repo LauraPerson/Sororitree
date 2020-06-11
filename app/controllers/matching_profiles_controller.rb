@@ -31,6 +31,7 @@ class MatchingProfilesController < ApplicationController
     @matching_profile.accepted = false
     authorize @matching_profile
     @matching_profile.save
+    redirect_to matching_profiles_path
   end
 
   def create

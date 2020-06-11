@@ -54,7 +54,7 @@ birthdates = ["24 Sep 1955", "06 Jan 1960", "20 Feb 1965", "28 Jun 1970", "24 Oc
 
 N = names.count
 (0..(N-1)).each do |i|
-  random = rand(Avatar.count)
+  random = rand(1..Avatar.count)
   user = {
     nickname: names[i],
     email: emails[i],

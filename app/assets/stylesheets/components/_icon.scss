@@ -1,3 +1,5 @@
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+
 .icon-helper {
   color: $blue-green;
   &:hover {
@@ -16,4 +18,20 @@
     color: $sugar-cane-dark;
     text-decoration: none;
   }
+}
+
+.icon-help-accept {
+  margin: 2px;
+  font-size: 22px;
+  color: $purple-dark;
+  &:hover {
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    color: $purple-light;
+  }
+}
+
+.icons-match {
+  margin: 0 auto;
+  margin-bottom: 5px;
 }

@@ -37,11 +37,12 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .matching-card {
+  margin: 0 auto;
+  margin-right: 18px;
+  margin-bottom: 18px;
   display: flex;
-  height: 120px;
-  justify-content: center;
   align-items: center;
-  width: 20vw;
+  width: 15vw;
   border-radius: 10px;
   background-color: #DED5CC;
   opacity: 0.9;
@@ -55,6 +56,27 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
     background-color: #F2EFEB;
     box-shadow: $box-shadow-purple;
     border: 3px solid $purple-medium;
+  }
+}
+
+.matching-header{
+  margin: 0 auto;
+  padding: 8% 2% 2% 2%;
+  h1 {
+    font-family: $body-font;
+  }
+}
+
+.matching-info {
+  margin: 0 auto;
+  padding: 5% 5%;
+  h5 {
+    font-family: $body-font;
+    font-weight: bold;
+  }
+  h6 {
+    font-family: $body-font;
+    font-size: 14px;
   }
 }
 
@@ -81,35 +103,32 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .matching-card-helper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30vw;
-  border-radius: 10px;
+  width: 150px;
+  height: 210px;
+  margin: 5px 15px;
+  padding: 10px 5px;
+  border-radius: 8px;
   background-color: #DED5CC;
   opacity: 0.9;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
   &:hover {
-    background-color: #F2EFEB;
     box-shadow: $box-shadow-purple;
     cursor: pointer;
   }
 }
 
-.matching-header{
-  padding: 2% 5%;
-  h1 {
-    font-family: $body-font;
-  }
-}
-
-.matching-info {
-  padding: 5% 5%;
-  h4 {
+.matching-info-helper {
+  width: 100%;
+  padding: 1% 5%;
+  h5 {
     font-family: $body-font;
     font-weight: bold;
   }
   h6 {
+    font-family: $body-font;
+  }
+  p {
+    font-size:0.8em;
     font-family: $body-font;
   }
 }
