@@ -2,31 +2,30 @@
   <div class="container-background" style="background-image: url(<%= image_path 'womem_handsup1.png' %>)">
   </div>
   <div class="container-posts">
-    <div class="py-3 px-3">
-      <h1> Sororitree Posts </h1>
+    <div class="text-center mb-4 py-3 px-3">
+      <h4>Confira os posts das manas com relatos e informações que podem lhe ajudar.</h4>
+      <h3>Juntas somos mais fortes!</h3>
     </div>
 
-    <div class="cards-form">
-      <%= simple_form_for @post, url: {controller: "posts", action: "create"} do |f| %>
-        <%= f.input :content, label: false, placeholder: 'Nos conte sua história...', input_html: { class: 'card-form' } %>
-        <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
-        <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
-      <% end %>
-    </div>
+    <div class="d-flex justify-content-around align-items-baseline">
+      <button type="button" class="btn-post" id="button-modal" data-toggle="modal" data-target="#exampleModal">
+        Criar Publicação
+      </button>
 
-    <div class="search-bar text-center mt-2 mb-5">
-      <%= form_tag posts_path, method: :get do %>
-        <%= text_field_tag :query, "", placeholder: "Insira um assunto", required: true %>
-        <button class="btn-post-search">Filtre</button>
-      <% end %>
+      <div class="posts-search mt-2 mb-5">
+        <%= form_tag posts_path, method: :get do %>
+          <%= text_field_tag :query, "", placeholder: "Insira um assunto", required: true %>
+          <button class="btn-post">Filtre</button>
+        <% end %>
+      </div>
     </div>
 
     <div>
-      <% @posts.each do |post| %>
+      <% @posts.order('created_at DESC').each do |post| %>
       <div class="posts-cards mt-4">
         <div class="d-flex justify-content-between">
           <div class="d-flex align-self-center">
-            <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= post.user.photo.attached? ? (cl_image_path post.user.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
+            <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= image_path("Avatars/avatar_#{post.user.avatar.id}.png", crop: :fill) %>')"></div>
             <div class="post-name-avatar align-self-center"><p><%= post.user.nickname %></p></div>
           </div>
           <div class="font-theme">
@@ -40,12 +39,35 @@
           <% elsif time_min > 60 && time_min < 1440 %>
             <p>Postado: <%= (time_min/60).round %> h</p>
           <% else %>
-            <p>Postado: <%= post.created_at.strftime("%d-%m-%Y") %></p>
+            <p><%= post.created_at.strftime(" Postado em %d-%m-%Y") %> <%= post.created_at.strftime("às %I:%M") %></p>
           <% end %>
         </div>
         <p><%= post.content %></p>
       </div>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nova Publicação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="cards-form">
+            <%= simple_form_for (@post), url: {controller: "posts", action: "create"} do |f| %>
+              <%= f.input :content, label: false, placeholder: 'Nos conte sua história...', input_html: { class: 'card-form' } %>
+              <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
+              <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
+            <% end %>
+          </div>
+      </div>
     </div>
   </div>
 </div>

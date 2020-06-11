@@ -24,19 +24,7 @@
                     label: "Confirma nova senha",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
-
-        <div class="d-flex align-items-center flex-column mb-4">
-          <% if current_user.photo.attached? %>
-            <div class="avatar-large" style="background-image: url('<%= cl_image_path current_user.photo.key, crop: :fill %>')"></div>
-            <%= link_to "Remover a foto", user_destroy_photo_path(current_user), method: :patch, remote: true, class: "btn-rose-outline-remove my-2" %>
-          <% else %>
-            <i>Você não tem foto de perfil por enquanto</i>
-            <div class="avatar-large mb-2" style="background-image: url('<%= image_path "Point_d_interrogation.jpg" %>')"></div>
-          <% end %>
-          <%= f.input :photo, as: :file, label: false%>
-        </div>
       </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Update", class: "btn-rose" %>
       </div>

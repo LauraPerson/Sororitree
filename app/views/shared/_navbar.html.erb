@@ -33,24 +33,14 @@
         </div>
       <% end %>
     <% end %>
-
       <!-- add avatar logic <-->
     <div class="nav-item dropdown">
-      <% if current_user.photo.attached? %>
-        <%= link_to cl_image_tag(current_user.photo.key), user_path(current_user), class: "avatar-small", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Profile",user_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Seus posts", my_posts_posts_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
-      <% else %>
-        <%= link_to image_tag("avatar.png"), user_path(current_user), class: "avatar-small", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile",user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Seus posts", my_posts_posts_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
-      <% end %>
+      <%= link_to image_tag("Avatars/avatar_#{current_user.avatar.id}.png"), user_path(current_user), class: "avatar-small", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to "Profile",user_path(current_user), class: "dropdown-item" %>
+        <%= link_to "Seus posts", my_posts_posts_path(current_user), class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      </div>
     </div>
   </div>
   <% else %>
