@@ -15,14 +15,25 @@
     </div>
   </div>
 
-<!--   <div class="row" style="background: rgba(0,0,0,0.1)">
-    <div class="col-7"> -->
-    <div class="post-presentation">
-      Olaaaaaa
-      <div class="grid-post">
+<!-- <div class="row" style="background: rgba(0,0,0,0.1)">
+ -->
+<div class="container">
+  <div class="post-presentation d-flex flex-wrap justify-content-center" style="background: rgba(0,0,0,0.1)">
 
-      </div>
+
+
+      <%  @random_posts.each do |post| %>
+        <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
+        <p> "<%= post.content[0, 200] %>..." </p>
+        <p> <%= post.user.nickname %></p>
+        </div>
+      <% end %>
+   <!--  <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
     </div>
+    <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
+    </div> -->
+  </div>
+</div>
 
   <div class="row banner-home-arms align-items-center">
     <div class="col-7">
