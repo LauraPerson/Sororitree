@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @posts = Post.all
     authorize @posts
     @random_posts = []
-    (0..3).each do
+    (1..3).each do
       random = rand(Post.count)
       @random_posts << Post.find(random)
     end

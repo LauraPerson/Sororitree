@@ -41,45 +41,74 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   font-style: bold;
 }
 
+.banner-home {
+ height: 700px;
+}
+
+.banner-arms {
+  height: 700px;
+  background-size: cover;
+}
+
+.banner-hands {
+  height: 700px;
+  background-size: cover;
+}
+
+.banner-heart {
+  height: 700px;
+  background-size: cover;
+}
+
 .banner-home-infos {
   height: 21%;
-  background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.4))
 }
 
 .banner-home-arms {
   height: 22%;
-  background: linear-gradient(rgba(255,255,255,0.4), rgba(248,255,248,0))
 }
 
 .banner-home-hands {
   height: 24%;
-  background: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,0.5))
 }
 
 .banner-home-heart {
   height: 24%;
-  background: linear-gradient(rgba(255,255,255,0.5), rgba(248,255,248,0))
+}
+
+// .post-container {
+//   background-color: linear-gradient(rgba(255,255,255,1), rgba(248,255,248,0));
+// }
+
+.title-posts {
+  font-family: $headers_font;
+  color: $red-pink;
+  font-size: 50px;
 }
 
 .post-presentation {
-  height: 300px;
+  height: 350px;
   text-align: center;
   box-align: center;
   border-radius: 10px;
-  background-color: rgba(248, 255, 248, 0.2);
-  box-shadow: $box-shadow;
-  padding-top: 50px;
+  background-color: white;
+  // background-color: rgba(248, 255, 248, 0.2);
+  // box-shadow: $box-shadow;
   padding-bottom: 10px;
 
 }
 
 .post-example {
-  background-color: white;
+  // background-color: white;
+  color: black;
   width: 18vw;
-  padding: 20px;
+  padding: 5px;
   border-radius: 10px;
   margin: 8px;
+  box-shadow: $box-shadow;
+
 }
+
 
 
 

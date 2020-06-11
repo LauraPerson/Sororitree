@@ -1,4 +1,4 @@
-<div class="banner-home">
+<div class="banner-home" style="background-image: url(<%= image_path 'Home/banner-home.jpg' %>)">
   <div class="row banner-home-infos">
     <div class="col-8">
       <div class="home-title mx-5">
@@ -14,27 +14,25 @@
       </div>
     </div>
   </div>
+</div>
 
-<!-- <div class="row" style="background: rgba(0,0,0,0.1)">
- -->
-<div class="container">
-  <div class="post-presentation d-flex flex-wrap justify-content-center" style="background: rgba(0,0,0,0.1)">
-
-
-
+<div class="post-container">
+    <div class="title-posts d-flex flex-wrap justify-content-center" style="background-image: linear-gradient(rgba(248,255,248,0), rgba(255,255,255,1))">
+      <p>As manas se expressam</p>
+    </div>
+    <div class="post-presentation d-flex flex-wrap justify-content-center">
       <%  @random_posts.each do |post| %>
         <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
+        <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= post.user.photo.attached? ? (cl_image_path post.user.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
         <p> "<%= post.content[0, 200] %>..." </p>
         <p> <%= post.user.nickname %></p>
         </div>
       <% end %>
-   <!--  <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
     </div>
-    <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
-    </div> -->
   </div>
 </div>
 
+<div class="banner-arms" style="background-image: linear-gradient(rgba(255,255,255,1), rgba(248,255,248,0)), url(<%= image_path 'Home/banner-arms.jpg' %>)">
   <div class="row banner-home-arms align-items-center">
     <div class="col-7">
       <div class="home-title-explanation">
@@ -45,6 +43,9 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="banner-hands" style="background-image: url(<%= image_path 'Home/banner-hands.jpg' %>)">
   <div class="row banner-home-hands align-items-center">
     <div class="col-6 offset-6">
       <div class="home-title-explanation">
@@ -55,6 +56,9 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="banner-heart" style="background-image: url(<%= image_path 'Home/banner-heart.jpg' %>)">
   <div class="row banner-home-heart align-items-center">
     <div class="col-7">
       <div class="home-title-explanation">
@@ -65,7 +69,5 @@
       </div>
     </div>
   </div>
-<div>
-
-# <!--  style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'global_banner.jpg' %>) -->
+</div>
 
