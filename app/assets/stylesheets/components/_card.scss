@@ -36,14 +36,16 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   text-align: center;
 }
 
+
 .matching-card {
   margin: 0 auto;
   margin-right: 18px;
+  height: 120px;
   margin-bottom: 18px;
   display: flex;
   align-items: center;
-  width: 15vw;
-  border-radius: 10px;
+  width: 16vw;
+  border-radius: 8px;
   background-color: #DED5CC;
   opacity: 0.9;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
@@ -54,6 +56,31 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   }
   &.active {
     background-color: #F2EFEB;
+    box-shadow: $box-shadow-purple;
+    border: 3px solid $purple-medium;
+  }
+}
+
+.matching-card-prof {
+  margin: 0 auto;
+  margin-right: 18px;
+  margin-bottom: 18px;
+  display: flex;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  width: 16vw;
+  border-radius: 8px;
+  background-color: $light-pink;
+  opacity: 0.9;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
+  &:hover {
+    background-color: $light-pink2;
+    box-shadow: $box-shadow-purple;
+    cursor: pointer;
+  }
+  &.active {
+    background-color: $light-pink2;
     box-shadow: $box-shadow-purple;
     border: 3px solid $purple-medium;
   }
@@ -77,28 +104,6 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   h6 {
     font-family: $body-font;
     font-size: 14px;
-  }
-}
-
-.matching-card-prof {
-  display: flex;
-  height: 120px;
-  justify-content: center;
-  align-items: center;
-  width: 20vw;
-  border-radius: 10px;
-  background-color: $light-pink;
-  opacity: 0.9;
-  box-shadow: rgba(0, 0, 0, 0.6) 0px 4px 8px 0px;
-  &:hover {
-    background-color: $light-pink2;
-    box-shadow: $box-shadow-purple;
-    cursor: pointer;
-  }
-  &.active {
-    background-color: $light-pink2;
-    box-shadow: $box-shadow-purple;
-    border: 3px solid $purple-medium;
   }
 }
 
