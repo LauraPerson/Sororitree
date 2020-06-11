@@ -1,8 +1,10 @@
  <% if current_user.avatar %>
-    <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@current_user.avatar.id}", crop: :fill %>')"></div>
-    <button type="button" class="btn-rose" data-toggle="modal" data-target="#exampleModal">
-      Mudar o avatar
-    </button>
+    <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@current_user.avatar.id}", crop: :fill %>')">
+      <button type="button" class="icon-update-avatar " data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-pen"></i>
+      </button>
+    </div>
+    
   <% else %>
     <i>Você não tem avatar por enquanto</i>
     <div class="avatar-large-black">
