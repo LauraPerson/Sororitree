@@ -54,37 +54,17 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 // ******************************************************************************
 
-
 .btn-post {
-  background-color: $red-pink;
-  border-radius: 8px;
   color: white;
-  border: none;
-  display: inline-block;
-  padding: 8px 16px;
-
-  &:hover {
-    box-shadow: $box-shadow;
-    background-color: $red-pink-dark;
-    text-decoration: none;
-    color: $sugar-cane;
-    cursor: pointer;
-  }
-}
-
-.btn-post-search {
-  padding: 2px 5px;
-  color: white;
-  background-color: #311D3F;
+  background-color: $purple-dark;
   border-radius: 8px;
-  display: inline-block;
   box-shadow: $box-shadow;
   &:hover {
-    background-color: #88304E;
-    box-shadow: $box-shadow;
-    cursor: pointer;
     text-decoration: none;
     color: white;
+    background-color: $purple-light;
+    box-shadow: $box-shadow;
+    cursor: pointer;
   }
 }
 
@@ -188,6 +168,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     color: white;
     background-color: gray;
     box-shadow: $box-shadow;
+    cursor: not-allowed;
   }
 }
 
