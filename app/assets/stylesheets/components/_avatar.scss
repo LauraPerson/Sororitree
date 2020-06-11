@@ -1,17 +1,34 @@
-.avatar {
+.avatar-chat {
   width: 35px;
   height: 35px;
   object-fit: cover;
   border-radius: 50%;
   padding: 6px;
+  background-position: center;
+  background-size: cover;
 }
+
 .avatar-large {
   height: 30vh;
   width: 30vh;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
+}
+
+.avatar-large-black {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
   border: outset white 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6vh;
+  color: white;
+  background-color: black;
 }
 .avatar-bordered {
   width: 40px;
@@ -41,6 +58,15 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
+}
+
+.avatar-small-black {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 6px;
+  background-color: black;
 }
 
 .avatar-matching {

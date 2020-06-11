@@ -4,23 +4,31 @@
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
-      <%= f.input :nickname,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "nickname" }%>
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :photo, as: :file %>
-    </div>
+    <%= f.input :nickname,
+                required: true,
+                autofocus: true, 
+                input_html: { autocomplete: "nickname" },
+                label: "Apelido" %>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" },
+                label: "Email" %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" },
+                label: "Senha" %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" },
+                label: "Confirmar a senha" %>
+    <%= f.input :birth_date, start_year: Date.today.year - 40,
+                end_year: Date.today.year - 12,
+                order: [:day, :month, :year],
+                required: true,
+                label: "Data de nascimento" %>
+  </div>
 
     <div class="form-actions">
       <%= f.submit "Sign up" %>

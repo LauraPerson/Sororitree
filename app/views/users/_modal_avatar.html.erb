@@ -1,0 +1,43 @@
+ <% if current_user.avatar %>
+    <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@current_user.avatar.id}", crop: :fill %>')"></div>
+    <button type="button" class="btn-rose" data-toggle="modal" data-target="#exampleModal">
+      Mudar o avatar
+    </button>
+  <% else %>
+    <i>Você não tem avatar por enquanto</i>
+    <div class="avatar-large-black">
+      <p><%= current_user.nickname %></p>
+    </div>
+    <button type="button" class="btn-rose" data-toggle="modal" data-target="#exampleModal">
+      Escolher um avatar
+    </button>
+  <% end %>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Escolhe seu avatar</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form_with(url: profile_avatar_path(@profile_avatar), method: "patch") do %>
+            <fieldset class="form-group check_boxes required profile_avatar_avatar">
+            <input type="hidden" name="profile_avatar[avatar_id][]" value="">
+            <div class="row">
+              <% Avatar.all.each do |a| %>
+                <div class="col-md-3 mb-4">
+                  <div class="form-check">
+                    <input class="hidden" type="checkbox" value=<%= a.id %> name="profile_avatar[avatar_id][]" id="profile_avatar_avatar_id_<%= a.id %>">
+                    <label class="card-avatar" for="profile_avatar_avatar_id_<%= a.id %>" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= image_path "Avatars/#{a.filename}.png" %>')"></label>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <%= submit_tag 'Escolhi !', class: "btn-rose", id: "btn-avatar" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

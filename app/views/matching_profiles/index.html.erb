@@ -17,7 +17,7 @@
           <div class="row">
             <div class="col-md-3 mx-1 my-2">
               <div class="matching-card-helper justify-content-around">
-                <div class="avatar-matching-helper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= matching.user.photo.attached? ? (cl_image_path matching.user.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
+                <div class="avatar-matching-helper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path("Avatars/avatar_#{matching.request.user.avatar.id}.png") %>')"></div>
                 <div class="matching-info-helper">
                   <h5 class="text-center mb-2"><%= matching.request.user.nickname %></h5>
                   <h6 class="text-center mb-1"><%= DateTime.now().year - matching.request.user.birth_date.year.to_i %> anos</h6>
@@ -33,6 +33,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         <% end %>
       <% end %>
