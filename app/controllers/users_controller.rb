@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    @profile_avatar = ProfileAvatar.find_by(user: current_user)
     authorize current_user
     @user = User.find(params[:id])
     @selected_theme = SelectedTheme.new
@@ -21,11 +22,11 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def destroy_photo
-    authorize current_user
-    current_user.photo.purge
-    redirect_to edit_user_registration_path(current_user)
-  end
+  # def destroy_photo
+  #   authorize current_user
+  #   current_user.photo.purge
+  #   redirect_to edit_user_registration_path(current_user)
+  # end
 
   # def toggle_professional
   #   authorize current_user
