@@ -15,5 +15,7 @@ class User < ApplicationRecord
   has_many :chatroom
   has_one_attached :photo
   has_one :professional, dependent: :destroy
+  has_one :profile_avatar
+  has_one :avatar, through: :profile_avatar
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }
 end

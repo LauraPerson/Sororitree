@@ -15,8 +15,9 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 .form-homepage {
   box-shadow: $box-shadow;
   padding: 10px;
+  width: 40vh;
   border-radius: 10px;
-  background-color: white;
+  background-color: rgba(248, 255, 248, 0.2);
   font-family: $body-font;
   margin-top: 20vh;
   a:hover {
@@ -41,7 +42,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   display: none;
 }
 
-.form-selected-themes-alone { 
+.form-selected-themes-alone {
   display: inline-block;
   margin: auto;
   width: 30vw;

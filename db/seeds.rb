@@ -12,6 +12,14 @@ array_themes.each do |theme|
 end
 
 ####################################
+# Creating the Avatar's list
+
+(1..31).each do |n|
+  avatar = Avatar.create(filename: "avatar_#{n}")
+  puts "create #{avatar.id} avatar"
+end
+
+####################################
 # Creating the users
 
 names = ["Alexia", "Andressa", "Amanda", "Laura", "Iara", "Raquel", "Patricia", \
@@ -46,13 +54,15 @@ birthdates = ["24 Sep 1955", "06 Jan 1960", "20 Feb 1965", "28 Jun 1970", "24 Oc
 
 N = names.count
 (0..(N-1)).each do |i|
+  random = rand(Avatar.count)
   user = {
     nickname: names[i],
     email: emails[i],
     password: password,
     helper: true,
     address: addresses[i],
-    birth_date: birthdates[i]
+    birth_date: birthdates[i],
+    avatar: Avatar.find(random)
   }
   use = User.create(user)
   puts "Created #{use.id} users"
