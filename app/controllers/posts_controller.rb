@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_post, only: [:destroy]
 
   def index
     if params[:query]
@@ -28,10 +29,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     authorize @post
     @post.destroy
-    redirect_to my_posts_posts_path(current_user)
+    redirect_to my_posts_posts_path
   end
 
   def my_posts
@@ -47,5 +47,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:user_id, :theme_id, :content)
   end
 
-
+  def find_post
+    @post = Post.find(params[:id])
+  end
 end

@@ -35,3 +35,17 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   margin: 0 auto;
   margin-bottom: 5px;
 }
+
+.icon-edit-post {
+  color: $darker-darker-brown;
+  &:hover {
+    color: $darker-brown;
+  }
+}
+
+.icon-destroy-post {
+  color: $darker-darker-brown;
+  &:hover {
+    color: $darker-brown;
+  }
+}
