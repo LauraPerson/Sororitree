@@ -14,7 +14,7 @@ class ProfileAvatarsController < ApplicationController
 
   def update
     profile_avatar = ProfileAvatar.find_by(user: current_user)
-    profile_avatar.avatar_id = params_profile_avatar
+    profile_avatar.avatar_id = params_avatar[:avatar_id][1]
     authorize profile_avatar
     profile_avatar.save
     redirect_to user_path(current_user)
