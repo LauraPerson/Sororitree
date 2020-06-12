@@ -6,6 +6,7 @@ require("turbolinks").start()
 import { transparentNabarHome } from '../components/navbar';
 import { themeChoice } from '../components/theme_choice';
 import { matchChoice } from '../components/match_choice';
+import { matchChoiceProf } from '../components/match_choice_prof';
 import { initBtnRequest } from '../components/init_btn_request';
 import "bootstrap";
 import { initChatroomCable } from '../channels/chatroom_channel';
@@ -17,6 +18,7 @@ document.addEventListener('turbolinks:load', () => {
   cardAvatarSelect();
   themeChoice();
   matchChoice();
+  matchChoiceProf();
   initBtnRequest();
   initChatroomCable();
   initBtnAvatar();

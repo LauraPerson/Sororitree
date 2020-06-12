@@ -12,6 +12,7 @@
       <%= hidden_field_tag :request_id, @request.id %>
       <% @helpers.sort_by { rand }.each do |user_helper| %>
         <% if user_helper.professional %>
+
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
           <label for="helper_user_id_<%= user_helper.id %>">
             <div class="matching-card-prof justify-content-around">
@@ -34,6 +35,7 @@
                 </div>
               </div>
             </label>
+
         <% end %>
     <% end %>
 
