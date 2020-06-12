@@ -32,6 +32,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   font-style: bold;
   margin-top: auto;
   margin-bottom: auto;
+  margin-left: 20%;
 }
 
 .home-explanation {
@@ -42,22 +43,25 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 .banner-home {
- height: 700px;
+ height: 800px;
 }
 
 .banner-arms {
   height: 700px;
   background-size: cover;
+  // background: linear-gradient(rgba(249,236,228,1), rgba(255,255,255,0.1));
 }
 
 .banner-hands {
   height: 700px;
   background-size: cover;
+  // background: linear-gradient(rgba(249,236,228,0.1), rgba(255,255,255,0.8));
 }
 
 .banner-heart {
   height: 700px;
   background-size: cover;
+  // background: linear-gradient(rgba(249,236,228,0.1), rgba(255,255,255,0.8));
 }
 
 .banner-home-infos {
@@ -91,11 +95,9 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   text-align: center;
   box-align: center;
   border-radius: 10px;
-  background-color: white;
-  // background-color: rgba(248, 255, 248, 0.2);
-  // box-shadow: $box-shadow;
+  // background-color: white;
+  background: linear-gradient(rgba(255,255,255,1), rgba(249,236,228,1));
   padding-bottom: 10px;
-
 }
 
 .post-example {
