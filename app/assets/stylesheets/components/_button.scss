@@ -21,19 +21,19 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 // # button Post/Enviar/Enviar modals ##
 // # --> All the other less important things
 
-// .btn-post-purple {
-//   color: white;
-//   background-color: $purple-dark;
-//   border-radius: 8px;
-//   box-shadow: $box-shadow;
-//   &:hover {
-//     text-decoration: none;
-//     color: white;
-//     background-color: $purple-light;
-//     box-shadow: $box-shadow;
-//     cursor: pointer;
-//   }
-// }
+.btn-post-purple {
+  color: white;
+  background-color: $purple-dark;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $purple-light;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+  }
+}
 
 
 // # button deletar /Sign out / Log out / Excluir ##

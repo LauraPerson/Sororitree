@@ -1,7 +1,7 @@
 <div class="show-user-banner" style="background-image: url('<%= image_path 'User-show-profile.png' %>')">
   <div class="container" id="container-user">
     <% if @user == current_user %>
-      <div class="user-show-title d-flex align-items-center mb-4">
+      <div class="user-relative d-flex align-items-center mb-4">
         <div class="user-show-nickname">
           <%= current_user.nickname %>
         </div>
@@ -10,46 +10,36 @@
           Editar meu perfil
         <% end %>
       </div>
-      <div class="card-user-profile d-flex align-items-center justify-content-center flex-column">
-        <%= render 'modal_avatar' %>
-      </div>
-      <div class="button-help text-center my-4">
-        <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-rose"%>
-      </div>
-
-    <% if current_user.professional.nil? %>
-      <button type="button" method="PATCH" class="btn btn-primary" id="button modal" data-toggle="modal" data-target="#exampleModal">
-        Adicionar proffissão
-      </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sua profissão</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="cards-form">
-                  <%= simple_form_for @professional, url: professionals_path(current_user) do |f| %>
-                    <%= f.input :job_category, collection: Professional::CATEGORIES, label: "Profissão", input_html: { class: 'card-form' } %>
-                    <%= f.input :description, label: false, placeholder: 'Descrição', input_html: { class: 'card-form' } %>
-                    <%= f.submit 'Adicionar', class: 'btn-post' %>
-                  <% end %>
+      <div class="user-relative d-flex align-items-center mb-4">
+        <div class="user-absolute card-professional">
+          <% if current_user.professional.nil? %>
+            <p>Caso sua função professional poderia ajudar as mulheres você pode adicionar essa informação aqui.</p>
+            <%= render 'modal_profession' %>
+          <% else %>
+            <div class="d-flex justify-content-between">
+              <div class="card-professional-infos">
+                <div class="card-professional-job mb-2">
+                  <%= current_user.professional.job_category %>
+                </div>
+                <div class="card-professional-description">
+                  <%= current_user.professional.description %>
                 </div>
               </div>
+              <%= link_to professional_path, method: :delete, data: {confirm: "Você quer tirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
+                <i class="fas fa-times"></i>
+              <% end %>
             </div>
+          <% end %>
+        </div>
+        <div class="user flex-grow-1">
+          <div class="card-user-profile d-flex align-items-center justify-content-center flex-column">
+            <%= render 'modal_avatar' %>
+          </div>
+          <div class="button-help text-center my-4">
+            <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-rose"%>
           </div>
         </div>
-      <% else %>
-        <%= current_user.professional.job_category %>
-        <%= current_user.professional.description %>
-      <% end %>
-
-      <button>
-        <%= link_to "Excluir perfil profisional", professional_path, method: :delete, data: {confirm: "Are you sure ?"}, class: 'btn-font-awesome mx-3' %>
-      </button>
+      </div>
 
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if current_user.helper == false %>
@@ -88,31 +78,47 @@
 
 
     <% else %>
-      <div class="user-show-title text-center">
-        <h1><%= @user.nickname %></h1>
+      <div class="user-relative d-flex align-items-center mb-4">
+        <div class="user-show-nickname">
+          <%= @user.nickname %>
+        </div>
       </div>
-      <div class="card-user-profile d-flex align-items-center justify-content-center">
-        <% if @user.avatar %>
-          <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')"></div>
-        <% else %>
-          <div class="avatar-large-black">
-            <p><%= current_user.nickname %></p>
+      <div class="user-relative d-flex align-items-center">
+        <div class="user-absolute card-professional">
+          <% if @user.professional %>
+            <div class="d-flex justify-content-between">
+              <div class="card-professional-infos">
+                <div class="card-professional-job mb-2">
+                  <%= @user.professional.job_category %>
+                </div>
+                <div class="card-professional-description">
+                  <%= @user.professional.description %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="user flex-grow-1">
+          <div class="card-user-profile d-flex align-items-center justify-content-center flex-column">
+            <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')"></div>
           </div>
-        <% end %>
+        </div>
       </div>
+
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if @user.helper == false %>
           <div class="icon-helper-w-hover">
             <%= icon_helper("square") %>
           </div>
-          <p class="mb-0 ml-3"> <%= @user.nickname %> não está disponível para ajudar</p>
+          <p class="mb-0 ml-3"><%= @user.nickname %> não está disponível para ajudar</p>
         <% else %>
           <div class="icon-helper-w-hover">
             <%= icon_helper("check-square") %>
           </div>
-          <p class="mb-0 ml-3"> <%= @user.nickname %> está disponível para ajudar</p>
+          <p class="mb-0 ml-3"><%= @user.nickname %> está disponível para ajudar</p>
         <% end %>
       </div>
+
       <% if @user.selected_themes.exists? %>
             <div class="selected-themes center" style="width: 50%; margin: auto">
               <div class="d-flex flex-wrap justify-content-center">

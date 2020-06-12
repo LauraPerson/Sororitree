@@ -192,3 +192,26 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
     border: $red-pink solid 3px;
   }
 }
+
+.card-professional {
+  left: 80%;
+  width: 20vw;
+  background-color: $sugar-cane;
+  padding: 8px;
+  border-radius: 4px;
+  p {
+    font-size: 12px;
+    font-style: italic;
+    text-align: justify;
+  }
+}
+
+.card-professional-job {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-professional-description {
+  font-style: italic;
+  font-size: 14px;
+}
