@@ -37,7 +37,7 @@
       <div class="posts-cards mt-4">
         <div class="d-flex justify-content-between">
           <div class="d-flex align-self-center">
-            <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= post.user.photo.attached? ? (cl_image_path post.user.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
+            <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= image_path("Avatars/avatar_#{post.user.avatar.id}.png", crop: :fill) %>')"></div>
             <div class="post-name-avatar align-self-center"><p><%= post.user.nickname %></p></div>
           </div>
           <div class="font-theme">

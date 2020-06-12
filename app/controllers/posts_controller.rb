@@ -27,6 +27,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    authorize @post
+    @post.destroy
+    redirect_to my_posts_posts_path(current_user)
+  end
+
   def my_posts
     @posts = Post.where(user_id: current_user.id)
     authorize @posts
