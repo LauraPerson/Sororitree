@@ -1,11 +1,11 @@
-<div class="banner-home">
+<div class="banner-home" style="background-image: url(<%= image_path 'Home/banner-home5.jpg' %>)">
   <div class="row banner-home-infos">
     <div class="col-8">
       <div class="home-title mx-5">
         Sororitree
       </div>
       <div class="home-subtitle mx-5 ">
-        Conecta as mulheres
+        Conecta mulheres
       </div>
     </div>
     <div class="col-4">
@@ -14,47 +14,59 @@
       </div>
     </div>
   </div>
+</div>
 
-<!--   <div class="row" style="background: rgba(0,0,0,0.1)">
-    <div class="col-7"> -->
-    <div class="post-presentation">
-      Olaaaaaa
-      <div class="grid-post">
-
-      </div>
+<div class="post-container">
+    <div class="title-posts d-flex flex-wrap justify-content-center">
+      <p>As manas se expressam</p>
     </div>
-
-  <div class="row banner-home-arms align-items-center">
-    <div class="col-7">
-      <div class="home-title-explanation">
-        Procurar ajuda
-      </div>
-      <div class="home-explanation">
-        Se você procura ajuda para falar de assuntos tabu, agora você pode utilizar a app Sororitree, <br>que lhe permite falar com mulheres que estão prontas para te ouvir.
-      </div>
+    <div class="post-presentation d-flex flex-wrap justify-content-center">
+      <%  @random_posts.each do |post| %>
+        <div class="post-example d-flex flex-column align-items-center justify-content-center" style="background: rgba(255,255,255,1)">
+        <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= image_path("Avatars/avatar_#{post.user.avatar.id}.png", crop: :fill) %>')"></div>
+        <p> "<%= post.content[0, 200] %>..." </p>
+        <p> <%= post.user.nickname %></p>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="row banner-home-hands align-items-center">
-    <div class="col-6 offset-6">
-      <div class="home-title-explanation">
-        Ajudar
-      </div>
-      <div class="home-explanation">
-        Se desejar, você também pode ajudar outras mulheres, compartilhando suas experiências e opiniões.
-      </div>
-    </div>
-  </div>
-  <div class="row banner-home-heart align-items-center">
-    <div class="col-7">
-      <div class="home-title-explanation">
-        Trocar
-      </div>
-      <div class="home-explanation">
-        No Sororitree você também pode visualizar e postar informações e comentários relacionados ao lugar da mulher na sociedade contemporânea.
-      </div>
-    </div>
-  </div>
-<div>
+</div>
 
-# <!--  style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= image_path 'global_banner.jpg' %>) -->
+<div class="arms d-flex justify-content-start" style="background-image: url(<%= image_path 'Home/banner-arms.jpg' %>)">
+  <div class="arms-text">
+    <div class="home-title-explanation">
+      <br><br>
+      Procurar ajuda
+    </div>
+    <div class="home-explanation">
+      Se você procura ajuda para falar de assuntos tabu, <br>agora você pode utilizar a app Sororitree, <br>que lhe permite falar com mulheres que estão prontas para te ouvir.
+    </div>
+  </div>
+</div>
+
+<div class="hands d-flex justify-content-end" style="background-image: url(<%= image_path 'Home/banner-hands.jpg' %>)">
+  <div class="hands-text">
+    <div class="home-title-explanation">
+      <br>
+      Ajudar
+    </div>
+    <div class="home-explanation">
+      Se desejar,<br> você também pode ajudar outras mulheres,<br> compartilhando suas experiências e opiniões.
+    </div>
+  </div>
+</div>
+
+<div class="heart d-flex justify-content-start" style="background-image: url(<%= image_path 'Home/banner-heart.jpg' %>)">
+  <div class="heart-text">
+    <div class="home-title-explanation">
+      <br><br>
+      Trocar
+    </div>
+    <div class="home-explanation">
+      No Sororitree você também pode visualizar e postar informações<br> e comentários relacionados ao lugar da mulher na sociedade contemporânea.
+    </div>
+  </div>
+</div>
+
+
 
