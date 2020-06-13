@@ -10,3 +10,25 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+.banner-posts {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  margin-top: 82px;
+}
+
+.text-center-posts {
+  background-color: transparentize($red-pink-light, 0.2);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.text-center-my-post {
+  margin-top: 48px;
+  background-color: $red-pink-light;
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+}

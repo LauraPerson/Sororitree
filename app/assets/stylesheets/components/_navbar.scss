@@ -58,13 +58,22 @@ margin: 4px;
 }
 
 .matching-number {
-  position: relative;
-  background-color: green;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-pink;
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  text-align: center;
   &:hover{
     text-decoration: none;
   }
+}
+
+.matching-items-position {
+  position: relative;
+  padding: 0 8px;
 }

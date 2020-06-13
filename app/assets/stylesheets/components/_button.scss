@@ -60,14 +60,13 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .btn-post {
   color: white;
-  background-color: $purple-dark;
+  background-color: $red-pink;
   border-radius: 8px;
-  box-shadow: $box-shadow;
+  height: 40px;
   &:hover {
     text-decoration: none;
     color: white;
-    background-color: $purple-light;
-    box-shadow: $box-shadow;
+    background-color: $red-pink-light;
     cursor: pointer;
   }
 }
@@ -192,8 +191,10 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 .helpbutton {
   background-color: $red-pink;
   border-radius: 8px;
+  align-items: center;
   color: white;
-  padding: 6px;
+  padding-left: 10px;
+  padding-top: 6px;
   border: none;
   margin-top: 8px;
   display: block;
@@ -272,4 +273,23 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     box-shadow: $box-shadow;
     cursor: pointer;
 }
+}
+
+#button-modal-publi {
+  border: 1px solid $red-pink;
+  background-color: $red-pink;
+  color: $light-brown;
+  text-align: center;
+  border-radius: 8px;
+  height: 40px;
+  width: 144px;
+  margin-top: 8px;
+  padding: 6px;
+  &:hover {
+    background-color: $red-pink-light;
+    color: $light-brown;
+    border: 1px solid $red-pink-light;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }

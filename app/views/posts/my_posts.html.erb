@@ -1,7 +1,6 @@
 <div class="container-page">
   <div class="container-background" style="background-image: url(<%= image_path 'womem_handsup1.png' %>)">
-  </div>
-  <div class="container-posts">
+  <div class="container-posts-user">
     <div class="py-5 px-3">
       <% if @posts.empty? %>
         <div class="text-center mb-4">
@@ -16,8 +15,8 @@
 
       <% else %>
 
-        <div class="text-center mb-4">
-          <h2> Seus Posts </h2>
+        <div class="text-center-my-post mb-4">
+          <h2> Suas Publicações </h2>
           <h4> Compartilhe sua história e ajude outras manas. </h4>
         </div>
         <div class="text-center">
@@ -111,5 +110,5 @@
       </div>
     </div>
   </div>
-
+</div>
 <% end %>

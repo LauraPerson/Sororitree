@@ -1,21 +1,22 @@
 <div class="container-page">
-  <div class="container-background" style="background-image: url(<%= image_path 'womem_handsup1.png' %>)">
+  <div class="banner-posts" style="background-image: url(<%= image_path 'posts.jpg' %>)">
   </div>
   <div class="container-posts">
-    <div class="text-center mb-4 py-3 px-3">
-      <h4>Confira os posts das manas com relatos e informações que podem lhe ajudar.</h4>
-      <h3>Juntas somos mais fortes!</h3>
+    <div class="text-center-posts mb-4 py-3 px-3">
+      <h1>Juntas somos mais fortes!</h1>
+      <br>
+      <h4>Confira os posts das manas com relatos e<br> informações que podem lhe ajudar.</h4>
     </div>
 
     <div class="d-flex justify-content-around align-items-baseline">
-      <button type="button" class="btn-post" id="button-modal" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn-post" id="button-modal-publi" data-toggle="modal" data-target="#exampleModal">
         Criar Publicação
       </button>
 
       <div class="posts-search mt-2 mb-5">
         <%= form_tag posts_path, method: :get do %>
           <%= text_field_tag :query, "", placeholder: "Insira um assunto", required: true %>
-          <button class="btn-post">Filtre</button>
+          <button class="btn-post">Filtrar</button>
         <% end %>
       </div>
     </div>
