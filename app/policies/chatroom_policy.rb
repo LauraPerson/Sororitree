@@ -16,4 +16,8 @@ class ChatroomPolicy < ApplicationPolicy
   def index?
     user == record.user || user == record.guest_user
   end
+
+  def destroy?
+    user == record.user
+  end
 end

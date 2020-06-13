@@ -18,6 +18,17 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
   end
 
+  def destroy
+    @chatroom = Chatroom.find(params[:id])
+    authorize @chatroom
+    @chatroom.destroy
+    if current_user.chatroom.empty?
+      redirect_to user_path(current_user)
+    else
+      redirect_to chatroom_path(ordered_chatrooms.first)
+    end
+  end
+
   private
 
   def ordered_chatrooms
