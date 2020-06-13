@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :messages_read
+
+  def messages_read
+    @chatrooms_user = Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user))
+    @unread = Message.where(read: false).where(chatroom: @chatrooms_user)
+  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
