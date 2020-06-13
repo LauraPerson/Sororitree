@@ -10,6 +10,7 @@ import { matchChoiceProf } from '../components/match_choice_prof';
 import { initBtnRequest } from '../components/init_btn_request';
 import "bootstrap";
 import { initChatroomCable } from '../channels/chatroom_channel';
+import { initNotifications } from '../channels/notifications_unread';
 import { cardAvatarHover, cardAvatarSelect, initBtnAvatar } from '../components/select_avatar';
 
 document.addEventListener('turbolinks:load', () => {
@@ -21,5 +22,6 @@ document.addEventListener('turbolinks:load', () => {
   matchChoiceProf();
   initBtnRequest();
   initChatroomCable();
+  initNotifications();
   initBtnAvatar();
 });

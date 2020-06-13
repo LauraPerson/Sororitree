@@ -67,12 +67,14 @@
               </div>
             </div>
           <% end %>
-          <div class="<%= current_user.themes == [] ? 'form-selected-themes-alone' : 'form-selected-themes' %>">
-            <div class="title-form mb-2">
-              Assuntos para ajudar
+          <% if current_user.themes.count != Theme.count %>
+            <div class="<%= current_user.themes == [] ? 'form-selected-themes-alone' : 'form-selected-themes' %>">
+              <div class="title-form mb-2">
+                Assuntos para ajudar
+              </div>
+              <%= render 'shared/form_themes' %>
             </div>
-            <%= render 'shared/form_themes' %>
-          </div>
+          <% end %>
         </div>
       <% end %>
 
@@ -84,20 +86,22 @@
         </div>
       </div>
       <div class="user-relative d-flex align-items-center">
-        <div class="user-absolute card-professional">
-          <% if @user.professional %>
-            <div class="d-flex justify-content-between">
-              <div class="card-professional-infos">
-                <div class="card-professional-job mb-2">
-                  <%= @user.professional.job_category %>
-                </div>
-                <div class="card-professional-description">
-                  <%= @user.professional.description %>
+        <% if @user.professional %>
+          <div class="user-absolute card-professional">
+            <% if @user.professional %>
+              <div class="d-flex justify-content-between">
+                <div class="card-professional-infos">
+                  <div class="card-professional-job mb-2">
+                    <%= @user.professional.job_category %>
+                  </div>
+                  <div class="card-professional-description">
+                    <%= @user.professional.description %>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div>
+            <% end %>
+          </div>
+        <% end %>
         <div class="user flex-grow-1">
           <div class="card-user-profile d-flex align-items-center justify-content-center flex-column">
             <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')"></div>

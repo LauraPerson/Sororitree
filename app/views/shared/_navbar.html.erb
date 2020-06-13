@@ -3,7 +3,6 @@
     <p class="logo-navbar">
       <%= link_to image_tag("newlogo.png", width: 70, height: 60), posts_path, class: "link-home-page" %>
     </p>
-
   <div class="inbox-and-drop-down">
     <%= link_to "Ajuda", new_request_path(current_user), class: "helpbutton" %>
     <%# Added a last_chat function in the helper to find the chat where the last message was sent %>
@@ -11,7 +10,8 @@
       <div class="inbox-icon">
         <%= link_to chatroom_path(last_chat) do %>
           <i class='fas fa-comments' id="inbox-button"></i>
-            <div class="messages-number">
+            <div class="messages-unread" data-id="<%= current_user.id %>">
+              <%= @unread.count %>
             </div>
         <% end %>
       </div>

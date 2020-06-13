@@ -100,6 +100,7 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   h5 {
     font-family: $body-font;
     font-weight: bold;
+    font-size: 14px;
   }
   h6 {
     font-family: $body-font;
@@ -167,6 +168,9 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   font-weight: bold;
   color: $purple-medium;
   font-size: 18px;
+  &:hover {
+    color: $purple-light;
+  }
 }
 
 .post-time {

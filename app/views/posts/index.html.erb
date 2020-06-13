@@ -25,12 +25,14 @@
       <% @posts.order('created_at DESC').each do |post| %>
       <div class="posts-cards mt-4">
         <div class="d-flex justify-content-between">
-          <div class="d-flex align-self-center">
-            <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= image_path("Avatars/avatar_#{post.user.avatar.id}.png", crop: :fill) %>')"></div>
-            <div class="post-name-avatar align-self-center"><p><%= post.user.nickname %></p></div>
-          </div>
+          <%= link_to user_path(post.user.id), class:"without-text-decoration" do %>
+            <div class="d-flex align-self-center">
+              <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= image_path("Avatars/avatar_#{post.user.avatar.id}.png", crop: :fill) %>')"></div>
+              <div class="post-name-avatar align-self-center"><p><%= post.user.nickname %></p></div>
+            </div>
+          <% end %>
           <div class="font-theme">
-            <p>Temática: <%= post.theme.title %></p>
+            <p><%= post.theme.title %></p>
           </div>
         </div>
         <div class="post-time d-flex text-left">
