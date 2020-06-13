@@ -19,7 +19,7 @@
             <div class="matching-card-prof justify-content-around">
               <div class="user-infos d-flex flex-column align-items-center">
                 <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
-                <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1" do %>
+                <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1", target: :_blank do %>
                   <p class="m-0">Perfil</p>
                 <% end %>
               </div>
@@ -36,7 +36,7 @@
               <div class="matching-card justify-content-around">
                 <div class="user-infos d-flex flex-column align-items-center">
                   <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
-                  <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1" do %>
+                  <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1", target: :_blank do %>
                     <p class="m-0">Perfil</p>
                   <% end %>                
                 </div>
