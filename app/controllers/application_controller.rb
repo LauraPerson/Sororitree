@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def messages_read
     @chatrooms_user = Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user))
-    @unread = Message.where(read: false).where(chatroom: @chatrooms_user)
+    @unread = Message.where(read: false).where(chatroom: @chatrooms_user).where.not(user: current_user)
   end
 
   def configure_permitted_parameters

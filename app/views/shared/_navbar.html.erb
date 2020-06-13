@@ -10,7 +10,7 @@
       <div class="inbox-icon">
         <%= link_to chatroom_path(last_chat) do %>
           <i class='fas fa-comments' id="inbox-button"></i>
-            <div class="messages-unread">
+            <div class="messages-unread" data-id="<%= current_user.id %>">
               <%= @unread.count %>
             </div>
         <% end %>

@@ -21,6 +21,8 @@ class ChatroomsController < ApplicationController
       message.save
     end
     # @messages_read.update_all(read: true)
+    current_user == @chatroom.user ? @user_chat = @chatroom.guest_user : @user_chat = @chatroom.user
+    NotificationsChannel.broadcast_to(@user_chat, @unread)
     authorize @chatroom
   end
 
