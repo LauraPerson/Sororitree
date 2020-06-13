@@ -17,7 +17,12 @@
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
           <label for="helper_user_id_<%= user_helper.id %>">
             <div class="matching-card-prof justify-content-around">
-              <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
+              <div class="user-infos d-flex flex-column align-items-center">
+                <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
+                <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1" do %>
+                  <p class="m-0">Perfil</p>
+                <% end %>
+              </div>
               <div class="matching-info">
                 <h4 class="text-center"><%= user_helper.nickname %></h4>
                 <h5 class="text-center"><%= user_helper.professional.job_category %></h5>
@@ -29,7 +34,12 @@
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
             <label for="helper_user_id_<%= user_helper.id %>">
               <div class="matching-card justify-content-around">
-              <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
+                <div class="user-infos d-flex flex-column align-items-center">
+                  <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
+                  <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1" do %>
+                    <p class="m-0">Perfil</p>
+                  <% end %>                
+                </div>
                 <div class="matching-info">
                   <h4 class="text-center"><%= user_helper.nickname %></h4>
                   <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
