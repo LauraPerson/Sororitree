@@ -21,19 +21,19 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 // # button Post/Enviar/Enviar modals ##
 // # --> All the other less important things
 
-// .btn-post-purple {
-//   color: white;
-//   background-color: $purple-dark;
-//   border-radius: 8px;
-//   box-shadow: $box-shadow;
-//   &:hover {
-//     text-decoration: none;
-//     color: white;
-//     background-color: $purple-light;
-//     box-shadow: $box-shadow;
-//     cursor: pointer;
-//   }
-// }
+.btn-post-purple {
+  color: white;
+  background-color: $purple-dark;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $purple-light;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+  }
+}
 
 
 // # button deletar /Sign out / Log out / Excluir ##
@@ -75,7 +75,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   padding: 4px 8px;
   border: none;
   margin: auto;
-  display: block;
+  display: inline-block;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $red-pink-dark;
@@ -224,10 +224,10 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
-.btn-rose-edit {
-  background-color: $red-pink;
+.btn-sugar-edit {
+  background-color: $sugar-cane;
   border-radius: 8px;
-  color: white;
+  color: black;
   padding: 4px 8px;
   flex: 0 1 auto;
   margin-left: auto;
@@ -235,9 +235,9 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   font-size: 12px;
   &:hover {
     box-shadow: $box-shadow;
-    background-color: $red-pink-dark;
+    background-color: $sugar-cane-dark;
     text-decoration: none;
-    color: white;
+    color: black;
     cursor: pointer;
   }
 }

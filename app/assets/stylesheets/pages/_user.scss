@@ -5,8 +5,13 @@
   font-family: $body-font;
 }
 
-.user-show-title{
+.user-relative{
   position: relative;
+}
+
+.user-absolute {
+  position: absolute;
+  flex: 0 1 auto;
 }
 
 .user-show-nickname {
