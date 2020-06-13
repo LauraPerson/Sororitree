@@ -1,102 +1,103 @@
-<% if @chatroom.user != current_user %>
-  <div class="chat-header m-2">
-    <div class="chat-title">
-      <%= @chatroom.user.nickname %>
+<div class="container pt-5">
+  <% if @chatroom.user != current_user %>
+    <div class="chat-header m-2">
+      <div class="chat-title">
+        <%= @chatroom.user.nickname %>
+      </div>
+      <div class="chat-title-category">
+        <%= @chatroom.theme.title %>
+      </div>
     </div>
-    <div class="chat-title-category">
-      <%= @chatroom.theme.title %>
+  <% elsif @chatroom.guest_user != current_user %>
+    <div class="chat-header m-2">
+      <div class="chat-title">
+      <%= @chatroom.guest_user.nickname %>
+      </div>
+      <div class="chat-title-category">
+        <%= @chatroom.theme.title %>
+      </div>
     </div>
-  </div>
-<% elsif @chatroom.guest_user != current_user %>
-  <div class="chat-header m-2">
-    <div class="chat-title">
-    <%= @chatroom.guest_user.nickname %>
-    </div>
-    <div class="chat-title-category">
-      <%= @chatroom.theme.title %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 
-<div class="chat">
-  <div class="chat-container d-flex">
-    <div class="side-bar">
-      <div class="side-bar-title mb-2">
-        Conversas
-      </div>
-      <div class="side-bar-content">
-        <% @chatrooms_ordered.each do |chat| %>
-          <% if chat.user != current_user %>
-            <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
-              <div class="card-chat-discussion d-flex align-items-center py-2">
-                <div class="avatar-chat mx-2" style="background-image: url('<%= image_path("Avatars/avatar_#{chat.user.avatar.id}.png", crop: :fill) %>')">
-                </div>
-                <div class="card-chat-user">
-                  <div class="card-chat-nickname">
-                    <%= chat.user.nickname %>
+  <div class="chat">
+    <div class="chat-container d-flex">
+      <div class="side-bar">
+        <div class="side-bar-title mb-2">
+          Conversas
+        </div>
+        <div class="side-bar-content">
+          <% @chatrooms_ordered.each do |chat| %>
+            <% if chat.user != current_user %>
+              <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
+                <div class="card-chat-discussion d-flex align-items-center py-2">
+                  <div class="avatar-chat mx-2" style="background-image: url('<%= image_path("Avatars/avatar_#{chat.user.avatar.id}.png", crop: :fill) %>')">
                   </div>
-                  <div class="card-chat-theme">
-                    <%= chat.theme.title %>
+                  <div class="card-chat-user">
+                    <div class="card-chat-nickname">
+                      <%= chat.user.nickname %>
+                    </div>
+                    <div class="card-chat-theme">
+                      <%= chat.theme.title %>
+                    </div>
+                  </div>
+                  <div class="card-chat-time align-self-end">
+                    <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
+                      <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
+                    <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
+                      <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
+                    <% end %>
                   </div>
                 </div>
-                <div class="card-chat-time align-self-end">
-                  <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
-                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
-                  <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
-                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
-                  <% end %>
+              <% end %>
+            <% elsif chat.guest_user != current_user %>
+              <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
+                <div class="card-chat-discussion d-flex align-items-center py-2">
+                  <div class="avatar-chat mx-2" style="background-image: url('<%= image_path("Avatars/avatar_#{chat.guest_user.avatar.id}.png", crop: :fill) %>')"></div>
+                  <div class="card-chat-user">
+                    <div class="card-chat-nickname">
+                      <%= chat.guest_user.nickname %>
+                    </div>
+                    <div class="card-chat-theme">
+                      <%= chat.theme.title %>
+                    </div>
+                  </div>
+                  <div class="card-chat-time align-self-end">
+                    <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
+                      <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
+                    <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
+                      <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
+                    <% end %>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
-          <% elsif chat.guest_user != current_user %>
-            <%= link_to chatroom_path(chat), class: "without-text-decoration" do %>
-              <div class="card-chat-discussion d-flex align-items-center py-2">
-                <div class="avatar-chat mx-2" style="background-image: url('<%= image_path("Avatars/avatar_#{chat.guest_user.avatar.id}.png", crop: :fill) %>')"></div>
-                <div class="card-chat-user">
-                  <div class="card-chat-nickname">
-                    <%= chat.guest_user.nickname %>
-                  </div>
-                  <div class="card-chat-theme">
-                    <%= chat.theme.title %>
-                  </div>
-                </div>
-                <div class="card-chat-time align-self-end">
-                  <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
-                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
-                  <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
-                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="chat-discussion-form-container d-flex flex-column">
-      <% if policy(@chatroom).destroy? %>
-        <div class="text-right pr-3">
-          <%= link_to chatroom_path(@chatroom), method: :delete, remote: true, data: { confirm: "Tem certeza que deseja deletar esse chat? \n Ao deletar o chat você apagará todas mensagens." }, class: "icon-destroy-post",  style: 'text-decoration: none;' do %>
-            <i class="fas fa-trash"></i>
           <% end %>
         </div>
-      <% end %>
-      <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
-        <% @chatroom.messages.each do |message| %>
-          <%= render 'messages/message', message:message %>
-        <% end %>
       </div>
-      <div class="chat-form-container" >
-        <%= simple_form_for [ @chatroom, @message ], html:{class: "m-0 d-flex"} do |f| %>
-          <div class="chat-box flex-grow-1">
-            <textarea class="form-control chat-message required" placeholder="Escreve a sua mensagem..." name="message[content]" id="message_content"></textarea>
-          </div>
-          <div class="d-flex">
-            <input type="submit" name="commit" value="Mensagem" data-disable-with="Mensagem" class= "btn-rose-wradius-left m-0">
+      <div class="chat-discussion-form-container d-flex flex-column">
+        <% if policy(@chatroom).destroy? %>
+          <div class="text-right pr-3">
+            <%= link_to chatroom_path(@chatroom), method: :delete, remote: true, data: { confirm: "Tem certeza que deseja deletar esse chat? \n Ao deletar o chat você apagará todas mensagens." }, class: "icon-destroy-post",  style: 'text-decoration: none;' do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
           </div>
         <% end %>
+        <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
+          <% @chatroom.messages.each do |message| %>
+            <%= render 'messages/message', message:message %>
+          <% end %>
+        </div>
+        <div class="chat-form-container" >
+          <%= simple_form_for [ @chatroom, @message ], html:{class: "m-0 d-flex"} do |f| %>
+            <div class="chat-box flex-grow-1">
+              <textarea class="form-control chat-message required" placeholder="Escreve a sua mensagem..." name="message[content]" id="message_content"></textarea>
+            </div>
+            <div class="d-flex">
+              <input type="submit" name="commit" value="Mensagem" data-disable-with="Mensagem" class= "btn-rose-wradius-left m-0">
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
