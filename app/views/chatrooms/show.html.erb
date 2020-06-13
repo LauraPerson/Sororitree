@@ -39,6 +39,13 @@
                     <%= chat.theme.title %>
                   </div>
                 </div>
+                <div class="card-chat-time align-self-end">
+                  <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
+                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%I:%M %p') %>
+                  <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
+                    <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
+                  <% end %>
+                </div>
               </div>
             <% end %>
           <% elsif chat.guest_user != current_user %>
