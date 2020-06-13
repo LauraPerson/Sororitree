@@ -4,7 +4,8 @@
   </div>
 
   <div class="matching-header text-center">
-    <h2> Manas disponíveis para ajudar </h2>
+    <h1> Manas disponíveis para ajudar </h1>
+    <h3> Escolha quantas manas você quiser!</h3>
   </div>
 
   <div class="container-matching-cards">
@@ -12,10 +13,12 @@
       <%= hidden_field_tag :request_id, @request.id %>
       <% @helpers.sort_by { rand }.each do |user_helper| %>
         <% if user_helper.professional %>
+
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
           <label for="helper_user_id_<%= user_helper.id %>">
-            <div class="matching-card-prof">
+            <div class="matching-card-prof justify-content-around">
               <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
+              <div class="matching-info">
                 <h4 class="text-center"><%= user_helper.nickname %></h4>
                 <h5 class="text-center"><%= user_helper.professional.job_category %></h5>
                 <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
@@ -25,7 +28,7 @@
         <% else %>
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
             <label for="helper_user_id_<%= user_helper.id %>">
-              <div class="matching-card">
+              <div class="matching-card justify-content-around">
               <div class="avatar-matching" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
                 <div class="matching-info">
                   <h4 class="text-center"><%= user_helper.nickname %></h4>
@@ -33,12 +36,13 @@
                 </div>
               </div>
             </label>
+
         <% end %>
     <% end %>
 
         <div class="text-center mt-5">
           <button type="button" class="transparent" data-toggle="modal" data-target="#modalExemplo">
-            <%= submit_tag("Enviar", :id=>"button-modal-request", :class=>"btn-request disabled", :name=>"submit")%>
+            <%= submit_tag("Enviar pedido de ajuda", :id=>"button-modal-request", :class=>"btn-request disabled", :name=>"submit")%>
           </button>
         </div>
 

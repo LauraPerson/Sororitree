@@ -254,3 +254,18 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     cursor: not-allowed;
   }
 }
+
+#button-modal-request {
+  color: white;
+  padding: 16px 24px;
+  background-color: $purple-dark;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $purple-light;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+}
+}
