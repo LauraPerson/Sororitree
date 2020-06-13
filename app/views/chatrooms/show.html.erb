@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="chat-discussion-form-container d-flex flex-column">
-      <% if @chatroom.user == current_user %>
+      <% if policy(@chatroom).destroy? %>
         <div class="text-right pr-3">
           <%= link_to chatroom_path(@chatroom), method: :delete, remote: true, data: { confirm: "Tem certeza que deseja deletar esse chat? \n Ao deletar o chat você apagará todas mensagens." }, class: "icon-destroy-post",  style: 'text-decoration: none;' do %>
             <i class="fas fa-trash"></i>
