@@ -16,4 +16,13 @@ class PostPolicy < ApplicationPolicy
   def my_posts?
     true
   end
+
+  def destroy?
+    user == record.user
+  end
+
+  def update?
+    user == record.user
+    true
+  end
 end

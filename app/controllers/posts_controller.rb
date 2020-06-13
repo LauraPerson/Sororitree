@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_post, only: [:edit, :update, :destroy]
 
   def index
     if params[:query]
@@ -27,6 +28,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @post
+  end
+
+  def update
+    @post.update(params_posts)
+    authorize @post
+    redirect_to my_posts_posts_path
+  end
+
+  def destroy
+    authorize @post
+    @post.destroy
+    redirect_to my_posts_posts_path
+  end
+
   def my_posts
     @posts = Post.where(user_id: current_user.id)
     authorize @posts
@@ -40,5 +57,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:user_id, :theme_id, :content)
   end
 
-
+  def find_post
+    @post = Post.find(params[:id])
+  end
 end

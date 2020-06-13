@@ -3,60 +3,113 @@
   </div>
   <div class="container-posts">
     <div class="py-5 px-3">
-      <h1> Seus Posts </h1>
+      <% if @posts.empty? %>
+        <div class="text-center mb-4">
+          <h3> Você ainda não possui posts. </h3>
+          <h4> Compartilhe sua história e ajude outras manas. </h4>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" id="button-modal" data-toggle="modal" data-target="#exampleModal">
+            Criar Publicação
+          </button>
+        </div>
 
-      <button type="button" class="btn btn-primary" id="button-modal" data-toggle="modal" data-target="#exampleModal">
-        Criar Publicação
-      </button>
+      <% else %>
 
-<!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nova Publicação</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-             <div class="cards-form">
-                <%= simple_form_for (@post), url: {controller: "posts", action: "create"} do |f| %>
-                  <%= f.input :content, label: false, placeholder: 'Nos conte sua história...', input_html: { class: 'card-form' } %>
-                  <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
-                  <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
+        <div class="text-center mb-4">
+          <h2> Seus Posts </h2>
+          <h4> Compartilhe sua história e ajude outras manas. </h4>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" id="button-modal" data-toggle="modal" data-target="#exampleModal">
+            Criar Publicação
+          </button>
+        </div>
+
+        <% @posts.order('created_at DESC').each do |post| %>
+          <div class="posts-cards mt-4">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex align-self-center">
+                <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= image_path("Avatars/avatar_#{post.user.avatar.id}.png", crop: :fill) %>')"></div>
+                <div class="post-name-avatar align-self-center"><p><%= post.user.nickname %></p></div>
+              </div>
+              <div class="font-theme">
+                <p>Temática: <%= post.theme.title %></p>
+              </div>
+            </div>
+            <div class="post-time d-flex justify-content-between align-items-baseline">
+              <% time_min = (DateTime.now().to_time - post.created_at.to_time) / 60 %>
+              <% if time_min < 60  %>
+                <p>Postado: <%= time_min.round %> min</p>
+              <% elsif time_min > 60 && time_min < 1440 %>
+                <p>Postado: <%= (time_min/60).round %> h</p>
+              <% else %>
+                <p><%= post.created_at.strftime(" Postado em %d-%m-%Y") %> <%= post.created_at.strftime("às %I:%M") %></p>
+              <% end %>
+              <div>
+                <button type="button" class="transparent" style = 'text-decoration: none;' data-toggle="modal" data-target="#editModal<%= post.id %>">
+                  <i class="fas fa-edit icon-edit-post"></i>
+                </button>
+                <%= link_to post_path(post), method: :delete, remote: true, data: { confirm: 'Tem certeza?' }, class: "icon-destroy-post",  style: 'text-decoration: none;' do %>
+                  <i class="fas fa-trash"></i>
                 <% end %>
               </div>
+            </div>
+            <p><%= post.content %></p>
           </div>
-        </div>
-      </div>
-    </div>
-    </div>
+        <% end %>
 
-    <% @posts.order('created_at DESC').each do |post| %>
-      <div class="posts-cards mt-4">
-        <div class="d-flex justify-content-between">
-          <div class="d-flex align-self-center">
-            <div class="avatar-post mx-1 align-self-center" style="background-image: url('<%= post.user.photo.attached? ? (cl_image_path post.user.photo.key, crop: :fill) : (image_path "Avatars/#{rand(30)}.png", crop: :fill) %>')"></div>
-            <div class="post-name-avatar align-self-center"><p><%= post.user.nickname %></p></div>
-          </div>
-          <div class="font-theme">
-            <p>Temática: <%= post.theme.title %></p>
-          </div>
-        </div>
-        <div class="post-time d-flex text-left">
-          <% time_min = (DateTime.now().to_time - post.created_at.to_time) / 60 %>
-          <% if time_min < 60  %>
-            <p>Postado: <%= time_min.round %> min</p>
-          <% elsif time_min > 60 && time_min < 1440 %>
-            <p>Postado: <%= (time_min/60).round %> h</p>
-          <% else %>
-            <p><%= post.created_at.strftime(" Postado em %d-%m-%Y") %> <%= post.created_at.strftime("às %I:%M") %></p>
-          <% end %>
-        </div>
-        <p><%= post.content %></p>
-      </div>
       <% end %>
+
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nova Publicação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="cards-form">
+            <%= simple_form_for (@post), url: {controller: "posts", action: "create"} do |f| %>
+              <%= f.input :content, label: false, placeholder: 'Nos conte sua história...', input_html: { class: 'card-form' } %>
+              <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
+              <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% @posts.order('created_at DESC').each do |post| %>
+<!-- Modal -->
+  <div class="modal fade" id="editModal<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<%= post.id %>" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel<%= post.id %>">Edite sua Publicação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           <div class="cards-form">
+              <%= simple_form_for post do |f| %>
+                <%= f.input :content, label: false, input_html: { class: 'card-form' } %>
+                <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
+                <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
