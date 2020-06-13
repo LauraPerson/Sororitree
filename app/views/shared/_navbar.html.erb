@@ -19,16 +19,16 @@
 
     <% if current_user.helper == true %>
       <%= link_to matching_profiles_path, class: "without-text-decoration" do  %>
-        <div class="matching-items-position d-flex">
+        <div class="matching-items-position">
           <i class="fas fa-hands-helping" id="inbox-button"></i>
           <div class="matching-number">
-            <% count = 0 %>
+            <spam><% count = 0 %>
             <% current_user.matching_profiles.each do |match| %>
               <% if match.accepted.nil? %>
                 <% count += 1%>
               <% end %>
             <% end %>
-            <%= count %>
+            <%= count %></spam>
           </div>
         </div>
       <% end %>
