@@ -8,11 +8,13 @@
     <%# Added a last_chat function in the helper to find the chat where the last message was sent %>
     <% if last_chat %>
       <div class="inbox-icon">
-        <%= link_to chatroom_path(last_chat) do %>
-          <i class='fas fa-comments' id="inbox-button"></i>
-            <div class="messages-unread" data-id="<%= current_user.id %>">
-              <%= @unread.count %>
+        <%= link_to chatroom_path(last_chat), class: "without-text-decoration" do %>
+          <div class="matching-items-position">
+            <i class='fas fa-comments' id="inbox-button"></i>
+            <div class="messages-unread matching-number" data-id="<%= current_user.id %>">
+              <span><%= @unread.count %></span>
             </div>
+          </div>
         <% end %>
       </div>
     <% end %>
@@ -22,13 +24,13 @@
         <div class="matching-items-position">
           <i class="fas fa-hands-helping" id="inbox-button"></i>
           <div class="matching-number">
-            <spam><% count = 0 %>
+            <span><% count = 0 %>
             <% current_user.matching_profiles.each do |match| %>
               <% if match.accepted.nil? %>
                 <% count += 1%>
               <% end %>
             <% end %>
-            <%= count %></spam>
+            <%= count %></span>
           </div>
         </div>
       <% end %>
