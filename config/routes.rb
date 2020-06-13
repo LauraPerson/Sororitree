@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :selected_themes, only: :create
   end
   resources :selected_themes, only: :destroy
-  resources :posts, only: [:index, :show, :create, :destroy] do
+  resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do
     collection do
       get :my_posts
     end

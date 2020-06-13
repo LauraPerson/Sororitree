@@ -47,7 +47,10 @@
                 <p><%= post.created_at.strftime(" Postado em %d-%m-%Y") %> <%= post.created_at.strftime("às %I:%M") %></p>
               <% end %>
               <div>
-                <%= link_to post_path(post), method: :delete, remote: true, data: { confirm: 'Tem certeza?' }, class: "icon-destroy-post" do %>
+                <button type="button" class="transparent" style = 'text-decoration: none;' data-toggle="modal" data-target="#editModal<%= post.id %>">
+                  <i class="fas fa-edit icon-edit-post"></i>
+                </button>
+                <%= link_to post_path(post), method: :delete, remote: true, data: { confirm: 'Tem certeza?' }, class: "icon-destroy-post",  style: 'text-decoration: none;' do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
               </div>
@@ -84,4 +87,29 @@
     </div>
   </div>
 </div>
-</div>
+
+<% @posts.order('created_at DESC').each do |post| %>
+<!-- Modal -->
+  <div class="modal fade" id="editModal<%= post.id %>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<%= post.id %>" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel<%= post.id %>">Edite sua Publicação</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           <div class="cards-form">
+              <%= simple_form_for post do |f| %>
+                <%= f.input :content, label: false, input_html: { class: 'card-form' } %>
+                <%= f.association :theme, label: "Temática:", input_html: { class: 'card-form' } %>
+                <%= f.button :submit, 'Compartilhe', class: 'btn-post' %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
