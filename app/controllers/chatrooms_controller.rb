@@ -14,7 +14,15 @@ class ChatroomsController < ApplicationController
 
   def show
     @message = Message.new
-    @chatroom = Chatroom.find(params[:id])
+    @chatroom = Chatroom.find(params[:id]) 
+    @messages_read = Message.where.not(user: current_user).where(chatroom: @chatroom)
+    @messages_read.each do |message| 
+      message.read = true
+      message.save
+    end
+    # @messages_read.update_all(read: true)
+    current_user == @chatroom.user ? @user_chat = @chatroom.guest_user : @user_chat = @chatroom.user
+    NotificationsChannel.broadcast_to(@user_chat, @unread)
     authorize @chatroom
   end
 
