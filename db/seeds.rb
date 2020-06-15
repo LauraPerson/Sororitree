@@ -73,10 +73,12 @@ end
 
 array_job_category = Professional::CATEGORIES
 
+users_ids = User.all.ids
 array_job_category.each do |category|
-  user = User.find(rand(User.first.id..User.last.id))
-  categ = Professional.create!(job_category: category, user: user)
-  puts "Created #{categ.id} categories"
+  id_user = users_ids.sample
+  categ = Professional.create(job_category: category, user_id: id_user)
+  puts "Created #{categ.id} professional"
+  users_ids.delete(id_user)
 end
 
 ####################################
