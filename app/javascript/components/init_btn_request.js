@@ -25,6 +25,9 @@ const checkBtnRequest = () => {
 
 const initBtnRequest = () => {
   const boxes = document.querySelectorAll('input[type=checkbox]');
+  const btnModal = document.getElementById("button-modal-request");
+  btnModal.disabled = true;
+  btnModal.classList.add("disabled");
   if (boxes) {
     boxes.forEach((box) => {
       box.addEventListener('click', (event) => {

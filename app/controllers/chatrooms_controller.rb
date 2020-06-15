@@ -42,6 +42,7 @@ class ChatroomsController < ApplicationController
   def ordered_chatrooms
     chatrooms_user = Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user))
     messages_chat = Message.where(chatroom: chatrooms_user).order(created_at: :desc).pluck(:chatroom_id).uniq
+    raise
     @chatrooms_ordered = Chatroom.find(messages_chat)
   end
 
