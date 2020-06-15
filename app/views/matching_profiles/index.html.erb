@@ -1,13 +1,10 @@
 <div class="container-page">
-
-  <div class="container-background" style="background-image: url(<%= image_path 'women_hug.png' %>)">
-  </div>
-
-  <% if @matching_profiles.where(accepted: nil).empty? %>
+  <div class="container-background-match" style="background-image: url(<%= image_path 'women_hug.png' %>)">
+    <% if @matching_profiles.where(accepted: nil).empty? %>
     <div class="matching-header text-center">
       <h3> Obrigada! ❤️ <br> Não há manas precisando de ajuda no momento. </h3>
     </div>
-  <% else %>
+    <% else %>
     <div class="matching-header text-center">
       <h2> Manas pedindo ajuda </h2>
     </div>
@@ -33,10 +30,10 @@
                 </div>
               </div>
             </div>
-
           </div>
         <% end %>
       <% end %>
     </div>
   <% end %>
+  </div>
 </div>

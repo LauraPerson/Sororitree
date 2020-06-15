@@ -1,4 +1,13 @@
 .page-footer {
+  background-color: transparent;
+  // display: flex;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.page-footer-log {
   background-color: $background;
   // display: flex;
   text-align: center;
