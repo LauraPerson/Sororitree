@@ -89,9 +89,13 @@
         <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
           <% @chatroom.messages.each do |message| %>
             <% if message.user == current_user %>
-              <%= render 'messages/message_user', message:message %>
+              <div class="d-flex justify-content-start">
+                <%= render 'messages/message_user', message:message %>
+              </div>
             <% else %>
-              <%= render 'messages/message_guest', message:message %>
+              <div class="d-flex justify-content-end">
+                <%= render 'messages/message_guest', message:message %>
+              </div>
             <% end %>
           <% end %>
         </div>
