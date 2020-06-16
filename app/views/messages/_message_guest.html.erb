@@ -1,0 +1,11 @@
+<div class="message-guest" id="message-<%= message.id %>">
+  <div class="py-1 px-3">
+    <div class="author">
+      <small><%= message.created_at.strftime("%b %e às %H:%M") %></small>
+      <span><%= message.user.nickname %></span>
+    </div>
+    <div>
+      <p><%= message.content %></p>
+    </div>
+  </div>
+</div>

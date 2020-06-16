@@ -156,6 +156,7 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .card-chat-theme {
+  font-size: 13px;
   font-style: italic;
   color: gray;
 }
@@ -223,4 +224,46 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 .card-professional-description {
   font-style: italic;
   font-size: 14px;
+}
+
+.message-user {
+  text-align: left;
+  margin-bottom: 5px;
+  border-radius: 12px;
+  background-color: $light-pink2;
+  max-width: 48%;
+  small {
+    font-style: italic;
+    margin-left: 5px;
+  }
+  span {
+    font-size:15px;
+    font-weight: bold;
+    color: $red-pink-dark;
+    font-style: italic;
+  }
+  p {
+    margin: 0 auto;
+  }
+}
+
+.message-guest {
+  text-align: right;
+  margin-bottom: 5px;
+  border-radius: 12px;
+  background-color: #f4e1e9;
+  max-width: 48%;
+  small {
+    font-style: italic;
+    margin-right: 5px;
+  }
+  span {
+    font-size:15px;
+    font-weight: bold;
+    color: $red-pink-dark;
+    font-style: italic;
+  }
+  p {
+    margin: 0 auto;
+  }
 }
