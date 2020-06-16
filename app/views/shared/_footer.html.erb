@@ -1,5 +1,6 @@
 <div class="footer">
-    <div class="page-footer">
+  <% if user_signed_in? %>
+    <div class="page-footer-log">
               <!-- Facebook -->
           <%= link_to "https://pt-br.facebook.com/lewagon/", target: "_blank", style: 'text-decoration: none;', class: "social-icon" do %>
             <i class="fab fa-facebook-square" id="facebook"></i>
@@ -20,4 +21,28 @@
     <div class="footer-copyright" id="copyright">© 2020 Copyright:
           <a href="https://www.lewagon.com/pt-BR" id="copyrighttext">#Batch354#TheBest</a>
     </div>
+
+    <% else %>
+      <div class="page-footer">
+                <!-- Facebook -->
+            <%= link_to "https://pt-br.facebook.com/lewagon/", target: "_blank", style: 'text-decoration: none;', class: "social-icon" do %>
+              <i class="fab fa-facebook-square" id="facebook"></i>
+              <% end %>
+                <!--Linkedin -->
+            <%= link_to "https://www.linkedin.com/school/le-wagon/?originalSubdomain=br", target: "_blank", style: 'text-decoration: none;', class: "social-icon" do %>
+              <i class="fab fa-linkedin" id="linkedin"></i>
+              <% end %>
+                <!--Instagram-->
+              <%= link_to "https://www.instagram.com/lewagonbrasil/?hl=pt-br", target: "_blank", style: 'text-decoration: none;', class: "social-icon" do %>
+                <i class="fab fa-instagram" id="instagram"></i>
+              <% end %>
+                <!--Twitter-->
+              <%=  link_to "https://twitter.com/lewagonbrasil", target: "_blank", style: 'text-decoration: none;', class: "social-icon" do %>
+                 <i class="fab fa-twitter-square" id="twitter"></i>
+              <% end %>
+      </div>
+      <div class="footer-copyright" id="copyright">© 2020 Copyright:
+            <a href="https://www.lewagon.com/pt-BR" id="copyrighttext">#Batch354#TheBest</a>
+      </div>
+  <% end %>
 </div>
