@@ -252,14 +252,6 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border: none;
 }
 
-.disabled {
-  background-color: gray;
-  &:hover {
-    background-color: gray;
-    cursor: not-allowed;
-  }
-}
-
 #button-modal-request {
   color: white;
   padding: 16px 24px;
@@ -272,7 +264,22 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     background-color: $purple-light;
     box-shadow: $box-shadow;
     cursor: pointer;
+  }
 }
+
+#button-modal-request.disabled {
+  color: white;
+  padding: 16px 24px;
+  background-color: $purple-dark;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $purple-light;
+    box-shadow: $box-shadow;
+    cursor: not-allowed;
+  }
 }
 
 #button-modal-publi {
@@ -291,5 +298,13 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     border: 1px solid $red-pink-light;
     text-decoration: none;
     cursor: pointer;
+  }
+}
+
+.disabled {
+  background-color: gray;
+  &:hover {
+    background-color: gray;
+    cursor: not-allowed;
   }
 }

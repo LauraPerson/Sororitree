@@ -10,7 +10,6 @@ const scrollLastMessageIntoView = () => {
 
 const initChatroomCable = () => {
   const messagesContainer = document.querySelector("#chat-container");
-
   if (messagesContainer) {
     const id = messagesContainer.dataset.chatroomId;
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
@@ -24,6 +23,6 @@ const initChatroomCable = () => {
 
 
 
-export { initChatroomCable };
+export { initChatroomCable, scrollLastMessageIntoView };
 
 
