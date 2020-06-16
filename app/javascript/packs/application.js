@@ -3,6 +3,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("turbolinks").start()
 
+import { initUpdateNavbarOnScroll } from '../components/navbar_2';
 import { transparentNabarHome } from '../components/navbar';
 import { themeChoice } from '../components/theme_choice';
 import { matchChoice } from '../components/match_choice';
@@ -14,6 +15,7 @@ import { initNotifications } from '../channels/notifications_unread';
 import { cardAvatarHover, cardAvatarSelect, initBtnAvatar } from '../components/select_avatar';
 
 document.addEventListener('turbolinks:load', () => {
+  initUpdateNavbarOnScroll();
   transparentNabarHome();
   cardAvatarHover();
   cardAvatarSelect();
