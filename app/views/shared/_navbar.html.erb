@@ -24,13 +24,7 @@
         <div class="matching-items-position">
           <i class="fas fa-hands-helping" id="inbox-button"></i>
           <div class="matching-number">
-            <span><% count = 0 %>
-            <% current_user.matching_profiles.each do |match| %>
-              <% if match.accepted.nil? %>
-                <% count += 1%>
-              <% end %>
-            <% end %>
-            <%= count %></span>
+            <span><%= @profile_matched %></span>
           </div>
         </div>
       <% end %>

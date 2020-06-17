@@ -1,11 +1,19 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :messages_read
+  before_action :messages_read, :profile_matched
 
   def messages_read
     @chatrooms_user = Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user))
     @unread = Message.where(read: false).where(chatroom: @chatrooms_user).where.not(user: current_user)
+  end
+
+  def profile_matched
+    @profile_matched = 0
+    current_user.matching_profiles.each do |match|
+      @profile_matched += 1 if match.accepted.nil?        
+    end
+    @profile_matched
   end
 
   def configure_permitted_parameters
