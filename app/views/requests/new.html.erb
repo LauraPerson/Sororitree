@@ -1,37 +1,26 @@
 <div class="container-page">
-
   <div class="container-background" style="background-image: url(<%= image_path 'women_hug.png' %>)">
-
-  <div class="container-request pt-5">
-
-    <div class="text-form text-center mt-2">
-      <h1> Solicitação de Ajuda </h1>
-    </div>
-
-    <div class="form-request-info text-justify">
-      <h5> Querida, nesse formulário de solicitação de ajuda você pode especificar algumas características que você prefere como intervalo de idade e a temática. Assim procuraremos "manas" que passaram por situação similar para lhe ajudar.</h3>
-      <div><h5 class="text-center mt-4"> Esperamos que você supere essa situação da melhor forma possível! ❤️</h3></div>
-      <div><h5 class="text-center mt-1"> Juntas somos mais fortes!!!</h3></div>
-    </div>
-
-    <div class="request-form">
-      <div class="text-center mb-4">
-        <h4 class="form-request-title"> Selecione suas preferências </h4>
+    <div class="container-request">
+      <div class="request-info mt-5 py-3 px-3">
+        <div class="request-text-form text-center">Solicitação de Ajuda</div>
       </div>
-      <%= simple_form_for @request do |f| %>
-        <%= f.label "Selecione a temática que você gostaria de conversar:" %>
-        <%= f.association :theme, label: false, input_html: { class: 'card-form' }  %>
-        <%= f.label "Selecione o intervalo de idade da mulher que você gostaria de conversar:", input_html: { class: 'text-form text-center' }%>
-        <div class="d-flex justify-content-around">
-          <%= f.input :age_min, label: 'Idade Mínima', input_html: { min: '18', step: 'any', class: 'card-form' } %>
-          <%= f.input :age_max, label: 'Idade Máxima', input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
+      <div class="request-form mt-5">
+        <div class="text-center mb-4">
+          <h4 class="form-request-title"> Selecione suas preferências </h4>
         </div>
-        <div class="text-center mt-3">
-          <%=f.submit 'Envie', class: 'btn-request' %>
-        </div>
-      <% end %>
+        <%= simple_form_for @request do |f| %>
+          <%= f.label "Selecione a temática que você gostaria de conversar:" %>
+          <%= f.association :theme, label: false, input_html: { class: 'card-form' }  %>
+          <%= f.label "Selecione o intervalo de idade da mulher que você gostaria de conversar:", input_html: { class: 'text-form text-center' }%>
+          <div class="d-flex justify-content-around">
+            <%= f.input :age_min, label: 'Idade Mínima', input_html: { min: '18', step: 'any', class: 'card-form' } %>
+            <%= f.input :age_max, label: 'Idade Máxima', input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
+          </div>
+          <div class="text-center mt-3">
+            <%=f.submit 'Envie', class: 'btn-request' %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
   </div>
-</div>
 </div>
