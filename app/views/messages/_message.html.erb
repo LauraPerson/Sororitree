@@ -4,7 +4,7 @@
       <div class="py-1 px-3">
         <div class="author">
           <span><%= message.user.nickname %></span>
-          <small><%= message.created_at.strftime("%b %e às %H:%M") %></small>
+          <small><%= message.created_at.in_time_zone('Brasilia').strftime("%b %e às %H:%M") %></small>
         </div>
         <div>
           <p><%= message.content %></p>
@@ -17,7 +17,7 @@
     <div class="message-guest" id="message-<%= message.id %>">
       <div class="py-1 px-3">
         <div class="author">
-          <small><%= message.created_at.strftime("%b %e às %H:%M") %></small>
+          <small><%= message.created_at.in_time_zone('Brasilia').strftime("%b %e às %H:%M") %></small>
           <span><%= message.user.nickname %></span>
         </div>
         <div>

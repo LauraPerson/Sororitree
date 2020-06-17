@@ -43,9 +43,9 @@
                   <% if chat.messages != [] %>
                     <div class="card-chat-time align-self-end">
                       <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
-                        <%= (chat.messages.last.created_at.in_time_zone).strftime('%H:%M') %>
+                        <%= (chat.messages.last.created_at.in_time_zone('Brasilia')).strftime('%H:%M') %>
                       <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
-                        <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
+                        <%= (chat.messages.last.created_at.in_time_zone('Brasilia')).strftime('%d/%m') %>
                       <% end %>
                     </div>
                   <% end %>
@@ -66,9 +66,9 @@
                   <% if chat.messages != [] %>
                     <div class="card-chat-time align-self-end">
                       <% if (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 24 %>
-                        <%= (chat.messages.last.created_at.in_time_zone).strftime('%H:%M') %>
+                        <%= (chat.messages.last.created_at.in_time_zone('Brasilia')).strftime('%H:%M') %>
                       <% elsif (DateTime.now.utc - chat.messages.last.created_at) / 3600 < 168 %>
-                        <%= (chat.messages.last.created_at.in_time_zone).strftime('%d/%m') %>
+                        <%= (chat.messages.last.created_at.in_time_zone('Brasilia')).strftime('%d/%m') %>
                       <% end %>
                     </div>
                   <% end %>
