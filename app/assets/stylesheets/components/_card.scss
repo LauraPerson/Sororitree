@@ -32,7 +32,8 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   border-radius: 8px;
   margin: 4px;
   box-shadow: $box-shadow-purple;
-  width: 18vw;
+  width: 16.5vw;
+  height: 10vh;
   text-align: center;
 }
 
@@ -204,14 +205,13 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .card-professional {
-  left: 80%;
-  width: 20vw;
+  width: 32vw;
   background-color: $sugar-cane;
   padding: 8px;
+  font-size: 12px;
   border-radius: 4px;
   p {
     font-size: 12px;
-    font-style: italic;
     text-align: justify;
   }
 }
@@ -266,4 +266,35 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
   p {
     margin: 0 auto;
   }
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 16px;
+
+}
+
+.profile {
+  width: 814vh;
+  margin-top: 80px;
+}
+
+.help-availability{
+padding-left: 154px;
+padding-top: 40px;
+}
+
+#theme-boxes {
+  padding-bottom: 64px;
+}
+
+.user-show-nickname {
+  width: 18vh;
+}
+
+.helper-profile-avatar {
+margin-left: 92px;
+margin-right: 60px;
 }

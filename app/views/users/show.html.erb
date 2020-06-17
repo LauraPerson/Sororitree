@@ -1,47 +1,45 @@
 <div class="show-user-banner" style="background-image: url('<%= image_path 'User-show-profile.png' %>')">
-  <div class="container" id="container-user">
-    <% if @user == current_user %>
-      <div class="user-relative d-flex align-items-center pt-2 mb-4">
-        <div class="user-show-nickname">
-          <%= current_user.nickname %>
-        </div>
-        <%= link_to edit_user_registration_path, class: "btn-sugar-edit" do %>
-          <i class="fas fa-pencil-alt"></i>
-          Editar meu perfil
-        <% end %>
-      </div>
-      <div class="user-relative d-flex align-items-center mb-4">
-        <div class="user-absolute card-professional">
-          <% if current_user.professional.nil? %>
-            <p>Caso sua função professional poderia ajudar as mulheres você pode adicionar essa informação aqui.</p>
-            <%= render 'modal_profession' %>
-          <% else %>
-            <div class="d-flex justify-content-between">
-              <div class="card-professional-infos">
-                <div class="card-professional-job mb-2">
-                  <%= current_user.professional.job_category %>
-                </div>
-                <div class="card-professional-description">
-                  <%= current_user.professional.description %>
-                </div>
-              </div>
-              <%= link_to professional_path, method: :delete, data: {confirm: "Você quer tirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
-                <i class="fas fa-times"></i>
-              <% end %>
+   <div class="profile-info">
+    <div class="container" id="container-user">
+      <% if @user == current_user %>
+        <div class="user">
+            <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')">
+            <%= render 'modal_avatar' %>
             </div>
+        </div>
+          <div class="edit-button-profile">
+          <%= link_to edit_user_registration_path, class: "btn-sugar-edit" do %>
+            <i class="fas fa-pencil-alt"></i>
+            Editar perfil
           <% end %>
         </div>
-        <div class="user flex-grow-1">
-          <div class="card-user-profile d-flex align-items-center justify-content-center flex-column">
-            <%= render 'modal_avatar' %>
+    </div>
+    <div class="profile">
+            <h2><%= current_user.nickname %></h2>
+            <br>
+            <p><%= DateTime.now().year - current_user.birth_date.year.to_i %> anos</p>
+          <div class="card-professional">
+            <% if current_user.professional.nil? %>
+              <p>Caso você possua uma função professional que pode ajudar outras mulheres, você pode adicionar essa informação aqui.</p>
+              <%= render 'modal_profession' %>
+            <% else %>
+                <div class="card-professional-infos">
+                  <div class="card-professional-job">
+                    <%= current_user.professional.job_category %>
+                  </div>
+                  <div class="card-professional-description">
+                    <%= current_user.professional.description %>
+                  </div>
+                    <%= link_to professional_path, method: :delete, data: {confirm: "Você quer tirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
+                    <i class="fas fa-times"></i>
+                    <% end %>
+                </div>
+           <% end %>
           </div>
-          <div class="button-help text-center my-4">
-            <%= link_to "Pedir Ajuda !", new_request_path, class: "btn-rose"%>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
 
-      <div class="d-flex align-items-center justify-content-center my-3">
+      <div class="help-availability">
         <% if current_user.helper == false %>
           <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
           <p class="mb-0 ml-3">Você não está disponível para ajudar</p>
@@ -52,10 +50,18 @@
       </div>
 
       <% if current_user.helper == true %>
-        <div class="d-flex justify-content-around p-4">
+        <div class="d-flex flex-wrap justify-content-center">
+          <% if current_user.themes.count != Theme.count %>
+            <div class="<%= current_user.themes == [] ? 'form-selected-themes-alone' : 'form-selected-themes' %>">
+             <!--  <div class="title-form mb-2">
+                Assuntos para ajudar
+              </div> -->
+              <%= render 'modal_themes' %>
+            </div>
+          <% end %>
           <% if current_user.selected_themes.exists? %>
-            <div class="selected-themes pt-4 flex-grow-2">
-              <div class="d-flex flex-wrap justify-content-center">
+            <div class="selected-themes p-4 flex-grow-2">
+              <div class="d-flex flex-wrap justify-content-center" id="theme-boxes">
                 <% @selected_themes_existing.each do |select_theme| %>
                   <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
                     <div class="delete-theme align-self-end">
@@ -67,47 +73,37 @@
               </div>
             </div>
           <% end %>
-          <% if current_user.themes.count != Theme.count %>
-            <div class="<%= current_user.themes == [] ? 'form-selected-themes-alone' : 'form-selected-themes' %>">
-              <div class="title-form mb-2">
-                Assuntos para ajudar
-              </div>
-              <%= render 'shared/form_themes' %>
-            </div>
-          <% end %>
         </div>
       <% end %>
 
 
     <% else %>
-      <div class="user-relative d-flex align-items-center mb-4">
+  <div class="helper-profile d-flex justify-content-space-evenly">
+    <div class= "helper-profile-avatar" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')">
+    </div>
         <div class="user-show-nickname">
           <%= @user.nickname %>
-        </div>
-      </div>
-      <div class="user-relative d-flex align-items-center">
-        <% if @user.professional %>
-          <div class="user-absolute card-professional">
+          <p><%= DateTime.now().year - @user.birth_date.year.to_i %> anos</p>
+          <div class="user">
             <% if @user.professional %>
-              <div class="d-flex justify-content-between">
-                <div class="card-professional-infos">
-                  <div class="card-professional-job mb-2">
-                    <%= @user.professional.job_category %>
+              <div class="card-professional">
+                <% if @user.professional %>
+                  <div class="d-flex justify-content-between">
+                    <div class="card-professional-infos">
+                      <div class="card-professional-job mb-2">
+                        <%= @user.professional.job_category %>
+                      </div>
+                      <div class="card-professional-description">
+                        <%= @user.professional.description %>
+                      </div>
+                    </div>
                   </div>
-                  <div class="card-professional-description">
-                    <%= @user.professional.description %>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        <div class="user flex-grow-1">
-          <div class="card-user-profile d-flex align-items-center justify-content-center flex-column">
-            <div class="avatar-large" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')"></div>
-          </div>
+                <% end %>
+            </div>
+          <% end %>
+           </div>
         </div>
-      </div>
+     </div>
 
       <div class="d-flex align-items-center justify-content-center my-3">
         <% if @user.helper == false %>
@@ -124,7 +120,7 @@
       </div>
 
       <% if @user.selected_themes.exists? %>
-            <div class="selected-themes center" style="width: 50%; margin: auto">
+            <div class="selected-themes" style="width: 100%; margin: auto">
               <div class="d-flex flex-wrap justify-content-center py-3">
                 <% @user.themes.each do |theme| %>
                   <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
@@ -135,5 +131,4 @@
             </div>
           <% end %>
     <% end %>
-  </div>
 </div>

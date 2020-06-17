@@ -1,21 +1,21 @@
-.selected-themes-title { 
+.selected-themes-title {
   font-weight: bold;
   font-size: 24px;
   color: $purple-dark;
   font-family: $body-font;
 }
 
-.user-relative{
-  position: relative;
-}
+// .user-relative{
+//   position: relative;
+// }
 
-.user-absolute {
-  position: absolute;
-  flex: 0 1 auto;
-}
+// .user-absolute {
+//   position: absolute;
+//   flex: 0 1 auto;
+// }
 
 .user-show-nickname {
-  position: absolute;
+  // position: absolute;
   flex: 0 1 auto;
   font-size: 32px;
   font-weight: bold;

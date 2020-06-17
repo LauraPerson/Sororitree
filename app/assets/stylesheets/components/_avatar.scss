@@ -9,11 +9,18 @@
 }
 
 .avatar-large {
-  height: 30vh;
-  width: 30vh;
+  height: 220px;
+  width: 220px;
   border-radius: 50%;
   background-size: cover;
-  background-position: center;
+  position: relative;
+  // background-position: center;
+}
+
+.avatar-pencil {
+  position: absolute;
+  right: 62px;
+  top: 10px;
 }
 
 .avatar-large-black {
@@ -84,4 +91,12 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
+}
+
+.helper-profile-avatar {
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+  background-size: cover;
+  position: relative;
 }
