@@ -8,18 +8,17 @@
     <h3> Escolha quantas manas você quiser!</h3>
   </div>
 
-  <div class="container-matching-cards">
+  <div class="container-matching-cards text-center">
     <%= form_tag request_matching_profiles_path, method: 'POST' do %>
       <%= hidden_field_tag :request_id, @request.id %>
       <% @helpers.sort_by { rand }.each do |user_helper| %>
         <% if user_helper.professional %>
-
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
           <label for="helper_user_id_<%= user_helper.id %>">
             <div class="matching-card-prof justify-content-around">
               <div class="user-infos d-flex flex-column align-items-center">
                 <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
-                <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1", target: :_blank do %>
+                <%= link_to user_path(user_helper.id), class: "btn-perfil-purple mt-1", target: :_blank do %>
                   <p class="m-0">Perfil</p>
                 <% end %>
               </div>
@@ -36,9 +35,9 @@
               <div class="matching-card justify-content-around">
                 <div class="user-infos d-flex flex-column align-items-center">
                   <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
-                  <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1", target: :_blank do %>
+                  <%= link_to user_path(user_helper.id), class: "btn-perfil-purple mt-1", target: :_blank do %>
                     <p class="m-0">Perfil</p>
-                  <% end %>                
+                  <% end %>
                 </div>
                 <div class="matching-info">
                   <h4 class="text-center"><%= user_helper.nickname %></h4>
