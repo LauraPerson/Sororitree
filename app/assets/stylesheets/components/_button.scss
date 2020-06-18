@@ -23,12 +23,15 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .btn-post-purple {
   color: white;
-  background-color: $purple-dark;
+  text-align: center;
+  background-color: $purple-medium;
   border-radius: 8px;
+  height: 32px;
+  width: 32;
   box-shadow: $box-shadow;
   padding: 0 4px;
   p {
-    font-size: 10px;
+    font-size: 12px;
   }
   &:hover {
     text-decoration: none;
@@ -230,22 +233,24 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 .btn-sugar-edit {
-  background-color: $sugar-cane;
+  text-align: center;
+  background-color: $purple-medium;
   border-radius: 8px;
-  color: black;
+  color: white;
   padding: 4px 8px;
   flex: 0 1 auto;
-  margin-left: auto;
   border: none;
   font-size: 12px;
+  margin-left: 60px;
   &:hover {
     box-shadow: $box-shadow;
-    background-color: $sugar-cane-dark;
+    background-color: $purple-light;
     text-decoration: none;
-    color: black;
+    color: white;
     cursor: pointer;
   }
 }
+
 
 .transparent {
   background-color: transparent;
@@ -342,3 +347,20 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
   }
 }
+#help-button-theme {
+  color: white;
+  padding: 8px 16px;
+  background-color: $purple-medium;
+  border-radius: 8px;
+  border-color: $purple-medium;
+  box-shadow: $box-shadow;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $purple-light;
+    border-color: $purple-light;
+    box-shadow: $box-shadow;
+    text-align: center;
+  }
+}
+

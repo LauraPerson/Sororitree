@@ -105,6 +105,7 @@
 
 #container-user{
   padding-top: 90px;
+  margin-left: 100px;
 }
 
 #login {
@@ -117,7 +118,8 @@
   min-height: 100vh;
   justify-content: space-between;
   background-color: $background;
-}
+
+  }
 
 .container-request {
  margin-top: -292px;

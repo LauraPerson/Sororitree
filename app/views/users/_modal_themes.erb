@@ -1,0 +1,38 @@
+<!-- Button trigger modal -->
+<button type="button" id="help-button-theme" class="btn btn-primary" data-toggle="modal" data-target="#modal-theme">
+  Selecionar temas
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-theme" tabindex="-1" role="dialog" aria-labelledby="modal-theme-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-theme">Adicionar temas para ajudar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <%= simple_form_for [current_user, @selected_theme], remote: true do |f| %>
+          <div class="form-inputs">
+            <fieldset class="form-group form-theme-content required">
+              <% @themes.each do |theme| %>
+              <div class="form-theme-choice">
+                <input class="hidden-checkbox" type="checkbox" value="<%= theme.id %>" name="selected_theme[theme_id][]" id="selected_theme_theme_id_<%= theme.id %>">
+                <label class="theme-choice" for="selected_theme_theme_id_<%= theme.id %>"> <%= theme.title %> </label>
+              </div>
+              <% end %>
+            </fieldset>
+
+      <div class="d-flex justify-content-center">
+      <%= f.submit "Ajuda !", class: "btn-rose-outline" %>
+      </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
