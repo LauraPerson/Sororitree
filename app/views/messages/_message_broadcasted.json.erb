@@ -1,0 +1,4 @@
+{
+  "senderNickname": "<%= current_user.nickname %>",
+  "message":  "<%= render('message_broadcasted', message: message).gsub("\n", " ").html_safe %>"
+}
