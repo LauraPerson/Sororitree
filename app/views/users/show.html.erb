@@ -16,36 +16,35 @@
     </div>
     <div class="profile">
             <h2><%= current_user.nickname %></h2>
-            <br>
-            <p><%= DateTime.now().year - current_user.birth_date.year.to_i %> anos</p>
+            <strong><p class="user-age"><%= DateTime.now().year - current_user.birth_date.year.to_i %> anos</p></strong>
           <div class="card-professional">
             <% if current_user.professional.nil? %>
               <p>Caso você possua uma função professional que pode ajudar outras mulheres, você pode adicionar essa informação aqui.</p>
               <%= render 'modal_profession' %>
             <% else %>
                 <div class="card-professional-infos">
-                  <div class="card-professional-job">
+                  <div class="card-professional-job d-flex justify-content-between">
                     <%= current_user.professional.job_category %>
+                    <%= link_to professional_path, method: :delete, data: {confirm: "Você quer tirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
+                    <i class="fas fa-times"></i>
+                    <% end %>
                   </div>
                   <div class="card-professional-description">
                     <%= current_user.professional.description %>
                   </div>
-                    <%= link_to professional_path, method: :delete, data: {confirm: "Você quer tirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
-                    <i class="fas fa-times"></i>
-                    <% end %>
                 </div>
            <% end %>
           </div>
     </div>
   </div>
 
-      <div class="help-availability">
+      <div class="help-availability d-flex align-items-center">
         <% if current_user.helper == false %>
           <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
-          <p class="mb-0 ml-5">Você não está disponível para ajudar</p>
+          <strong><p class="mb-0 ml-2" >Você não está disponível para ajudar</p></strong>
         <% else %>
           <%= link_to icon_helper("check-square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
-          <p class="mb-0 ml-5">Você está disponível para ajudar</p>
+          <strong><p class="mb-0 ml-2">Você está disponível para ajudar</p></strong>
         <% end %>
       </div>
 
@@ -82,8 +81,8 @@
     <div class= "helper-profile-avatar" style="background-image: url('<%= image_path "Avatars/avatar_#{@user.avatar.id}", crop: :fill %>')">
     </div>
         <div class="user-show-nickname">
-          <%= @user.nickname %>
-          <p><%= DateTime.now().year - @user.birth_date.year.to_i %> anos</p>
+          <h2><%= @user.nickname %></h2>
+          <p class="user-age"><%= DateTime.now().year - @user.birth_date.year.to_i %> anos</p>
           <div class="user">
             <% if @user.professional %>
               <div class="card-professional">
@@ -110,12 +109,12 @@
           <div class="icon-helper-w-hover">
             <%= icon_helper("square") %>
           </div>
-          <p class="mb-0 ml-3"><%= @user.nickname %> não está disponível para ajudar</p>
+         <p class="mb-0 ml-2"><%= @user.nickname %> não está disponível para ajudar</p>
         <% else %>
           <div class="icon-helper-w-hover">
             <%= icon_helper("check-square") %>
           </div>
-          <p class="mb-0 ml-3"><%= @user.nickname %> está disponível para ajudar</p>
+          <strong><p class="mb-0 ml-2"><%= @user.nickname %> está disponível para ajudar</p></strong>
         <% end %>
       </div>
 

@@ -271,15 +271,15 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 .profile-info {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  padding: 16px;
+  // align-items: center;
+  padding: 8px;
 
 }
 
 .profile {
   width: 814vh;
   margin-top: 80px;
-  padding-left: 56px;
+  align-self: center;
 }
 
 .help-availability{
@@ -293,9 +293,14 @@ padding-top: 40px;
 
 .user-show-nickname {
   width: 18vh;
+  align-self: center;
 }
 
 .helper-profile-avatar {
 margin-left: 92px;
 margin-right: 60px;
+}
+
+.user-age {
+font-size: 24px;
 }
