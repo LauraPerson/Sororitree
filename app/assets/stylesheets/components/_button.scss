@@ -325,3 +325,20 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
   }
 }
+
+.btn-modal-rose {
+  background-color: $red-pink;
+  border-radius: 8px;
+  color: white;
+  padding: 4px 8px;
+  width: 250px;
+  border: none;
+  display: inline-block;
+  &:hover {
+    box-shadow: $box-shadow;
+    background-color: $red-pink-dark;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  }
+}
