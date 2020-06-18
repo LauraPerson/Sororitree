@@ -42,10 +42,10 @@
       <div class="help-availability">
         <% if current_user.helper == false %>
           <%= link_to icon_helper("square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
-          <p class="mb-0 ml-3">Você não está disponível para ajudar</p>
+          <p class="mb-0 ml-5">Você não está disponível para ajudar</p>
         <% else %>
           <%= link_to icon_helper("check-square"), user_toggle_helper_path(current_user), method: :patch, class: "icon-helper", remote: true %>
-          <p class="mb-0 ml-3">Você está disponível para ajudar</p>
+          <p class="mb-0 ml-5">Você está disponível para ajudar</p>
         <% end %>
       </div>
 
