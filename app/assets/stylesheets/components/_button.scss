@@ -314,6 +314,23 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   }
 }
 
+.btn-perfil-purple {
+  color: white;
+  background-color: $purple-dark;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  padding: 0 4px;
+  width: 30px;
+  font-size: 10px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: $purple-light;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+  }
+}
+
 .btn-modal-rose {
   background-color: $red-pink;
   border-radius: 8px;
@@ -330,7 +347,6 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
   }
 }
-
 #help-button-theme {
   color: white;
   padding: 8px 16px;
@@ -347,3 +363,4 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     text-align: center;
   }
 }
+

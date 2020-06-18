@@ -43,11 +43,11 @@ class ChatroomsController < ApplicationController
     #find the chatrooms for the current_user
     chatrooms_user = Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user))
     #create an array with the ordered id_chatrooms within the last message
-    messages_chat = Message.where(chatroom: chatrooms_user).order(created_at: :desc).pluck(:chatroom_id).uniq
-    chatrooms_user.each do |chatroom|
-      messages_chat << chatroom.id if messages_chat.exclude? chatroom.id
-    end
-    @chatrooms_ordered = Chatroom.find(messages_chat)
+    chatroom_ids_message = Message.where(chatroom: chatrooms_user).order(created_at: :desc).pluck(:chatroom_id, :created_at).uniq(&:first)
+    chatroom_ids_empty = chatrooms_user.order(created_at: :desc).pluck(:id, :created_at).uniq(&:first)
+    chatroom_ids = ((chatroom_ids_empty + chatroom_ids_message).sort_by { |array| array.second }).reverse.uniq(&:first)
+    ids = chatroom_ids.map { |array| array.first }
+    @chatrooms_ordered = Chatroom.find(ids)
   end
 
   def chatroom_params

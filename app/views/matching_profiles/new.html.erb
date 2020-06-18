@@ -8,45 +8,54 @@
     <h3> Escolha quantas manas você quiser!</h3>
   </div>
 
-  <div class="container-matching-cards">
+  <div class="container-matching-cards text-center">
     <%= form_tag request_matching_profiles_path, method: 'POST' do %>
       <%= hidden_field_tag :request_id, @request.id %>
       <% @helpers.sort_by { rand }.each do |user_helper| %>
         <% if user_helper.professional %>
-
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
           <label for="helper_user_id_<%= user_helper.id %>">
+
+          <div class="profile-matching-card">
+            <div>
+              <%= link_to "Perfil", user_path(user_helper.id), class: "btn-perfil-purple", target: :_blank %>
+            </div>
+
             <div class="matching-card-prof justify-content-around">
               <div class="user-infos d-flex flex-column align-items-center">
                 <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
-                <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1", target: :_blank do %>
-                  <p class="m-0">Perfil</p>
-                <% end %>
               </div>
               <div class="matching-info">
                 <h4 class="text-center"><%= user_helper.nickname %></h4>
-                <h5 class="text-center"><%= user_helper.professional.job_category %></h5>
+                <h6 class="text-center"><%= user_helper.professional.job_category %></h6>
                 <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
               </div>
             </div>
+
+          </div>
+
           </label>
         <% else %>
           <input type="checkbox" class="hidden" value="<%= user_helper.id %>" name="user_helper_ids[]" id="helper_user_id_<%= user_helper.id %>">
-            <label for="helper_user_id_<%= user_helper.id %>">
+          <label for="helper_user_id_<%= user_helper.id %>">
+
+          <div class="profile-matching-card">
+            <div>
+              <%= link_to "Perfil", user_path(user_helper.id), class: "btn-perfil-purple", target: :_blank %>
+            </div>
+
               <div class="matching-card justify-content-around">
                 <div class="user-infos d-flex flex-column align-items-center">
                   <div class="avatar-matching" style="background-image: url('<%= image_path("Avatars/avatar_#{user_helper.avatar.id}.png") %>')"></div>
-                  <%= link_to user_path(user_helper.id), class: "btn-post-purple mt-1", target: :_blank do %>
-                    <p class="m-0">Perfil</p>
-                  <% end %>                
                 </div>
                 <div class="matching-info">
                   <h4 class="text-center"><%= user_helper.nickname %></h4>
                   <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
                 </div>
               </div>
-            </label>
+          </div>
 
+          </label>
         <% end %>
     <% end %>
 
@@ -59,6 +68,7 @@
       <% end %>
   </div>
 </div>
+
 
 <!-- Include in a partial? -->
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

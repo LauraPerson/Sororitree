@@ -31,3 +31,40 @@
   padding: 8px;
   border-radius: 10px;
 }
+
+.request-info {
+  background-color: transparentize($red-pink-light, 0.2);
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.request-text-form {
+  font-family : $headers-font;
+  font-size: 3rem;
+  }
+
+
+.text-title-info-posts {
+  font-family : $headers-font;
+  font-size: 3rem;
+}
+
+.text-info-posts {
+  font-family : $body-font;
+  font-size: 1rem;
+}
+
+.image-request {
+  height: 10px;
+}
+
+.container-background-request{
+  background-size: cover;
+  background-position: center;
+  height: 337px;
+  width: 100%;
+}

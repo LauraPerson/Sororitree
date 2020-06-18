@@ -8,11 +8,10 @@ module ApplicationHelper
 
   def last_chat
     chatroom_search = Chatroom.where(user: current_user).or(Chatroom.where(guest_user: current_user))
-    last_message = Message.where(chatroom: chatroom_search).last
-    if last_message.nil?
-      false
+    if chatroom_search
+      chatroom_search.last
     else
-      last_chat = last_message.chatroom
+      false
     end
   end
 end
