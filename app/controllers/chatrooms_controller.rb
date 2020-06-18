@@ -16,10 +16,11 @@ class ChatroomsController < ApplicationController
     @message = Message.new
     @chatroom = Chatroom.find(params[:id])
     @messages_read = Message.where.not(user: current_user).where(chatroom: @chatroom)
-    @messages_read.each do |message| 
+    @messages_read.each do |message|
       message.read = true
       message.save
     end
+    @chatroom_messages = @chatroom.messages.order(created_at: :asc)
     # @messages_read.update_all(read: true)
     current_user == @chatroom.user ? @user_chat = @chatroom.guest_user : @user_chat = @chatroom.user
     NotificationsChannel.broadcast_to(@user_chat, @unread)

@@ -5,8 +5,8 @@ const scrollLastMessageIntoView = () => {
   const lastMessage = messages[messages.length - 1];
   if (lastMessage !== undefined) {
     lastMessage.scrollIntoView();
-  }
-}
+  };
+};
 
 const initChatroomCable = () => {
   const messagesContainer = document.querySelector("#chat-container");
@@ -14,12 +14,17 @@ const initChatroomCable = () => {
     const id = messagesContainer.dataset.chatroomId;
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
-        messagesContainer.insertAdjacentHTML('beforeend', data);
-        scrollLastMessageIntoView();
-      },
+
+        const guestName = document.querySelector('.chat-title').innerText;
+        if (data.includes(guestName)) {
+          messagesContainer.insertAdjacentHTML('beforeend', data);
+          scrollLastMessageIntoView();
+        };
+
+      }
     });
-  }
-}
+  };
+};
 
 
 

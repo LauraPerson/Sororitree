@@ -1,0 +1,13 @@
+<div class='message-container d-flex justify-content-start'>
+  <div class='message-guest' id='message-<%= message.id %>'>
+    <div class='py-1 px-3'>
+      <div class='author'>
+        <span><%= message.user.nickname %></span>
+        <small><%= message.created_at.in_time_zone('Brasilia').strftime("%b %e às %H:%M") %></small>
+      </div>
+      <div>
+        <p><%= message.content %></p>
+      </div>
+    </div>
+  </div>
+</div>
