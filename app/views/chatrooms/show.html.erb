@@ -87,7 +87,7 @@
           </div>
         <% end %>
         <div class="discussion-container" id="chat-container" data-chatroom-id="<%= @chatroom.id %>">
-          <% @chatroom.messages.each do |message| %>
+          <% @chatroom_messages.each do |message| %>
             <%= render 'messages/message', message:message %>
           <% end %>
         </div>
