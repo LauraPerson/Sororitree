@@ -17,7 +17,7 @@
                     input_html: { autocomplete: "nickname" } %>
         <%= f.input :password,
                     label: "Nova senha",
-                    hint: "Deixa vazio se não quer mudar",
+                    hint: "Deixe vazio caso não queira mudar",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
@@ -26,12 +26,12 @@
                     input_html: { autocomplete: "new-password" } %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Update", class: "btn-rose" %>
+        <%= f.button :submit, "Atualizar", class: "btn-rose" %>
       </div>
     <% end %>
-    
+
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <%= link_to "Back", :back, class: "text-red-pink" %>
+      <%= link_to "Retornar", :back, class: "text-red-pink" %>
       <%= link_to "Apagar a minha conta", registration_path(resource_name), class: "btn-rose-outline-remove", data: { confirm: "Are you sure?" }, method: :delete %>
     </div>
 
