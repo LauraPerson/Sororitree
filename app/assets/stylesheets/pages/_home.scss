@@ -2,7 +2,7 @@
 $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 
 .home-title {
-  font-family: $headers_font;
+  font-family: $home_font;
   color: $red-pink;
   font-size: 85px;
   font-style: bold;
@@ -11,7 +11,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 .home-subtitle {
-  font-family: $headers_font;
+  font-family: $home_font;
   color: $red-pink;
   font-size: 40px;
   font-style: bold;
@@ -28,7 +28,7 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 .home-title-explanation {
-  font-family: $headers_font;
+  font-family: $home_font;
   color: $red-pink;
   font-size: 50px;
   font-style: bold;
