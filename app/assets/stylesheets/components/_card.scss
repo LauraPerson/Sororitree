@@ -26,6 +26,7 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .card-selected-theme {
+  position: relative; 
   background: linear-gradient(rgba(226,62,87,1), rgba(226,62,87,0.8));
   color: $sugar-cane;
   padding: 8px;

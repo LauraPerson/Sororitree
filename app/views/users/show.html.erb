@@ -63,11 +63,9 @@
             <div class="selected-themes p-4 flex-grow-2">
               <div class="d-flex flex-wrap justify-content-center" id="theme-boxes">
                 <% @selected_themes_existing.each do |select_theme| %>
-                  <div class="card-selected-theme d-flex flex-column align-items-center justify-content-center">
-                    <div class="delete-theme align-self-end">
-                      <%= link_to "x", selected_theme_path(select_theme), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy", remote: true %>
-                    </div>
-                    <p><%= select_theme.theme.title %></p>
+                  <div class="card-selected-theme d-flex align-items-center justify-content-center">
+                    <p class="mb-0"><%= select_theme.theme.title %></p>
+                    <%= link_to "x", selected_theme_path(select_theme), method: :delete, data: { confirm: "Certeza ?"}, class: "icon-destroy-absolute", remote: true %>
                   </div>
                 <% end %>
               </div>
