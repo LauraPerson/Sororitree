@@ -20,7 +20,7 @@
           <strong><p class="user-age"><%= DateTime.now().year - current_user.birth_date.year.to_i %> anos</p></strong>
           <div class="card-professional">
             <% if current_user.professional.nil? %>
-              <p>Caso você possua uma função professional que pode ajudar outras mulheres, você pode adicionar essa informação aqui.</p>
+              <p>Caso você possua uma profissão que possa ajudar outras mulheres, você pode adicionar essa informação aqui.</p>
               <%= render 'modal_profession' %>
             <% else %>
               <div class="card-professional-infos">
