@@ -26,6 +26,7 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 }
 
 .card-selected-theme {
+  position: relative; 
   background: linear-gradient(rgba(226,62,87,1), rgba(226,62,87,0.8));
   color: $sugar-cane;
   padding: 8px;
@@ -274,29 +275,12 @@ $box-shadow-purple: rgba(49, 29, 63, 0.2) 0px 2px 8px 0px;
 
 }
 
-.profile {
-  width: 814vh;
-  margin-top: 80px;
-  align-self: center;
-}
-
-.help-availability{
-padding-left: 102px;
-padding-top: 40px;
-}
-
 #theme-boxes {
   padding-bottom: 64px;
 }
 
 .user-show-nickname {
-  width: 18vh;
   align-self: center;
-}
-
-.helper-profile-avatar {
-margin-left: 92px;
-margin-right: 60px;
 }
 
 .user-age {

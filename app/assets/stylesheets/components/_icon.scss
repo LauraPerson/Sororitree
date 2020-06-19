@@ -64,3 +64,15 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     color: $darker-brown;
   }
 }
+
+.icon-destroy-absolute {
+  position: absolute;
+  top: 0;
+  right: 1vw;
+  color: $light-gray;
+  font-size: 14px;
+  &:hover {
+    color: $medium-gray;
+    text-decoration: none;
+  }
+}
