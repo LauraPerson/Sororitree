@@ -19,13 +19,13 @@
             <strong><p class="user-age"><%= DateTime.now().year - current_user.birth_date.year.to_i %> anos</p></strong>
           <div class="card-professional">
             <% if current_user.professional.nil? %>
-              <p>Caso você possua uma função professional que pode ajudar outras mulheres, você pode adicionar essa informação aqui.</p>
+              <p>Caso você possua uma profissão que possa ajudar outras mulheres, adicione essa informação aqui.</p>
               <%= render 'modal_profession' %>
             <% else %>
                 <div class="card-professional-infos">
                   <div class="card-professional-job d-flex justify-content-between">
                     <%= current_user.professional.job_category %>
-                    <%= link_to professional_path, method: :delete, data: {confirm: "Você quer tirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
+                    <%= link_to professional_path, method: :delete, data: {confirm: "Você deseja retirar a sua profissão ?"}, class: 'btn-font-awesome mx-3 icon-update-avatar', style: "font-size: 12px" do %>
                     <i class="fas fa-times"></i>
                     <% end %>
                   </div>
