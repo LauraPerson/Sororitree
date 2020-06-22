@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @user = User.new
     @posts = Post.all
     authorize @posts
     random = [rand(1..Post.count), rand(1..Post.count), rand(1..Post.count)]
