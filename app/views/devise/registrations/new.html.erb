@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-6 offset-3">
-  <h2> up</h2>
+  <h2>Sign up</h2>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
@@ -23,7 +23,7 @@
                 required: true,
                 input_html: { autocomplete: "new-password" },
                 label: "Confirmar a senha" %>
-    <%= f.input :birth_date, start_year: Date.today.year - 40,
+    <%= f.input :birth_date, start_year: Date.today.year - 90,
                 end_year: Date.today.year - 12,
                 order: [:day, :month, :year],
                 required: true,

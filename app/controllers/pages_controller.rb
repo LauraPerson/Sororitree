@@ -3,12 +3,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
+    @user = User.new
     @posts = Post.all
     authorize @posts
-    @random_posts = []
-    (1..3).each do
-      random = rand(1..Post.count).to_i
-      @random_posts << Post.find(random)
-    end
+    random = [rand(1..Post.count), rand(1..Post.count), rand(1..Post.count)]
+    @random_posts = Post.includes(user: :avatar).find(random)
   end
 end
