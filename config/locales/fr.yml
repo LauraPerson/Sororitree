@@ -4,23 +4,32 @@ fr:
   messages:
   pages:
     modal_homepage:
-      sign_up: "S'enregistrer"
+      sign_up: "Créer un compte"
       title: "Créer mon compte"
     home:
       title: "Sororitree"
       subtitle: "Rencontre des sisters pour échanger"
-      sign_up: "S'enregistrer"
+      sign_up: "Créer un compte"
       posts: "Les sisters s'expriment"
       search_help: "Chercher de l'aide"
-      search_help_desc: "Si vous cherchez de l'aide pour parler de sujets tabous, vous pouvez maintenant utiliser l'application Sororitree, qui vous permet de parler à des femmes qui sont prêtes à vous écouter."
+      search_help_desc: "Si tu cherches de l'aide pour parler de sujets tabous, tu peux désormais utiliser l'application Sororitree, qui te permet de parler à des femmes prêtes à t'écouter."
       help: "Aider"
-      help_desc: "Si tu le souhaites, tu peux également aider d'autres femmes, en partageant tes expériences et opinions."
+      help_desc: "Si tu le souhaites, tu peux également aider d'autres femmes, en partageant tes expériences et tes opinions."
       talk: "Échanger"
-      talk_desc: "Dans Sororitree, tu peux également consulter et partager des commentaires relatifs à la place des femmes dans la société contemporaine"
+      talk_desc: "Sur Sororitree, tu peux également consulter et partager des commentaires relatifs à la place des femmes dans la société contemporaine"
   posts:
+    index:
+      title: "Ensemble nous sommes plus fortes!"
+      subtitle: "Jette un oeil sur les publications des sisters"
+      createpost: "Publier"
+      insertsubject: "Insère un sujet"
+      filter: "Filtrer"
   profile_avatar:
   requests:
   users:
+    show:
+      yearsold: "ans"
+
   shared:
     navbar:
       sign_in: "Se connecter"
@@ -30,6 +39,7 @@ fr:
       profile: "Mon profil"
       posts: "Mes posts"
       sign_out: "Se déconnecter"
+      help: "À l'aide"
   activerecord:
     models:
       chatroom: "Chatroom"
@@ -63,7 +73,7 @@ fr:
     - ven
     - sam
     abbr_month_names:
-    - 
+    -
     - jan.
     - fév.
     - mar.
@@ -89,7 +99,7 @@ fr:
       long: "%e %B %Y"
       short: "%e %b"
     month_names:
-    - 
+    -
     - janvier
     - février
     - mars
@@ -261,4 +271,3 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
-  

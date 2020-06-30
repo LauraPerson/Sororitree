@@ -4,7 +4,7 @@
       <%= link_to image_tag("newlogo.png", width: 70, height: 60), posts_path, class: "link-home-page" %>
     </p>
     <div class="inbox-and-drop-down">
-      <%= link_to "Ajuda", new_request_path(current_user), class: "helpbutton" %>
+      <%= link_to t('.help') , new_request_path(current_user), class: "helpbutton" %>
       <%# Added a last_chat function in the helper to find the chat where the last message was sent %>
       <% if last_chat %>
         <div class="inbox-icon">
