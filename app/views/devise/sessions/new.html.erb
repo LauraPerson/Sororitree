@@ -4,12 +4,10 @@
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div>
-        <%= f.label :nickname %><br />
-        <%= f.email_field :nickname %>
+        <%= f.input :nickname %>
       </div>
       <div>
-        <%= f.label :password %><br />
-        <%= f.password_field :password %>
+        <%= f.input :password %><br />
       </div>
 
       <% if devise_mapping.rememberable? -%>

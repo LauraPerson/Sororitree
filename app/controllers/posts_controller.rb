@@ -44,13 +44,6 @@ class PostsController < ApplicationController
     redirect_to my_posts_posts_path
   end
 
-  def my_posts
-    @posts = Post.where(user_id: current_user.id)
-    authorize @posts
-    @post = Post.new()
-    authorize @post
-  end
-
   private
 
   def params_posts

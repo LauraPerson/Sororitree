@@ -17,12 +17,12 @@ Rails.application.routes.draw do
     patch "users/:id/remove_photo", to: "users#destroy_photo", as: :user_destroy_photo
     resources :users, only: [:show] do
       resources :selected_themes, only: :create
+      member do
+        get :my_posts
+      end
     end
     resources :selected_themes, only: :destroy
     resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do
-      collection do
-        get :my_posts
-      end
     end
 
     resources :requests, only: [:create, :new] do

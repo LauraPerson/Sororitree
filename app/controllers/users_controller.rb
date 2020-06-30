@@ -22,6 +22,13 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def my_posts
+    @posts = Post.where(user_id: current_user.id)
+    authorize @posts
+    @post = Post.new()
+    authorize @post
+  end
+
   # def destroy_photo
   #   authorize current_user
   #   current_user.photo.purge

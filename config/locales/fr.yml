@@ -25,6 +25,11 @@ fr:
     navbar:
       sign_in: "Se connecter"
       already_signed: "Déjà inscrite ?"
+      french: "Français"
+      portuguese: "Portugais"
+      profile: "Mon profil"
+      posts: "Mes posts"
+      sign_out: "Se déconnecter"
   activerecord:
     models:
       chatroom: "Chatroom"
