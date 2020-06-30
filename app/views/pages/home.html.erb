@@ -2,15 +2,15 @@
   <div class="row banner-home-infos">
     <div class="col-8">
       <div class="home-title">
-        Sororitree
+        <%= t('pages.home.title') %>
       </div>
       <div class="home-subtitle ">
-        Conectando mulheres
+        <%= t('.subtitle') %>
       </div>
       <div id="form-homepage">
         <div class="modal-sign-up">
           <button type="button" method="PATCH" class="btn-modal-rose" id="button modal" data-toggle="modal" data-target="#Modal">
-            <p style="font-size: 20px" class="m-0" >Cadastre-se!</p>
+            <p style="font-size: 20px" class="m-0" > <%= t('.sign_up') %> </p>
           </button>
         </div>
         <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -23,7 +23,7 @@
 
 <div class="post-container">
     <div class="title-posts d-flex flex-wrap justify-content-center">
-      <p>As manas se expressam</p>
+      <p> <%= t('.posts') %> </p>
     </div>
     <div class="post-presentation d-flex flex-wrap justify-content-center">
       <%  @random_posts.each do |post| %>
@@ -41,10 +41,10 @@
   <div class="arms-text">
     <div class="home-title-explanation">
       <br><br>
-      Procurar ajuda
+      <%= t('.search_help') %>
     </div>
     <div class="home-explanation">
-      Se você procura ajuda para falar de assuntos tabu, <br>agora você pode utilizar a app Sororitree, <br>que lhe permite falar com mulheres que estão prontas para te ouvir.
+      <%= t('.search_help_desc') %>
     </div>
   </div>
 </div>
@@ -52,11 +52,10 @@
 <div class="hands d-flex justify-content-end" style="background-image: url(<%= image_path 'Home/banner-hands.jpg' %>)">
   <div class="hands-text">
     <div class="home-title-explanation">
-      <br>
-      Ajudar
+      <%= t('.help') %>      
     </div>
-    <div class="home-explanation">
-      Se desejar,<br> você também pode ajudar outras mulheres,<br> compartilhando suas experiências e opiniões.
+    <div class="home-explanation-right">
+      <%= t('.help_desc') %>
     </div>
   </div>
 </div>
@@ -65,10 +64,10 @@
   <div class="heart-text">
     <div class="home-title-explanation">
       <br><br>
-      Trocar
+      <%= t('.talk') %>
     </div>
     <div class="home-explanation">
-      No Sororitree você também pode visualizar e postar informações<br> e comentários relacionados ao lugar da mulher na sociedade contemporânea.
+      <%= t('.talk_desc') %>
     </div>
   </div>
 </div>

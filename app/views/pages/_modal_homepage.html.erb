@@ -1,7 +1,7 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="ModalLabel">Seu cadastro</h5>
+      <h5 class="modal-title" id="ModalLabel"> <%= t('.title') %> </h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -15,31 +15,26 @@
             <%= f.input :nickname,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "nickname" },
-                        label: "Apelido" %>
+                        input_html: { autocomplete: "nickname" } %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email" },
-                        label: "Email" %>
+                        input_html: { autocomplete: "email" } %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" },
-                        label: "Senha" %>
+                        input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" },
-                        label: "Confirmar a senha" %>
+                        input_html: { autocomplete: "new-password" } %>
             <%= f.input :birth_date, start_year: Date.today.year - 100,
                         end_year: Date.today.year - 12,
                         order: [:day, :month, :year],
-                        required: true,
-                        label: "Data de nascimento" %>
+                        required: true %>
           </div>
 
           <div class="form-actions d-flex justify-content-center">
-            <%= f.button :submit, "Sign up", class: "btn-rose"%>
+            <%= f.button :submit, t(".sign_up"), class: "btn-rose"%>
           </div>
         <% end %>
       </div>

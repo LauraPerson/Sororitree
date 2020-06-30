@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Sororitree
   class Application < Rails::Application
+    # Set default language to french
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    config.i18n.default_locale = :fr
+
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.generators do |generate|
       generate.assets false
