@@ -3,14 +3,37 @@ pt:
   matching_profiles:
   messages:
   pages:
+    modal_homepage:
+      sign_up: "Seu cadastro"
+      title: "Sign up"
     home:
       title: "Sororitree"
-      subtitle: "Coneta com mulheres"
+      subtitle: "Conectando com mulheres"
+      sign_up: "Cadastre-se"
+      posts: "As manas se expressam"
+      search_help: "Procurar ajuda"
+      search_help_desc: "Se você procura ajuda para falar de assuntos tabu, agora você pode utilizar a app Sororitree, que lhe permite falar com mulheres que estão prontas para te ouvir."
+      help: "Ajudar"
+      help_desc: "Se você procura ajuda para falar de assuntos tabu, agora você pode utilizar a app Sororitree, que lhe permite falar com mulheres que estão prontas para te ouvir."
+      talk: "Trocar"
+      talk_desc: "No Sororitree você também pode visualizar e postar informações e comentários relacionados ao lugar da mulher na sociedade contemporânea."
   posts:
+      index:
+      title: "Juntas somos mais fortes!"
+      subtitle: "Confira os posts das manas"
+      createpost: "Criar Publicação"
+      insertsubject: "Insera um assunto"
+      filter: "Filtrar"
   profile_avatar:
   requests:
   shared:
   users:
+    show:
+      yearsold: "anos"
+      incaseprofession: "Si la profession que tu exerces peut aider des femmes sur certaines problématiques, ajoute cette information ici."
+      deleteprofession: "Tu veux effacer l'information sur ta profession?"
+    modal_profession:
+      addprofession: "Adicionar profissão"
   activerecord:
     errors:
       messages:
@@ -28,7 +51,7 @@ pt:
     - sex
     - sáb
     abbr_month_names:
-    - 
+    -
     - jan
     - fev
     - mar
@@ -54,7 +77,7 @@ pt:
       long: "%d de %B de %Y"
       short: "%d de %B"
     month_names:
-    - 
+    -
     - janeiro
     - fevereiro
     - março

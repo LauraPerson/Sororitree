@@ -29,7 +29,10 @@ fr:
   users:
     show:
       yearsold: "ans"
-
+      incaseprofession: "Si la profession que tu exerces peut aider des femmes sur certaines problématiques, ajoute cette information ici."
+      deleteprofession: "Tu veux effacer l'information sur ta profession?"
+    modal_profession:
+      addprofession: "Ajouter une profession"
   shared:
     navbar:
       sign_in: "Se connecter"
