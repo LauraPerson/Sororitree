@@ -2,6 +2,8 @@ fr:
   chatrooms:
       show:
         discussions: "Discussions"
+        writemessage: "Écris ton message..."
+        message: "Message"
   matching_profiles:
     index:
       thanks: "Merci! ❤️"
