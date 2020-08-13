@@ -46,8 +46,8 @@ pt:
   users:
     show:
       yearsold: "anos"
-      incaseprofession: "Si la profession que tu exerces peut aider des femmes sur certaines problématiques, ajoute cette information ici."
-      deleteprofession: "Tu veux effacer l'information sur ta profession?"
+      incaseprofession: "Caso você possua uma profissão que possa ajudar outras mulheres, você pode adicionar essa informação aqui."
+      deleteprofession: "Você quer tirar a sua profissão ?"
       editprofile: "Editar perfil"
       notavailabletohelp: "Você não está disponível para ajudar"
       availabletohelp: "Você está disponível para ajudar"
