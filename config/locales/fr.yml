@@ -1,6 +1,11 @@
 fr:
   chatrooms:
+      show:
+        discussions: "Discussions"
   matching_profiles:
+    index:
+      thanks: "Merci! ❤️"
+      noneedforhelp: "Personne n'a besoin d'aide pour le moment."
   messages:
   pages:
     modal_homepage:
@@ -8,9 +13,9 @@ fr:
       title: "Créer mon compte"
     home:
       title: "Sororitree"
-      subtitle: "Rencontre des sisters pour échanger"
+      subtitle: "Échange avec d'autres femmes"
       sign_up: "Créer un compte"
-      posts: "Les sisters s'expriment"
+      posts: "Elles s'expriment"
       search_help: "Chercher de l'aide"
       search_help_desc: "Si tu cherches de l'aide pour parler de sujets tabous, tu peux désormais utiliser l'application Sororitree, qui te permet de parler à des femmes prêtes à t'écouter."
       help: "Aider"
@@ -20,19 +25,44 @@ fr:
   posts:
     index:
       title: "Ensemble nous sommes plus fortes!"
-      subtitle: "Jette un oeil sur les publications des sisters"
+      subtitle: "Jette un oeil sur les publications des utilisatrices de Sororitree"
       createpost: "Publier"
       insertsubject: "Insère un sujet"
       filter: "Filtrer"
+      postedat: "Posté le"
+      postedtime: "à"
   profile_avatar:
   requests:
+      new:
+        needhelp: "Demande d'aide"
+        selectpreferences: "Sélectionnez vos préférences"
+        selectatheme: "Sélectionnez la thématique que vous souhaiteriez aborder:"
+        selectrangeage: "Sélectionnez la tranche d'âge de la femme avec qui vous souhaitez discuter:"
+        maxage: "Âge maximum "
+        minage: "Âge minimum"
+
   users:
     show:
       yearsold: "ans"
       incaseprofession: "Si la profession que tu exerces peut aider des femmes sur certaines problématiques, ajoute cette information ici."
       deleteprofession: "Tu veux effacer l'information sur ta profession?"
+      editprofile: "Modifier le profil"
+      notavailabletohelp: "Tu n'es pas disponible pour aider"
+      availabletohelp: "Tu es disponible pour aider"
+      usernotavailable: "n'est pas disponible pour aider'"
+      useravailable: "est disponible pour aider"
+
     modal_profession:
       addprofession: "Ajouter une profession"
+      yourprofession: "Ta profession"
+      profession: "Profession"
+      professiondescription: "Description"
+
+
+    modal_themes:
+      selectthemes: "Sélectionner les thèmes"
+      addthemes: "Ajouter les thèmes pour aider"
+      helpbutton: "Aide !"
   shared:
     navbar:
       sign_in: "Se connecter"

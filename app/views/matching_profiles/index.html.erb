@@ -2,7 +2,7 @@
   <div class="container-background-match" style="background-image: url(<%= image_path 'women_hug.png' %>)">
     <% if @matching_profiles.where(accepted: nil).empty? %>
     <div class="matching-header text-center">
-      <h3> Obrigada! ❤️ <br> Não há manas precisando de ajuda no momento. </h3>
+      <h3> <%= t('.thanks') %> <br> <%= t('.noneedforhelp')%> </h3>
     </div>
     <% else %>
     <div class="matching-header text-center">

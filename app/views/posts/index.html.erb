@@ -41,7 +41,7 @@
           <% elsif time_min > 60 && time_min < 1440 %>
             <p>Hà <%= (time_min/60).round %> h</p>
           <% else %>
-            <p><%= post.created_at.strftime(" Postado em %d-%m-%Y") %> <%= post.created_at.strftime("às %I:%M") %></p>
+            <p><%= t('.postedat')%> <%= post.created_at.strftime("%d-%m-%Y") %> <%= t('.postedtime')%> <%= post.created_at.strftime("%I:%M") %></p>
           <% end %>
         </div>
         <p><%= post.content %></p>

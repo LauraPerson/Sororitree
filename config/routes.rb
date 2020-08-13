@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
-  
+
   scope '(:locale)', locale: /en|pt/ do
     root to: 'pages#home'
 
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     patch "matching_profiles/:id/accepted_false", to: "matching_profiles#accepted_false", as: :accepted_false
     resources :profile_avatars, only: [ :create, :new, :update]
     end
-  
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

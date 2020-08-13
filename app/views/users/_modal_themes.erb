@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" id="help-button-theme" class="btn btn-primary" data-toggle="modal" data-target="#modal-theme">
-  Selecionar temas
+  <%= t('.selectthemes') %>
 </button>
 
 <!-- Modal -->
@@ -8,7 +8,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modal-theme">Adicionar temas para ajudar</h5>
+        <h5 class="modal-title" id="modal-theme"><%= t('.addthemes') %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -27,7 +27,7 @@
             </fieldset>
 
       <div class="d-flex justify-content-center">
-      <%= f.submit "Ajuda !", class: "btn-rose-outline" %>
+      <%= f.submit t('.helpbutton'), class: "btn-rose-outline" %>
       </div>
           </div>
         <% end %>

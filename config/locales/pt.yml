@@ -1,6 +1,13 @@
 pt:
   chatrooms:
+    show:
+      discussions: "Conversas"
+      writemessage: "Escreve a sua mensagem..."
+      message: "Mensagem"
   matching_profiles:
+    index:
+      thanks: "Obrigada! ❤️"
+      noneedforhelp: "Não há manas precisando de ajuda no momento"
   messages:
   pages:
     modal_homepage:
@@ -19,21 +26,42 @@ pt:
       talk_desc: "No Sororitree você também pode visualizar e postar informações e comentários relacionados ao lugar da mulher na sociedade contemporânea."
   posts:
       index:
-      title: "Juntas somos mais fortes!"
-      subtitle: "Confira os posts das manas"
-      createpost: "Criar Publicação"
-      insertsubject: "Insera um assunto"
-      filter: "Filtrar"
+        title: "Juntas somos mais fortes!"
+        subtitle: "Confira os posts das manas"
+        createpost: "Criar Publicação"
+        insertsubject: "Insera um assunto"
+        filter: "Filtrar"
+        postedat: "Postado em"
+
   profile_avatar:
   requests:
+    new:
+      needhelp: "Solicitação de Ajuda"
+      selectpreferences: "Selecione suas preferências"
+      selectatheme: "Selecione a temática que você gostaria de conversar:"
+      selectrangeage: " Selecione o intervalo de idade da mulher que você gostaria de conversar:"
+      maxage: "Idade Mínima"
+      minage: "Idade Máxima"
   shared:
   users:
     show:
       yearsold: "anos"
       incaseprofession: "Si la profession que tu exerces peut aider des femmes sur certaines problématiques, ajoute cette information ici."
       deleteprofession: "Tu veux effacer l'information sur ta profession?"
+      editprofile: "Editar perfil"
+      notavailabletohelp: "Você não está disponível para ajudar"
+      availabletohelp: "Você está disponível para ajudar"
+      usernotavailable: "não está disponível para ajudar"
+      useravailable: "está disponível para ajudar"
     modal_profession:
       addprofession: "Adicionar profissão"
+      yourprofession: "Sua profissão"
+      profession: "Profissão"
+      professiondescription: "Descrição"
+    modal_themes:
+      selectthemes: "Selecionar temas"
+      addthemes: "Adicionar temas para ajudar"
+      helpbutton: "Ajuda !"
   activerecord:
     errors:
       messages:
