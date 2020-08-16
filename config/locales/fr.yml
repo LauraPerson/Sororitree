@@ -8,6 +8,16 @@ fr:
     index:
       thanks: "Merci! ❤️"
       noneedforhelp: "Personne n'a besoin d'aide pour le moment."
+    new:
+      availablesisters: "Femmes disponibles pour t'aider"
+      choosesisters: "Choisis celles avec qui tu souhaiterais discuter"
+      profile: "Profil"
+      age: "ans"
+      sendrequest: "Envoyer la demande d'aide"
+      requestsend: "Ta demande a été envoyée avec succès!"
+      seeposts: "En attendant, consulte les publications des utilisatrices de Sororitree"
+      canhelp: "Cela pourrait t'aider! ❤️"
+      ok: "Ok!"
   messages:
   pages:
     modal_homepage:
@@ -48,6 +58,7 @@ fr:
         selectrangeage: "Sélectionnez la tranche d'âge de la femme avec qui vous souhaitez discuter:"
         maxage: "Âge maximum "
         minage: "Âge minimum"
+        send: "Envoyer"
 
   users:
     show:

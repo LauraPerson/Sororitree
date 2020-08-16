@@ -8,6 +8,16 @@ pt:
     index:
       thanks: "Obrigada! ❤️"
       noneedforhelp: "Não há manas precisando de ajuda no momento"
+    new:
+      availablesisters: "Manas disponíveis para ajudar"
+      choosesisters: "Escolha quantas manas você quiser!"
+      profile: "Perfil"
+      age: "anos"
+      sendrequest: "Enviar pedido de ajuda"
+      requestsend: "Seu pedido de ajuda foi enviado!"
+      seeposts: "Enquanto isso veja os posts de outras manas."
+      canhelp: "Podem lhe ajudar! ❤️"
+      ok: "Ok!"
   messages:
   pages:
     modal_homepage:
@@ -48,6 +58,8 @@ pt:
       selectrangeage: " Selecione o intervalo de idade da mulher que você gostaria de conversar:"
       maxage: "Idade Mínima"
       minage: "Idade Máxima"
+      send: "Envie"
+
   shared:
   users:
     show:

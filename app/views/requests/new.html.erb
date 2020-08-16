@@ -15,11 +15,11 @@
           <%= f.association :theme, label: false, input_html: { class: 'card-form' }  %>
           <%= f.label t('.selectrangeage'), input_html: { class: 'text-form text-center' }%>
           <div class="d-flex justify-content-around">
-            <%= f.input :age_min, label: t('.maxage'), input_html: { min: '18', step: 'any', class: 'card-form' } %>
-            <%= f.input :age_max, label: t('.minage'), input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
+            <%= f.input :age_min, label: t('.minage'), input_html: { min: '18', step: 'any', class: 'card-form' } %>
+            <%= f.input :age_max, label: t('.maxage'), input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
           </div>
           <div class="text-center mt-3">
-            <%=f.submit 'Envie', class: 'btn-request' %>
+            <%=f.submit t('.send'), class: 'btn-request' %>
           </div>
         <% end %>
       </div>
