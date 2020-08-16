@@ -23,7 +23,7 @@
     <div class="chat-container d-flex">
       <div class="side-bar">
         <div class="side-bar-title mb-2">
-          Conversas
+          <%= t('.discussions') %>
         </div>
         <div class="side-bar-content">
           <% @chatrooms_ordered.each do |chat| %>
@@ -94,10 +94,10 @@
         <div class="chat-form-container" >
           <%= simple_form_for [ @chatroom, @message ], html:{class: "m-0 d-flex"} do |f| %>
             <div class="chat-box flex-grow-1">
-              <textarea class="form-control chat-message required" placeholder="Escreve a sua mensagem..." name="message[content]" id="message_content"></textarea>
+              <textarea class="form-control chat-message required" placeholder= <%= t('.writemessage') %> name="message[content]" id="message_content"></textarea>
             </div>
             <div class="d-flex">
-              <input type="submit" name="commit" value="Mensagem" data-disable-with="Mensagem" class= "btn-rose-wradius-left m-0">
+              <input type="submit" name="commit" value= <%= t('.message') %> data-disable-with= <%= t('.message') %> class= "btn-rose-wradius-left m-0">
             </div>
           <% end %>
         </div>

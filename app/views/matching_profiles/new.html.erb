@@ -4,8 +4,8 @@
   </div>
 
   <div class="matching-header text-center">
-    <h1> Manas disponíveis para ajudar </h1>
-    <h3> Escolha quantas manas você quiser!</h3>
+    <h1> <%= t('.availablesisters') %> </h1>
+    <h3> <%= t('.choosesisters') %></h3>
   </div>
 
   <div class="container-matching-cards text-center">
@@ -18,7 +18,7 @@
 
           <div class="profile-matching-card">
             <div>
-              <%= link_to "Perfil", user_path(user_helper.id), class: "btn-perfil-purple", target: :_blank %>
+              <%= link_to t('.profile'), user_path(user_helper.id), class: "btn-perfil-purple", target: :_blank %>
             </div>
 
             <div class="matching-card-prof justify-content-around">
@@ -28,7 +28,7 @@
               <div class="matching-info">
                 <h4 class="text-center"><%= user_helper.nickname %></h4>
                 <h6 class="text-center"><%= user_helper.professional.job_category %></h6>
-                <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
+                <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> <%= t('.age') %></h6>
               </div>
             </div>
 
@@ -41,7 +41,7 @@
 
           <div class="profile-matching-card">
             <div>
-              <%= link_to "Perfil", user_path(user_helper.id), class: "btn-perfil-purple", target: :_blank %>
+              <%= link_to t('.profile'), user_path(user_helper.id), class: "btn-perfil-purple", target: :_blank %>
             </div>
 
               <div class="matching-card justify-content-around">
@@ -50,7 +50,7 @@
                 </div>
                 <div class="matching-info">
                   <h4 class="text-center"><%= user_helper.nickname %></h4>
-                  <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> anos</h6>
+                  <h6 class="text-center"><%= DateTime.now().year - user_helper.birth_date.year.to_i %> <%= t('.age') %></h6>
                 </div>
               </div>
           </div>
@@ -61,7 +61,7 @@
 
         <div class="text-center mt-5">
           <button type="button" class="transparent" data-toggle="modal" data-target="#modalExemplo">
-            <%= submit_tag("Enviar pedido de ajuda", :id=>"button-modal-request", :class=>"btn-request disabled", :name=>"submit")%>
+            <%= submit_tag(t('.sendrequest'), :id=>"button-modal-request", :class=>"btn-request disabled", :name=>"submit")%>
           </button>
         </div>
 
@@ -75,14 +75,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Seu pedido de ajuda foi enviado!</h5>
+        <h5 class="modal-title text-center" id="exampleModalLabel"><%= t('.requestsend') %></h5>
       </div>
       <div class="modal-body text-center">
-        <h6>Enquanto isso veja os posts de outras manas.</h6>
-        <h6>Podem lhe ajudar! ❤️</h6>
+        <h6><%= t('.seeposts') %></h6>
+        <h6><%= t('.canhelp') %></h6>
       </div>
       <div class="modal-footer">
-        <%= link_to 'Ok!', posts_path, class: "btn-request" %>
+        <%= link_to t('.ok'), posts_path, class: "btn-request" %>
       </div>
     </div>
   </div>

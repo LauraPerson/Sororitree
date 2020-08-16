@@ -18,4 +18,14 @@ class User < ApplicationRecord
   has_one :profile_avatar
   has_one :avatar, through: :profile_avatar
   validates :nickname, presence: true, uniqueness: { case_sensitive: false }
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:nickname)
+      where(conditions).where(["lower(nickname) = :value", { value: login.downcase }]).first
+    else
+      where(conditions).first
+    end
+  end
+
 end

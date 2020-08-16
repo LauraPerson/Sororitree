@@ -11,6 +11,10 @@ gem 'redis'
 #Turbolinks Gem + Debugger
 gem 'turbolinks', '~> 5'
 gem 'turbolinks_render'
+# Traduction
+gem 'i18n'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'

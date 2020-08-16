@@ -1,23 +1,23 @@
 <div class="d-flex justify-content-center">
   <button type="button" method="PATCH" class="btn-post-purple" id="button modal" data-toggle="modal" data-target="#Modal">
-    <p style="font-size: 12px" class="m-0">Adicionar profissão</p>
+    <p style="font-size: 12px" class="m-0"><%= t('.addprofession') %></p>
   </button>
 </div>
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">Sua profissão</h5>
+        <h5 class="modal-title" id="ModalLabel"><%= t('.yourprofession') %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="cards-form">
-          <%= simple_form_for @professional, url: professionals_path(current_user) do |f| %>
-            <%= f.input :job_category, collection: Professional::CATEGORIES, label: "Profissão", input_html: { class: 'card-form' } %>
-            <%= f.input :description, label: false, placeholder: 'Descrição', input_html: { class: 'card-form', maxlength: 60 } %>
-            <%= f.submit 'Adicionar', class: 'btn-post' %>
+          <%= simple_form_for @professional, url: professionals_path do |f| %>
+            <%= f.input :job_category, collection: Professional::CATEGORIES, label: t('.profession'), input_html: { class: 'card-form' } %>
+            <%= f.input :description, label: false, placeholder: t('.professiondescription'), input_html: { class: 'card-form', maxlength: 60 } %>
+            <%= f.submit t('.addprofession'), class: 'btn-post' %>
           <% end %>
         </div>
       </div>

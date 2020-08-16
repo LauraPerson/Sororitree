@@ -1,0 +1,331 @@
+fr:
+  chatrooms:
+      show:
+        discussions: "Discussions"
+        writemessage: "Écris ton message..."
+        message: "Message"
+  matching_profiles:
+    index:
+      thanks: "Merci! ❤️"
+      noneedforhelp: "Personne n'a besoin d'aide pour le moment."
+    new:
+      availablesisters: "Femmes disponibles pour t'aider"
+      choosesisters: "Choisis celles avec qui tu souhaiterais discuter"
+      profile: "Profil"
+      age: "ans"
+      sendrequest: "Envoyer la demande d'aide"
+      requestsend: "Ta demande a été envoyée avec succès!"
+      seeposts: "En attendant, consulte les publications des utilisatrices de Sororitree"
+      canhelp: "Cela pourrait t'aider! ❤️"
+      ok: "Ok!"
+  messages:
+  pages:
+    modal_homepage:
+      sign_up: "Créer un compte"
+      title: "Créer mon compte"
+    home:
+      title: "Sororitree"
+      subtitle: "Échange avec d'autres femmes"
+      sign_up: "Créer un compte"
+      posts: "Elles s'expriment"
+      search_help: "Chercher de l'aide"
+      search_help_desc: "Si tu cherches de l'aide pour parler de sujets tabous, tu peux désormais utiliser l'application Sororitree, qui te permet de parler à des femmes prêtes à t'écouter."
+      help: "Aider"
+      help_desc: "Si tu le souhaites, tu peux également aider d'autres femmes, en partageant tes expériences et tes opinions."
+      talk: "Échanger"
+      talk_desc: "Sur Sororitree, tu peux également consulter et partager des commentaires relatifs à la place des femmes dans la société contemporaine"
+  posts:
+    index:
+      title: "Ensemble nous sommes plus fortes!"
+      subtitle: "Jette un oeil sur les publications des utilisatrices de Sororitree"
+      createpost: "Publier"
+      insertsubject: "Insère un sujet"
+      filter: "Filtrer"
+      postedat: "Posté le"
+      postedtime: "à"
+      minago: "Il y a"
+      publication: "Nouvelle publication"
+      modal_history: "Raconte nous ton histoire..."
+      modal_theme: "Thème"
+      modal_share: "Partage"
+
+  profile_avatar:
+  requests:
+      new:
+        needhelp: "Demande d'aide"
+        selectpreferences: "Sélectionnez vos préférences"
+        selectatheme: "Sélectionnez la thématique que vous souhaiteriez aborder:"
+        selectrangeage: "Sélectionnez la tranche d'âge de la femme avec qui vous souhaitez discuter:"
+        maxage: "Âge maximum "
+        minage: "Âge minimum"
+        send: "Envoyer"
+
+  users:
+    show:
+      yearsold: "ans"
+      incaseprofession: "Si la profession que tu exerces peut aider des femmes sur certaines problématiques, ajoute cette information ici."
+      deleteprofession: "Tu veux effacer l'information sur ta profession?"
+      editprofile: "Modifier le profil"
+      notavailabletohelp: "Tu n'es pas disponible pour aider"
+      availabletohelp: "Tu es disponible pour aider"
+      usernotavailable: "n'est pas disponible pour aider'"
+      useravailable: "est disponible pour aider"
+
+    modal_profession:
+      addprofession: "Ajouter une profession"
+      yourprofession: "Ta profession"
+      profession: "Profession"
+      professiondescription: "Description"
+
+
+    modal_themes:
+      selectthemes: "Sélectionner les thèmes"
+      addthemes: "Ajouter les thèmes pour aider"
+      helpbutton: "Aide !"
+  shared:
+    navbar:
+      sign_in: "Se connecter"
+      already_signed: "Déjà inscrite ?"
+      french: "Français"
+      portuguese: "Portugais"
+      profile: "Mon profil"
+      posts: "Mes posts"
+      sign_out: "Se déconnecter"
+      help: "À l'aide"
+  activerecord:
+    models:
+      chatroom: "Chatroom"
+      message: "Message"
+      post: "Post"
+      professional: "Professionel"
+      request: "Requête"
+      theme: "Theme"
+      user: "Utilisateur"
+    attributes:
+      user:
+        email: "Email"
+        nickname: "Pseudo"
+        helper: "Helper"
+        birth_date: "Date de naissance"
+    errors:
+      messages:
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record}
+            dépendant(e) existe
+          has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
+            dépendants existent
+
+  seeds:
+    array_themes:
+      violence: "Violence Domestique"
+
+
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    -
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: "%d/%m/%Y"
+      long: "%e %B %Y"
+      short: "%e %b"
+    month_names:
+    -
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_seconds:
+        zero: moins d'une seconde
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+      less_than_x_minutes:
+        zero: moins d'une minute
+        one: moins d'une minute
+        other: moins de %{count} minutes
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_seconds:
+        one: 1 seconde
+        other: "%{count} secondes"
+      x_minutes:
+        one: 1 minute
+        other: "%{count} minutes"
+      x_days:
+        one: 1 jour
+        other: "%{count} jours"
+      x_months:
+        one: 1 mois
+        other: "%{count} mois"
+      x_years:
+        one: 1 an
+        other: "%{count} ans"
+    prompts:
+      second: Seconde
+      minute: Minute
+      hour: Heure
+      day: Jour
+      month: Mois
+      year: Année
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: doit être accepté(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec %{attribute}
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      model_invalid: 'Validation échouée : %{errors}'
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      odd: doit être impair
+      other_than: doit être différent de %{count}
+      present: doit être vide
+      required: doit exister
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: 'Veuillez vérifier les champs suivants : '
+      header:
+        one: 'Impossible d''enregistrer ce(tte) %{model} : 1 erreur'
+        other: 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: octet
+            other: octets
+          eb: Eo
+          gb: Go
+          kb: ko
+          mb: Mo
+          pb: Po
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: pm

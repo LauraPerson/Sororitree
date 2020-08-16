@@ -3,23 +3,23 @@
     </div>
     <div class="container-request">
       <div class="request-info mt-5 py-3 px-3">
-        <div class="request-text-form text-center">Solicitação de Ajuda
+        <div class="request-text-form text-center"><%= t('.needhelp') %>
         </div>
       </div>
       <div class="request-form mt-5">
         <div class="text-center mb-4">
-          <h4 class="form-request-title"> Selecione suas preferências </h4>
+          <h4 class="form-request-title"> <%= t('.selectpreferences') %></h4>
         </div>
         <%= simple_form_for @request do |f| %>
-          <%= f.label "Selecione a temática que você gostaria de conversar:" %>
+          <%= f.label t('.selectatheme') %>
           <%= f.association :theme, label: false, input_html: { class: 'card-form' }  %>
-          <%= f.label "Selecione o intervalo de idade da mulher que você gostaria de conversar:", input_html: { class: 'text-form text-center' }%>
+          <%= f.label t('.selectrangeage'), input_html: { class: 'text-form text-center' }%>
           <div class="d-flex justify-content-around">
-            <%= f.input :age_min, label: 'Idade Mínima', input_html: { min: '18', step: 'any', class: 'card-form' } %>
-            <%= f.input :age_max, label: 'Idade Máxima', input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
+            <%= f.input :age_min, label: t('.minage'), input_html: { min: '18', step: 'any', class: 'card-form' } %>
+            <%= f.input :age_max, label: t('.maxage'), input_html: { min: '18', max: '120', step: 'any', class: 'card-form' } %>
           </div>
           <div class="text-center mt-3">
-            <%=f.submit 'Envie', class: 'btn-request' %>
+            <%=f.submit t('.send'), class: 'btn-request' %>
           </div>
         <% end %>
       </div>

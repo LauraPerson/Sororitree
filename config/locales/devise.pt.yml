@@ -1,0 +1,66 @@
+# Traduções adicionais em https://github.com/plataformatec/devise/wiki/I18n
+
+pt:
+  devise:
+    confirmations:
+      confirmed: "Seu endereço de e-mail foi confirmado com sucesso"
+      send_instructions: "Você receberá um e-mail em alguns minutos com instruções sobre como confirmar seu endereço de e-mail"
+      send_paranoid_instructions: "Se seu endereço de e-mail existir em nosso banco de dados, você receberá um e-mail em alguns minutos com instruções sobre como confirmar seu endereço de e-mail"
+    failure:
+      already_authenticated: "Você já está logado"
+      inactive: "Sua conta ainda não foi ativada"
+      invalid: "Inválido %{authentication_keys} ou senha"
+      locked: "Sua conta está bloqueada"
+      last_attempt: "Você tem mais uma tentativa antes que sua conta seja bloqueada"
+      not_found_in_database: "Invalid %{authentication_keys} or password"
+      timeout: "Sua sessão expirou. Por favor, faça o login novamente para continuar"
+      unauthenticated: "Você deve fazer login ou registrar-se antes de prosseguir"
+      unconfirmed: "Você deve confirmar seu endereço de e-mail antes de prosseguir"
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções de confirmação"
+      reset_password_instructions:
+        subject: "Instruções para redefinição de senha"
+      unlock_instructions:
+        subject: "Desbloquear instruções"
+      e-mail_changed:
+        subject: "E-mail Alterado"
+      password_change:
+        subject: "Mudança de senha"
+    omniauth_callbacks:
+      failure: "Incapaz de autenticar de %{kind} porque %{reason}"
+      success: "Autenticado com sucesso a partir da conta %{kind}"
+    passwords:
+      no_token: "Você não pode acessar esta página sem vir de um e-mail de redefinição de senha. Se você estiver vindo de um e-mail de redefinição de senha, certifique-se de ter usado a URL completa fornecida"
+      send_instructions: "Você receberá um e-mail em alguns minutos com instruções sobre como redefinir sua senha"
+      send_paranoid_instructions: "Se seu endereço de e-mail existir em nosso banco de dados, você receberá um link de recuperação de senha para seu endereço de e-mail dentro de alguns minutos"
+      updated: "Sua senha foi alterada com sucesso. Você está agora logado"
+      updated_not_active: "Sua senha foi alterada com sucesso"
+    registrations:
+      destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo em breve"
+      signed_up: "Bem-vindo! Você se registrou com sucesso"
+      signed_up_but_inactive: "Você se registrou com sucesso. No entanto, não conseguimos registrá-lo porque sua conta ainda não está ativada"
+      signed_up_but_locked: "Você se registrou com sucesso. No entanto, não conseguimos registrá-lo porque sua conta está bloqueada"
+      signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para seu endereço de e-mail. Por favor, siga o link para ativar sua conta"
+      update_needs_confirmation: "Você atualizou sua conta com sucesso, mas precisamos verificar seu novo endereço de e-mail. Favor verificar seu endereço de e-mail e seguir o link de confirmação para confirmar seu novo endereço de e-mail"
+      updated: "Sua conta foi atualizada com sucesso"
+      updated_but_not_signed_in: "Sua conta foi atualizada com sucesso, mas como sua senha foi alterada, você precisa fazer o login novamente"
+    sessions:
+      signed_in: "Registrado com sucesso"
+      signed_out: "Registrado com sucesso"
+      already_signed_out: "Registrado com sucesso"
+    unlocks:
+      send_instructions: "Você receberá um e-mail em alguns minutos com instruções sobre como desbloquear sua conta"
+      send_paranoid_instructions: "Se sua conta existe, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos"
+      unlocked: "Sua conta foi desbloqueada com sucesso. Por favor, faça o login para continuar"
+  errors:
+    messages:
+      already_confirmed: "já foi confirmado, por favor, tente fazer o login"
+      confirmation_period_expired: "deve ser confirmado em %{period}, favor solicitar um novo período"
+      expired: "expirou, favor solicitar um novo"
+      not_found: "não encontrado"
+      not_locked: "não trancado"
+      not_saved:
+        one: "1 erro impediu o registro deste %{resource} :"
+        other: "%{count} erros proibiu este %{resource} de ser salvo :"
+

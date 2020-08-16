@@ -196,13 +196,9 @@ $box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 8px;
   align-items: center;
   color: white;
-  padding-left: 10px;
-  padding-top: 6px;
   border: none;
-  margin-top: 8px;
   display: block;
-  height: 36px;
-  width: 64px;
+  padding: 4px 8px;
   &:hover {
     box-shadow: $box-shadow;
     background-color: $red-pink-dark;

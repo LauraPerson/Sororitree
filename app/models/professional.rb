@@ -3,5 +3,5 @@ class Professional < ApplicationRecord
   validates :job_category, presence: true
   validates :user, uniqueness: true
 
-  CATEGORIES = ["Médica - outros", "Enfermeira", "Psicóloga", "Psiquiatra", "Assistente Social", "Ginecologista", "Doula", "Advogada", "Policial", "Nutricionista", "Coach" ]
+  CATEGORIES = ["Médecin - autres", "Infirmière", "Psychologue", "Psychiatre", "Assistante Sociale", "Gynécologiste", "Sage Femme", "Avocate", "Policière", "Nutricioniste", "Coach" ]
 end

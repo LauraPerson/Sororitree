@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       @post = Post.new()
       authorize @post
     else
-      @posts = policy_scope(Post)
+      @posts = policy_scope(Post.includes(user: :avatar).includes(:theme))
       authorize @posts
       @post = Post.new()
       authorize @post
@@ -42,13 +42,6 @@ class PostsController < ApplicationController
     authorize @post
     @post.destroy
     redirect_to my_posts_posts_path
-  end
-
-  def my_posts
-    @posts = Post.where(user_id: current_user.id)
-    authorize @posts
-    @post = Post.new()
-    authorize @post
   end
 
   private
