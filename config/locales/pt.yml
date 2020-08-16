@@ -33,6 +33,10 @@ pt:
         filter: "Filtrar"
         postedat: "Postado em"
         minago: "Hà"
+        publication: "Nova Publicação"
+        modal_history: "Nos conte sua história..."
+        modal_theme: "Temática"
+        modal_share: "Compartilhe"
 
 
   profile_avatar:
@@ -64,6 +68,16 @@ pt:
       selectthemes: "Selecionar temas"
       addthemes: "Adicionar temas para ajudar"
       helpbutton: "Ajuda !"
+  shared:
+    navbar:
+      sign_in: "Se connectar"
+      already_signed: "Já inscrita ?"
+      french: "Francês"
+      portuguese: "Português"
+      profile: "Meu perfil"
+      posts: "Meus posts"
+      sign_out: "Se desconectar"
+      help: "Aujda"
   activerecord:
     errors:
       messages:

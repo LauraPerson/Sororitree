@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       @post = Post.new()
       authorize @post
     else
-      @posts = policy_scope(Post)
+      @posts = policy_scope(Post.includes(user: :avatar).includes(:theme))
       authorize @posts
       @post = Post.new()
       authorize @post

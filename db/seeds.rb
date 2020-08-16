@@ -1,12 +1,7 @@
 ####################################
 # Creating the Themes categories
 
-array_themes = ["Violence conjugale", "Violence psychologique", "Violence Physique", \
-  "Agressions sexuelles", "Harcèlement", "Avortement", "Sexualité", "Maternité", "Contraception", \
-  "Droits des femmes", "Relations abusives", "Orientation professionnelle", \
-  "Santé de la femme", "Égalité de genre"]
-
-array_themes.each do |theme|
+Theme::CATEGORIES.each do |theme|
   the = Theme.create(title: theme)
   puts "Created #{the.id} themes"
 end

@@ -34,6 +34,11 @@ fr:
       postedat: "Posté le"
       postedtime: "à"
       minago: "Il y a"
+      publication: "Nouvelle publication"
+      modal_history: "Raconte nous ton histoire..."
+      modal_theme: "Thème"
+      modal_share: "Partage"
+
   profile_avatar:
   requests:
       new:
