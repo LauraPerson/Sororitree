@@ -17,10 +17,10 @@ end
 ####################################
 # Creating the users
 
-names = ["Alexia", "Andressa", "Amanda", "Laura", "Iara", "Raquel", "Patricia", \
-  "Camila", "Bruna", "Priscila", "Bárbara", "Carol", "Naiara", "Maria", "Rafaela", \
-  "Milene", "Silvia", "Taissa", "Cecilia", "Dani", "Verônica", "Beatriz", "Simone", \
-  "Valquiria", "Fabiola"]
+names = ["Alexia", "Andressa", "Amanda", "Laura", "Manon", "Julie", "Louise", \
+  "Marion", "Camille", "Aude", "Léa", "Carole", "Marie", "Célia", "Clémence", \
+  "Milène", "Françoise", "Laurence", "Lisa", "Alice", "Agathe", "Juliette", "Mona", \
+  "Elsa", "Céline"]
 
 emails = ["alexia@gmail.com", "andressa@gmail.com", "amanda@gmail.com", "laura@gmail.com", \
   "iara@gmail.com", "raquel@gmail.com", "patricia@gmail.com", "camila@gmail.com", \
