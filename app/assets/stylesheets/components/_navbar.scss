@@ -98,3 +98,12 @@ margin: 4px;
   background-color: $light-pink2;
   border-radius: 50%;
 }
+
+li {
+  list-style: none;
+  margin-right: 25px;
+  font-size: 25px;
+  a:link {
+    text-decoration: none;
+  }
+}

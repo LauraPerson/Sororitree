@@ -84,8 +84,8 @@ pt:
     navbar:
       sign_in: "Se connectar"
       already_signed: "Já inscrita ?"
-      french: "Francês"
-      portuguese: "Português"
+      french: "🇫🇷"
+      portuguese: "🇧🇷"
       profile: "Meu perfil"
       posts: "Meus posts"
       sign_out: "Se desconectar"
