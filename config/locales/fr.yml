@@ -33,6 +33,7 @@ fr:
       filter: "Filtrer"
       postedat: "Posté le"
       postedtime: "à"
+      minago: "Il y a"
   profile_avatar:
   requests:
       new:
@@ -98,6 +99,12 @@ fr:
             dépendant(e) existe
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
+
+  seeds:
+    array_themes:
+      violence: "Violence Domestique"
+
+
   date:
     abbr_day_names:
     - dim

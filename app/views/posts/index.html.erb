@@ -37,7 +37,7 @@
         <div class="post-time d-flex text-left">
           <% time_min = (DateTime.now().to_time - post.created_at.to_time) / 60 %>
           <% if time_min < 60  %>
-            <p>Hà <%= time_min.round %> min</p>
+            <p> <%= t('.minago') %> <%= time_min.round %> min</p>
           <% elsif time_min > 60 && time_min < 1440 %>
             <p>Hà <%= (time_min/60).round %> h</p>
           <% else %>

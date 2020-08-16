@@ -32,6 +32,8 @@ pt:
         insertsubject: "Insera um assunto"
         filter: "Filtrar"
         postedat: "Postado em"
+        minago: "Hà"
+
 
   profile_avatar:
   requests:
