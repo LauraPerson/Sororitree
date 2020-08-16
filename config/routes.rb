@@ -22,8 +22,7 @@ Rails.application.routes.draw do
       end
     end
     resources :selected_themes, only: :destroy
-    resources :posts, only: [:index, :show, :create, :edit, :update, :destroy] do
-    end
+    resources :posts, only: [:index, :show, :create, :edit, :update, :destroy]
 
     resources :requests, only: [:create, :new] do
       resources :matching_profiles, only: [:new, :create]

@@ -14,7 +14,7 @@
       </div>
       <div class="modal-body">
         <div class="cards-form">
-          <%= simple_form_for @professional, url: professionals_path(current_user) do |f| %>
+          <%= simple_form_for @professional, url: professionals_path do |f| %>
             <%= f.input :job_category, collection: Professional::CATEGORIES, label: t('.profession'), input_html: { class: 'card-form' } %>
             <%= f.input :description, label: false, placeholder: t('.professiondescription'), input_html: { class: 'card-form', maxlength: 60 } %>
             <%= f.submit t('.addprofession'), class: 'btn-post' %>
